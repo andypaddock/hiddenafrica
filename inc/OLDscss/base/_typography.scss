@@ -1,0 +1,156 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  // font-size: 16px;
+  line-height: 1.7;
+  color: $color-dark-text;
+}
+strong {
+  font-weight: 700;
+}
+.heading-primary {
+  color: $color-dark-text;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  font-weight: 300;
+  backface-visibility: hidden;
+  margin: 2rem 0;
+  text-align: center;
+  letter-spacing: 0.1rem;
+
+  &--main {
+    display: block;
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+      //font-family: 5rem;
+      line-height: 1.3;
+    }
+    /*
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+
+.heading-secondary {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  // &:hover {
+  //   transform: skewY(2deg) skewX(15deg) scale(1.1);
+  //   text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  // }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+.text-block {
+  padding: 0 1rem;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  p {
+    margin: 0rem 0 1rem;
+    text-align: center;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  @include headings {
+    margin: 1.5rem 0 0.5rem;
+  }
+}
+
+.legal-block {
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  p {
+    margin: 0rem 0 1rem;
+    font-size: 1.5rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  @include headings {
+    margin: 1.5rem 0 0.5rem;
+  }
+}
+.arrow-link {
+  position: relative;
+
+  &:after,
+  &:before {
+    border-right: 2px solid $color-secondary-dark;
+    content: "";
+    display: block;
+    height: 12px;
+    position: absolute;
+    transform: rotate(135deg);
+    right: 10px;
+    top: 48%;
+    width: 0;
+    margin-top: -8px;
+  }
+
+  &:after {
+    margin-top: -1px;
+    transform: rotate(45deg);
+  }
+}
+.light-text {
+  color: white;
+}

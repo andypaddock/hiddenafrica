@@ -1,0 +1,100 @@
+.accordion-outer {
+  grid-column-end: 13;
+}
+
+.info-accordion {
+  position: relative;
+  background-color: $color-primary-dark;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  font-weight: 200;
+  color: white;
+  cursor: pointer;
+  padding: 1.2rem 2rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: 10fr 2fr;
+  align-items: center;
+  text-transform: uppercase;
+  &:after,
+  &:before {
+    border-right: 2px solid $color-primary-light;
+    content: "";
+    display: block;
+    height: 12px;
+    position: absolute;
+    transform: rotate(45deg);
+    right: 1.8rem;
+    top: 46%;
+    width: 0;
+    margin-top: -8px;
+    transition: 0.5s;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &:after {
+    transform: rotate(315deg);
+    right: 2.6rem;
+  }
+  &.info-active {
+    &:before {
+      transform: rotate(315deg);
+      transition: 0.5s;
+    }
+    &:after {
+      transform: rotate(45deg);
+      transition: 0.5s;
+    }
+  }
+  .auto-counter {
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+    justify-self: flex-end;
+
+    path {
+      fill: white;
+    }
+  }
+}
+
+.text-content .info-active {
+  margin-bottom: 0;
+
+  svg {
+    transform: rotate(270deg);
+  }
+}
+
+.info-panel {
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-bottom: 1rem;
+  p,
+  li {
+    margin: 0rem 0 1rem;
+    font-size: $default-font-size;
+    list-style: none;
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  @include headings {
+    margin: 1.5rem 0 0.5rem;
+  }
+}

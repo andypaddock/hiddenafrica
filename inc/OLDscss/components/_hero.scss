@@ -1,0 +1,27 @@
+.hero-wrapper {
+  height: calc(100vh - 4.5rem);
+  display: grid;
+  grid-template-rows: auto 16rem;
+  .section {
+    margin: 0;
+    text-align: center;
+  }
+  section.header {
+    @include backgroundCover;
+    background-position: bottom !important;
+  }
+  svg {
+    width: 40rem;
+    margin-top: 3rem;
+    path,
+    rect {
+      fill: $color-primary;
+    }
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+  .more {
+    font-size: 1.5rem;
+  }
+}

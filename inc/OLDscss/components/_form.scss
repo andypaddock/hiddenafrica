@@ -1,0 +1,61 @@
+#contact-form {
+  p {
+    margin: 0;
+    // font-size: 1em;
+  }
+
+  .wpcf7-text,
+  .wpcf7-textarea {
+    border: 1px solid $color-green-mid;
+    // background: darken($color-grey-light-1, 5%);
+    // font-family: $body-font;
+    width: 100%;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+    padding: 1rem;
+    outline: none;
+    // color: $brand-primary;
+
+    &::placeholder {
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 1rem;
+      text-align: center;
+      // color: $brand-mid-grey;
+    }
+  }
+
+  .wpcf7-text[name="your-name"] {
+    margin-top: 0;
+  }
+
+  .wpcf7-submit {
+    margin-top: 1em;
+    width: 100%;
+    background: $color-primary-dark;
+    color: white;
+    text-transform: uppercase;
+    padding: 1.2rem;
+    border: none;
+    font-family: "Lato", sans-serif;
+    letter-spacing: .2rem;
+  }
+
+  br {
+    display: none;
+  }
+
+  .wpcf7-not-valid-tip {
+    color: lighten($color-primary, 10%) !important;
+    font-size: 0.85em;
+  }
+
+  .wpcf7-response-output {
+    font-size: 0.85em;
+    margin: 1em 0 0 0;
+    border: none;
+    background: none;
+    color: black;
+    background: hsla(0, 0%, 0%, 0.2);
+  }
+}

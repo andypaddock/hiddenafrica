@@ -1,0 +1,188 @@
+.footer {
+  font-size: 1.4rem;
+  color: $color-grey-light-1;
+
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
+  &__logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__logo {
+    width: 15rem;
+    height: auto;
+  }
+
+  &__navigation {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: $color-grey-light-1;
+      background-color: $color-grey-dark-3;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      transform: rotate(5deg) scale(1.3);
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    width: 80%;
+    float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
+  }
+  .footer-hero {
+    height: 35rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    @include backgroundCover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .centre-line {
+      display: flex;
+      padding: 1rem;
+      div {
+        flex: 1;
+      }
+    }
+    .line {
+      border-right: 1px solid $color-white;
+      height: 3rem;
+      padding-top: 1rem;
+    }
+    .footer_text {
+      text-align: center;
+      .heading-secondary {
+        color: $color-white;
+        font-size: 2.1rem;
+      }
+    }
+    .footer_link {
+      border: 1px solid $color-white;
+      border-radius: 0.5rem;
+      padding: 2rem 4rem 2rem 5rem;
+      margin-bottom: 2rem;
+      .footer_button {
+        display: block;
+        color: $color-white;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        font-weight: 700;
+        &:hover {
+          &:after {
+            content: "→";
+            transition: all ease 0.5s;
+            opacity: 1;
+            left: 8px;
+          }
+        }
+
+        &:after {
+          content: "→";
+          transition: all ease 0.5s;
+          position: relative;
+          opacity: 0;
+          left: -12px;
+        }
+      }
+      a {
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 2.1rem;
+        position: relative;
+      }
+    }
+  }
+}
+.footer-navbar {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  .nav {
+    padding: 3rem 0;
+    ul {
+      list-style: none;
+      column-count: 3;
+      li {
+        border-left: 1px solid $color-primary;
+
+        a {
+          color: $color-white;
+          text-transform: uppercase;
+          text-decoration: none;
+          padding: 2rem;
+        }
+      }
+    }
+  }
+  .privacy {
+    padding: 3rem 0;
+    ul {
+      list-style: none;
+      li {
+        border-left: 1px solid $color-primary;
+        a {
+          color: $color-white;
+          text-decoration: none;
+          padding: 2rem;
+        }
+        span {
+          padding: 2rem;
+        }
+      }
+    }
+  }
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .nav ul {
+      column-count: 2;
+    }
+  }
+}

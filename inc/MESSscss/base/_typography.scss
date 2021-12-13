@@ -1,0 +1,114 @@
+body {
+  font-family: "Lato", sans-serif;
+  // font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: $color-grey-dark-3;
+}
+.heading-hero {
+  color: $color-primary-light;
+  text-transform: uppercase;
+  font-size: 4rem;
+  letter-spacing: 0.6rem;
+  font-family: "mrs-eaves";
+  font-weight: 100;
+  @include respond(mini-lap) {
+    font-size: 3rem;
+  }
+}
+
+.heading-primary {
+  color: $color-primary;
+  font-family: "mrs-eaves";
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-weight: 100;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    line-height: 1.1em;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-family: 5rem;
+    }
+    /*
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+
+.heading-secondary {
+  color: $color-primary;
+  font-size: 2rem;
+  font-family: "mrs-eaves";
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: $light-font-weight;
+  backface-visibility: hidden;
+}
+.heading-secondary-sub {
+  font-size: 1.5rem;
+  font-family: "mrs-eaves";
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: $light-font-weight;
+  backface-visibility: hidden;
+}
+
+.heading-tertiary {
+  font-family: "roboto";
+  font-size: 2.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: $default-font-size;
+  font-weight: 400;
+  margin-bottom: 1.5rem; /* between paragraphs */
+
+  // &:not(:last-child) {
+  //   margin-bottom: 3rem;
+  // }
+}
+.alt-font {
+  font-family: "mrs-eaves";
+}
+.robo-font {
+  font-family: "roboto";
+}
+a {
+  display: inline-block;
+  line-height: 1.2em;
+  text-decoration: none;
+  color: $color-secondary-dark;
+  transition: color 0.3s ease;
+  font-weight: 400;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}

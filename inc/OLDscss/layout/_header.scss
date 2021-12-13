@@ -1,0 +1,56 @@
+header {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+  #bgvideo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0.5;
+    object-fit: cover;
+  }
+  .header {
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    flex: 1;
+
+    &__logo-box {
+      svg {
+        width: 100%;
+        margin-top: 1rem;
+        path, rect {
+          fill: $color-primary;
+        }
+      }
+      .section {
+        margin-top: 2rem;
+      }
+    }
+
+    &__logo {
+      height: 3.5rem;
+    }
+
+    &__text-box {
+      text-align: center;
+      margin: 3rem 0;
+      a {
+        text-transform: uppercase;
+        color: $color-secondary-light;
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .hero-text {
+    background: white;
+  }
+}
+header {
+  //height: calc(100vh - 4.5rem);
+}

@@ -1,0 +1,153 @@
+.hero {
+  position: relative;
+  color: white;
+  /*&:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(black, 0.6);
+  }*/
+  &__tint {
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+  }
+  .container {
+    z-index: 2;
+    align-content: center;
+    display: relative;
+    width: 80%;
+    text-align: center;
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+    }
+    h2 {
+      margin: 0;
+      font-size: 1.4rem;
+
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    h3 {
+      font-size: 2rem;
+
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .company-title {
+      img {
+        max-width: 24rem;
+        margin-bottom: 8rem;
+        filter: brightness(50);
+      }
+    }
+    .company-copy {
+      margin-top: 10vh;
+      margin-bottom: 5rem;
+    }
+    .home_hero {
+      h1 {
+        text-transform: uppercase;
+        letter-spacing: 6px;
+      }
+    }
+  }
+  #scroll-icon {
+    position: absolute;
+    bottom: 3em;
+    left: 50%;
+    z-index: 99;
+    span {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: block;
+      border-left: 3px solid white;
+      border-bottom: 3px solid white;
+      width: 30px;
+      height: 30px;
+      transform: translateX(-50%) rotate(-45deg);
+
+      &:hover {
+        top: 10px;
+
+        cursor: pointer;
+      }
+    }
+  }
+}
+.hero {
+  @include backgroundCover;
+  display: grid;
+
+  .container {
+    display: grid;
+    height: 100%;
+    color: white;
+  }
+}
+.page-template-holdingpage {
+  .navigation,
+  .header,
+  .hero-text {
+    display: none;
+  }
+  header {
+    height: unset;
+  }
+  .h100 {
+    height: 100vh;
+  }
+  .container {
+    .col {
+      grid-column: 1/12;
+      &.main-box {
+        grid-column: span 8;
+      }
+      &.short-box {
+        grid-column: span 4;
+      }
+    }
+  }
+}
+/*-------------COMING SOON -------------*/
+.comingsoon {
+  border: 1px white solid;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  text-align: left;
+  margin-top: 3rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+  a {
+    color: white;
+  }
+}
+.socials {
+  margin-top: 3rem;
+  a {
+    color: #ffffff;
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+}
+.hero {
+  svg {
+    height: 12rem;
+    margin-bottom: 3rem;
+  }
+  img {
+    height: 2rem;
+  }
+}

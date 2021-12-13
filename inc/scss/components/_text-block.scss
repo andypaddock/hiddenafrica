@@ -1,0 +1,27 @@
+.section-text {
+  text-align: center;
+  .heading-tertiary {
+    color: $color-primary;
+    font-weight: 700;
+    padding: 2rem 0;
+  }
+  .centre-line {
+    display: flex;
+    div {
+      flex: 1;
+    }
+  }
+  .line {
+    border-right: 1px solid $color-primary-dark;
+    height: 5rem;
+  }
+}
+.section-title {
+  text-align: center;
+  .alt-text {
+    color: $color-white;
+  }
+}
+.count2 {
+  column-count: 2;
+}

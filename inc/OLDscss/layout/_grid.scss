@@ -1,0 +1,31 @@
+/*=====MASTER GRID RULES=====*/
+
+.container {
+  display: grid;
+  grid-gap: $grid-gap;
+  max-width: $grid-width;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0 auto;
+}
+
+/*=====PROJECT GRID RULES=====*/
+
+.section {
+  grid-column: 2/12;
+  margin-top: 5rem;
+  &__narrow {
+    grid-column: 3/11;
+    @include respond(tab-port) {
+      grid-column: 2/12;
+    }
+  }
+  &__extranarrow {
+    grid-column: 4/10;
+    @include respond(tab-port) {
+      grid-column: 2/12;
+    }
+  }
+  &.createdby {
+    margin-top: 0;
+  }
+}

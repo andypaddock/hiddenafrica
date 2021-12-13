@@ -1,0 +1,131 @@
+.footer {
+  background-color: $color-primary;
+  padding: 0 0 2rem;
+  //   font-size: 1.4rem;
+  color: $color-white;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 1rem;
+  i,
+  a {
+    color: $color-white;
+  }
+  h4 {
+    text-transform: uppercase;
+    padding-bottom: 5rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
+  &__logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+  }
+  .light-text {
+    a {
+      font-size: 2rem;
+    }
+  }
+  .mandatory {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  &__logo {
+    width: 15rem;
+    height: auto;
+  }
+
+  &__navigation {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: $color-grey-light-1;
+      background-color: $color-grey-dark-3;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      transform: rotate(5deg) scale(1.3);
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    width: 80%;
+    float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
+  }
+}
+.silverless {
+  text-align: center;
+  margin-top: 1rem;
+
+  #logo {
+    width: 10rem;
+    height: 3rem;
+  }
+
+  #silverless {
+    opacity: 0.6;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  #created {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s transform ease, 2s opacity ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    #silverless {
+      opacity: 0.8;
+    }
+
+    #created {
+      opacity: 0.8;
+      transform: translateY(0);
+    }
+  }
+}

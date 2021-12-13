@@ -1,0 +1,42 @@
+.feature-box {
+  font-size: 1.5rem;
+  position: relative;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  transition: transform 0.3s;
+  border: 1px solid $color-primary-dark;
+  text-transform: uppercase;
+  svg {
+    height: 2rem;
+  }
+  .heading-tertiary {
+    font-size: 1.6rem;
+    color: $color-primary;
+  }
+
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+
+  &.edited {
+    i {
+      font-size: 2.5rem;
+    }
+    .heading-tertiary {
+      color: $color-primary;
+    }
+  }
+  .arrow {
+    svg {
+      width: 3rem;
+      height: 3rem;
+      fill: $color-primary;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+  }
+}

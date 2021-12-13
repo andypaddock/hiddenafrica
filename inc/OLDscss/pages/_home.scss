@@ -1,0 +1,82 @@
+.section {
+  &.directory {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding: 3rem;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity:0.3;
+      z-index: -1;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    h2,
+    .file-type {
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.2rem;
+    }
+    .sub-text {
+      font-weight: 300;
+    }
+    img {
+      padding: 2rem 0;
+      height: 9rem;
+      filter: brightness(5);
+    }
+    p {
+      font-size: 1.7rem;
+      font-weight: 300;
+    }
+  }
+  &.contact {
+    margin-bottom: 5rem;
+  }
+}
+.contact-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
+
+  .phone,
+  .email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+      font-size: 1.4rem;
+    }
+    i {
+      color: $color-secondary-light;
+      padding-bottom: 1rem;
+    }
+  }
+  .phone-detail {
+    border-right: 1px solid black;
+    width: 100%;
+    text-align: center;
+    @include respond(phone) {
+      border-right: none;
+    }
+  }
+}
+
+.mapboxgl-ctrl-bottom-left,
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}

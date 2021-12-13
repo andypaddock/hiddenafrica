@@ -1,0 +1,68 @@
+.hero-outer {
+  position: relative;
+  overflow: hidden;
+  height: 50vh;
+
+  .hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include backgroundCover;
+  }
+  canvas {
+    width: 100%;
+    margin-bottom: -1rem;
+    opacity: 0.4;
+    &.h-50 {
+      height: 50vh;
+    }
+    &.h-75 {
+      height: 75vh;
+    }
+    &.h-full {
+      height: 100vh;
+    }
+  }
+  .hero-title {
+    text-align: center;
+    @include absCenter60;
+    @include respond(tab-port) {
+      top: 50%;
+    }
+    @include respond(mini-lap) {
+      top: 50%;
+      svg {
+        width: 10rem;
+      }
+    }
+  }
+}
+.subhero-block {
+  @include overCenter;
+  top: -20vh;
+  .subhero-title {
+    grid-column: 2/6;
+    @include respond(tab-port) {
+      grid-column: 1/12;
+    }
+  }
+}
+.subhero-textblock {
+  margin-top: -20vh;
+  margin-bottom: 5rem;
+  .subhero-copyblock {
+    grid-row: 2;
+    grid-column: 7/12;
+    background: $color-grey-light-1;
+    color: $color-primary-dark;
+    padding: 5rem;
+    font-size: 1.5rem;
+    z-index: 1;
+    @include respond(tab-port) {
+      grid-column: 1/13;
+    }
+  }
+}
+.home .hero-outer canvas {
+  opacity: 0.4;
+}

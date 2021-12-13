@@ -1,0 +1,45 @@
+.research-archive {
+  &__sidebar {
+    ul {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: $color-primary;
+        font-size: 1.2rem;
+      }
+      li {
+        padding: 0.25rem;
+      }
+    }
+    .archive {
+      text-transform: uppercase;
+      padding: 1rem 0 0.5rem;
+      font-size: 1.2rem;
+    }
+  }
+  .archive-sub-menu {
+    padding-left: 1rem;
+    li {
+      padding: 0.25rem;
+    }
+  }
+  .archive-year {
+    color: $color-primary;
+  }
+  .custom-bg {
+    width: 100%;
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat !important;
+    margin: 1rem;
+  }
+}
+.log-in-link {
+  grid-column: 4/10;
+  text-align: center;
+}
+.oldcontent {
+  p {
+    text-align: center;
+  }
+}

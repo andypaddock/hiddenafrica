@@ -1,0 +1,124 @@
+.research-block {
+  width: 100%;
+  @include absCenter;
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+.research-title {
+  grid-column: 2/12;
+  text-align: center;
+  padding: 2rem;
+}
+.research-feed {
+  grid-column: 2/12;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  .research-item {
+    background: $color-off-white;
+    display: flex;
+    flex-direction: column;
+    .research-image {
+      @include backgroundCover;
+      height: 12rem;
+    }
+    .research-copy {
+      padding: 1rem;
+      flex: 1;
+      a {
+        text-decoration: none;
+        color: $color-primary;
+      }
+      .pub-date {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: $color-primary-dark;
+      }
+      .research-excerpt {
+        padding-top: 2rem;
+      }
+    }
+    .research-link {
+      padding: 1rem;
+      a {
+        display: block;
+        color: $color-primary;
+        background: $color-white;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        padding: 1rem;
+      }
+    }
+  }
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+  }
+}
+.research-archive {
+  padding: 3rem 0;
+  &__sidebar {
+    grid-column: 2/4;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+  &__main {
+    grid-column: 4/12;
+    @include respond(tab-port) {
+      grid-column: 1/13;
+    }
+    li {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      background: $color-off-white;
+      margin: 2rem 0;
+      border-right: 2rem solid $color-primary-dark;
+    }
+    img {
+      width: 25rem;
+    }
+    .research-meta {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 3rem;
+      a {
+        text-decoration: none;
+        color: $color-primary;
+        text-transform: uppercase;
+      }
+    }
+    .research-link {
+      font-size: 1.4rem;
+    }
+    .pub-date {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: $color-primary-dark;
+    }
+    .heading-tertiary {
+      padding-bottom: 1rem;
+      font-size: 2rem;
+      // line-height: 3.2rem;
+      a {
+        color: $color-primary-dark;
+      }
+    }
+  }
+}
+.video-block {
+  grid-column: 2/12;
+  video {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+.research-meta {
+  p {
+    font-size: 1.4rem;
+    // line-height: 3.3rem;
+  }
+}
