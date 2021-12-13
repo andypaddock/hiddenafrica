@@ -75,7 +75,7 @@ if( $link ):
     <?php endif;?>
 
     <div class="row footer-navbar">
-        <div class="logo"><?php get_template_part("inc/img/initials"); ?></div>
+        <div class="logo"><?php get_template_part("inc/img/hiddenlogo"); ?></div>
         <div class="nav">
             <?wp_nav_menu( array( 
                         'theme_location' => 'footer-menu',
