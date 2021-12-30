@@ -315,3 +315,28 @@ function smartwp_remove_wp_block_library_css(){
   wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
 } 
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+
+/**
+ * Generate breadcrumbs
+ * @author CodexWorld
+ * @authorURL www.codexworld.com
+ */
+function get_breadcrumb() {
+  echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
+  if (is_category() || is_single()) {
+      echo "&nbsp;&nbsp;|&nbsp;&nbsp;";
+      the_category(' &bull; ');
+          if (is_single()) {
+              echo " &nbsp;&nbsp;|&nbsp;&nbsp; ";
+              the_title();
+          }
+  } elseif (is_page()) {
+      echo "&nbsp;&nbsp;|&nbsp;&nbsp;";
+      echo the_title();
+  } elseif (is_search()) {
+      echo "&nbsp;&nbsp;|&nbsp;&nbsp;Search Results for... ";
+      echo '"<em>';
+      echo the_search_query();
+      echo '</em>"';
+  }
+}

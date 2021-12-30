@@ -62,6 +62,14 @@
       3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal}
     );
   }
+  .grid-layout3 {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: $gutter-horizontal;
+    .grid-item {
+      flex: 1 0 17rem;
+    }
+  }
 }
 section {
   padding: 5rem 0;

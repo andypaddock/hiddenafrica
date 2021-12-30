@@ -41,11 +41,11 @@ body {
 main {
   z-index: 2;
   position: relative;
-  height: 100%;
-  -webkit-transition: transform 0.7s ease-in-out;
-  -moz-transition: transform 0.7s ease-in-out;
-  -ms-transition: transform 0.7s ease-in-out;
-  -o-transition: transform 0.7s ease-in-out;
-  transition: transform 0.7s ease-in-out;
   background-color: $color-primary-bg;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.filler-block {
+  flex: 1;
 }

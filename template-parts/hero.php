@@ -22,11 +22,7 @@ $heroPoster = get_field('video_poster');?>
 </div>
 
 <?php elseif ($heroSwitch == 'image'):?>
-<div class="hero" style="background-image: linear-gradient(
-      0deg,
-      rgba(4, 11, 46, 1) 20%,
-      rgba(4, 11, 46, 0) 50%
-    ),url(<?php echo $heroImage['url']; ?>)">
+<div class="hero" style="background-image: url(<?php echo $heroImage['url']; ?>)">
     <div class="header__text-box">
         <h1 class="heading-<?php the_field('header_size'); ?>">
             <span class="heading-<?php the_field('header_size'); ?>--main"><?php the_field('header'); ?></span>
@@ -47,7 +43,7 @@ $heroPoster = get_field('video_poster');?>
         <blockquote><?php the_field('fade_text_second'); ?></blockquote>
     </div>
     <?php endif; ?>
-    <?php $mainBlocks = get_field('main_link_boxes');
+    <!-- <?php $mainBlocks = get_field('main_link_boxes');
             if ($mainBlocks == 'yes'): ?>
     <div class="main_links"><?php get_template_part('template-parts/main-boxes');?></div>
     <?php else:?>
@@ -56,6 +52,7 @@ $heroPoster = get_field('video_poster');?>
             <a class="fal fa-long-arrow-down fa-4x" href="#content"></a>
         </div>
     </div>
-    <?php endif; ?>
+    <?php endif; ?> -->
 </div>
 <?php endif;?>
+<div class="breadcrumb"><?php get_breadcrumb(); ?></div>

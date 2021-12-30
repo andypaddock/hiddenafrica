@@ -1,7 +1,8 @@
 .footer {
   font-size: 1.4rem;
-  color: $color-grey-light-1;
-
+  color: $color-white;
+  background: $color-black;
+  font-family: "work-sans", sans-serif;
   @include respond(tab-port) {
     padding: 8rem 0;
   }
@@ -141,8 +142,14 @@
   }
 }
 .footer-navbar {
-  display: grid;
-  grid-template-columns: 1fr 3fr 2fr;
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 0;
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .nav {
     padding: 3rem 0;
     ul {

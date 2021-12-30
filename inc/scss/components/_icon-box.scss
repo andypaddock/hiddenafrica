@@ -1,0 +1,12 @@
+.icon-block {
+  text-align: center;
+  .icon {
+    i {
+      font-size: 3rem;
+      display: inline-block;
+      border-radius: 50%;
+      background: $color-black;
+      padding: 2rem;
+    }
+  }
+}

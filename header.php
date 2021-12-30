@@ -27,7 +27,7 @@
     <meta name="keywords" content=" ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo the_title(); ?></title>
-    <script src="https://kit.fontawesome.com/98edb62204.js" crossorigin="anonymous" defer="defer"></script>
+    <script src="https://kit.fontawesome.com/4faa096376.js" crossorigin="anonymous" defer="defer"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
@@ -46,15 +46,23 @@
     </div>
 
     <main>
-        <menu>
-            <?wp_nav_menu( array( 
+        <div id="navbar" class="top-bar">
+            <div class="logo-bar">
+                <div class="logo-bar__contacts"></div>
+                <div class="logo-bar__image"><a
+                        href="<?php echo site_url(); ?>"><?php get_template_part("inc/img/hiddenlogo"); ?></a></div>
+                <div class="logo-bar__button"></div>
+            </div>
+            <menu>
+                <?wp_nav_menu( array( 
                         'theme_location' => 'main-menu',
                         'container_class' => 'header-menu row'
                         // 'menu_class' => 'header-menu',
     //                     'list_item_class'  => 'sidebar-item',
     // 'link_class'   => 'sidebar-anchor'
                     ) ); ?>
-        </menu>
+            </menu>
+        </div>
         <nav>
             <!-- nav-right -->
 

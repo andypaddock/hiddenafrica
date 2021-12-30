@@ -4,8 +4,8 @@
  * @package kitjames
  */
 ?>
-<footer class="footer">
-    <?php $footerSwitch = get_field('footer_override');
+<div class="filler-block"></div>
+<div class="footer-message"><?php $footerSwitch = get_field('footer_override');
             if ($footerSwitch == 'alternate'): ?>
 
 
@@ -73,19 +73,17 @@ if( $link ):
         </div>
     </div>
     <?php endif;?>
+</div>
+<footer class="footer">
+
 
     <div class="row footer-navbar">
-        <div class="logo"><?php get_template_part("inc/img/hiddenlogo"); ?></div>
-        <div class="nav">
-            <?wp_nav_menu( array( 
-                        'theme_location' => 'footer-menu',
-                        'container' => false,
-    //                     'menu_class' => 'sidebar-list',
-    //                     'list_item_class'  => 'sidebar-item',
-    // 'link_class'   => 'sidebar-anchor'
-					) ); ?>
+        <div class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part("inc/img/footerlogo"); ?></a>
         </div>
-        <div class="privacy">
+        <div class="contact-details">Reservations</div>
+        <div class="explore-links">Explore Our World</div>
+        <div class="about-links">Get to Know Us</div>
+        <div class="privacy-links">Important Stuff
             <ul>
                 <li><?php 
 $link = get_field('privacy_policy_link','options');
@@ -101,6 +99,7 @@ if( $link ):
                 <li><span><?php the_field('copy_text','options'); ?></span></li>
             </ul>
         </div>
+        <div class="newsletter-block">Get to Know Us</div>
     </div>
 
 

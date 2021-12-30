@@ -33,14 +33,13 @@
   .hero {
     height: 100%;
     position: relative;
-    border-radius: 0.5rem 0.5rem 0 0;
     @include backgroundCover;
-    background: rgb(4, 11, 46);
-    background: linear-gradient(
-      0deg,
-      rgba(4, 11, 46, 1) 0%,
-      rgba(4, 11, 46, 0) 40%
-    );
+    // background: rgb(4, 11, 46);
+    // background: linear-gradient(
+    //   0deg,
+    //   rgba(4, 11, 46, 1) 0%,
+    //   rgba(4, 11, 46, 0) 40%
+    // );
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -48,7 +47,6 @@
   }
   video#bgvideo {
     position: absolute;
-    border-radius: 0.5rem 0.5rem 0 0;
     top: 0;
     z-index: -1;
     background-size: cover;
@@ -353,11 +351,23 @@ nav {
     }
   }
 }
-menu {
+.top-bar {
+  .logo-bar {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    &__image {
+      svg {
+        height: 5rem;
+      }
+    }
+  }
+}
+.top-bar {
   position: sticky;
   top: 0;
   z-index: 3;
-  background-color: #040b2e;
+  background: $color-primary-bg;
 
   .header-menu {
     padding: 0;
@@ -381,7 +391,7 @@ menu {
         }
         a {
           text-decoration: none;
-          color: #fff;
+          color: $color-black;
           display: block;
           border-bottom: 3px solid rgba(255, 255, 255, 0);
           transition: ease-out 0.25s;
@@ -391,7 +401,7 @@ menu {
         &.current-menu-item {
           border-bottom: 3px solid $color-primary;
           &.menu-logo {
-            border-bottom: 1px solid $color-white;
+            border-bottom: 1px solid $color-black;
           }
         }
       }
@@ -401,6 +411,9 @@ menu {
     display: none;
   }
 }
-.scrolled menu {
+.scrolled .top-bar {
   box-shadow: 0 7px 10px rgba(0, 0, 0, 0.4);
+}
+.heading-primary--main {
+  color: $color-white;
 }
