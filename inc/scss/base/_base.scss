@@ -49,3 +49,7 @@ main {
 .filler-block {
   flex: 1;
 }
+.alt-color {
+  background: $color-black;
+  color: $color-white;
+}

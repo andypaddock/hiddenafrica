@@ -1,13 +1,12 @@
 <?php $heroImage = get_field('hero_image'); 
 $heroVideo = get_field('background_video');
 $heroMobile = get_field('mobile_video');
-$heroPoster = get_field('video_poster');
-$mapimage = get_field('map_image');?>
+$heroPoster = get_field('video_poster');?>
 <?php $heroSwitch = get_field('hero_type');
             if ($heroSwitch == 'video'): ?>
 
 
-<div class="hero">
+<div class="hero tester">
     <video playsinline autoplay muted loop poster="<?php echo $heroPoster['url'];?>" id="bgvideo">
         <?php if ($heroMobile): ?>
         <source src="<?php echo $heroMobile['url'];?>" type="video/mp4" media="all and (max-width: 480px)">
@@ -23,7 +22,7 @@ $mapimage = get_field('map_image');?>
 </div>
 
 <?php elseif ($heroSwitch == 'image'):?>
-<div class="hero" style="background-image: url(<?php echo $heroImage['url']; ?>)">
+<div class="hero tester" style="background-image: url(<?php echo $heroImage['url']; ?>)">
     <div class="header__text-box">
         <h1 class="heading-<?php the_field('header_size'); ?>">
             <span class="heading-<?php the_field('header_size'); ?>--main"><?php the_field('header'); ?></span>
@@ -54,29 +53,6 @@ $mapimage = get_field('map_image');?>
         </div>
     </div>
     <?php endif; ?> -->
-</div>
-<?php elseif ($heroSwitch == 'map'):?>
-<div class="hero map-popup" style="background-image: url(<?php echo $mapimage['url']; ?>)">
-
-
-    <div class="map-link">
-        <a class="pop-link" href="#popupmap">
-            <i class="far fa-bars"></i>
-            <span>See Whole Map</span>
-        </a>
-    </div>
-
-
-</div>
-
-
-<div class="popup" id="popupmap">
-    <div class="popup__content">
-        <div class="popup__full">
-            <a href="#testimonial-section" class="popup__close">&times;</a>
-            <img src="<?php echo $mapimage['sizes'] ['large']; ?>" />
-        </div>
-    </div>
 </div>
 <?php endif;?>
 <div class="breadcrumb"><?php get_breadcrumb(); ?></div>

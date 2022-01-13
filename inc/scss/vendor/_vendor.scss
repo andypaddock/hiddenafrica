@@ -14,7 +14,6 @@
   position: relative;
   z-index: 1;
   padding: 0 8rem;
-  margin-bottom: 5rem;
 }
 .owl-carousel .owl-stage {
   position: relative;
@@ -87,12 +86,12 @@
 }
 .owl-prev {
   left: 0;
-  top: 50%;
+  top: 25%;
   position: absolute;
 }
 .owl-next {
   right: 0;
-  top: 50%;
+  top: 25%;
   position: absolute;
 }
 .owl-carousel.owl-loaded {
@@ -250,6 +249,7 @@
   margin-top: 10px;
   text-align: center;
   -webkit-tap-highlight-color: transparent;
+  font-family: "Lato", sans-serif;
 }
 .owl-theme .owl-nav [class*="owl-"] {
   color: #fff;
@@ -262,7 +262,6 @@
   border-radius: 3px;
 }
 .owl-theme .owl-nav [class*="owl-"]:hover {
-  background: #869791;
   color: #fff;
   text-decoration: none;
 }
