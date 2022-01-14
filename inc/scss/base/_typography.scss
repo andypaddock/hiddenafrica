@@ -52,6 +52,30 @@ body {
   color: $color-primary;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
+  &--main {
+    display: block;
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+  }
+
+  &--sub {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+    animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
 
   @include respond(tab-port) {
     font-size: 3rem;

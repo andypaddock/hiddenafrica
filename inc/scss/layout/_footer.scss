@@ -74,72 +74,6 @@
       float: none;
     }
   }
-  .footer-hero {
-    height: 35rem;
-    border-radius: 0.5rem 0.5rem 0 0;
-    @include backgroundCover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .centre-line {
-      display: flex;
-      padding: 1rem;
-      div {
-        flex: 1;
-      }
-    }
-    .line {
-      border-right: 1px solid $color-white;
-      height: 3rem;
-      padding-top: 1rem;
-    }
-    .footer_text {
-      text-align: center;
-      .heading-secondary {
-        color: $color-white;
-        font-size: 2.1rem;
-      }
-    }
-    .footer_link {
-      border: 1px solid $color-white;
-      border-radius: 0.5rem;
-      padding: 2rem 4rem 2rem 5rem;
-      margin-bottom: 2rem;
-      .footer_button {
-        display: block;
-        color: $color-white;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 1.7rem;
-        font-weight: 700;
-        &:hover {
-          &:after {
-            content: "→";
-            transition: all ease 0.5s;
-            opacity: 1;
-            left: 8px;
-          }
-        }
-
-        &:after {
-          content: "→";
-          transition: all ease 0.5s;
-          position: relative;
-          opacity: 0;
-          left: -12px;
-        }
-      }
-      a {
-        color: $color-white;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 400;
-        font-size: 2.1rem;
-        position: relative;
-      }
-    }
-  }
 }
 .footer-navbar {
   display: flex;
@@ -190,6 +124,77 @@
     align-items: center;
     .nav ul {
       column-count: 2;
+    }
+  }
+}
+.footer-message {
+  .footer-hero {
+    height: 50rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    @include backgroundCover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .centre-line {
+      display: flex;
+      padding: 1rem;
+      div {
+        flex: 1;
+      }
+    }
+    .line {
+      border-right: 1px solid $color-white;
+      height: 3rem;
+      padding-top: 1rem;
+    }
+    .footer_text {
+      .heading-secondary {
+        color: $color-white;
+        font-size: 2.1rem;
+      }
+      p {
+        display: block;
+        color: $color-white;
+      }
+    }
+    .footer_link {
+      border: 1px solid $color-white;
+      border-radius: 0.5rem;
+      padding: 2rem 4rem 2rem 5rem;
+      margin-bottom: 2rem;
+      .footer_button {
+        display: block;
+        color: $color-white;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        font-weight: 700;
+        &:hover {
+          &:after {
+            content: "›";
+            transition: all ease 0.5s;
+            opacity: 1;
+            left: 8px;
+          }
+        }
+
+        &:after {
+          content: "›";
+          transition: all ease 0.5s;
+          position: relative;
+          opacity: 0;
+          left: -12px;
+        }
+      }
+      a {
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 2.1rem;
+        position: relative;
+      }
     }
   }
 }
