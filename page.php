@@ -48,6 +48,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/imageboxes');?>
 <?php elseif( get_row_layout() == 'itinerary_block' ):?>
 <?php get_template_part('template-parts/itinerary');?>
+<?php elseif( get_row_layout() == 'advertblock' ):?>
+<?php get_template_part('template-parts/advertblock');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
