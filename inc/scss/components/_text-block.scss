@@ -1,6 +1,8 @@
 .section-text {
   text-align: center;
   .heading-tertiary {
+    font-family: $alt-font-style;
+    font-style: italic;
     color: $color-primary;
     font-weight: 700;
     padding: 2rem 0;
@@ -24,4 +26,56 @@
 }
 .count2 {
   column-count: 2;
+}
+.image-text-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  padding: 5rem 0;
+  .text {
+    padding: 0rem 20% 2rem 2rem;
+    .heading-secondary {
+      padding-right: 5rem;
+      &::after {
+        content: "";
+        border-bottom: 1px solid $color-primary;
+        width: 2rem;
+        display: block;
+      }
+    }
+    .heading-tertiary {
+      padding: 1.5rem 0;
+    }
+    .button {
+      margin-top: 2rem;
+    }
+  }
+  .image {
+    @include backgroundCover;
+    min-height: 25rem;
+  }
+  &.row-reverse {
+    flex-direction: row-reverse;
+    .text {
+      order: 1;
+      padding: 0rem 2rem 2rem 20%;
+    }
+    .image {
+      order: 2;
+    }
+  }
+}
+.optional-header {
+  text-align: center;
+}
+.alt-bg {
+  .image-text-block {
+    .text {
+      padding: 0 2rem;
+    }
+    .heading-secondary {
+      padding-right: 0;
+      font-family: $alt-font-header;
+    }
+  }
 }

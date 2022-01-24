@@ -1,5 +1,5 @@
 body {
-  font-family: "Crimson Pro", sans-serif;
+  font-family: $default-font-style;
   font-weight: 200;
   /*font-size: 16px;*/
   line-height: 1.7;
@@ -7,6 +7,7 @@ body {
 }
 
 .heading-primary {
+  font-family: $default-header-style;
   color: $color-black;
   backface-visibility: hidden;
   margin-bottom: 6rem;
@@ -45,11 +46,12 @@ body {
 }
 
 .heading-secondary {
-  font-size: 3.5rem;
-  text-transform: uppercase;
+  font-family: $default-header-style;
+  font-size: 3rem;
+  line-height: 3.5rem;
   font-weight: 400;
   display: inline-block;
-  color: $color-primary;
+  color: $color-black;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
   &--main {
@@ -71,10 +73,16 @@ body {
     font-weight: 400;
     letter-spacing: 0.5rem;
     animation: moveInRight 1s ease-out;
-
+    color: $color-primary;
     @include respond(phone) {
       letter-spacing: 0.5rem;
     }
+  }
+  &.light {
+    font-weight: 200;
+  }
+  &.alt-color {
+    color: $color-primary;
   }
 
   @include respond(tab-port) {
@@ -87,10 +95,14 @@ body {
 }
 
 .heading-tertiary {
-  font-size: 2rem;
+  font-family: $default-header-style;
+  font-size: 1.9rem;
   font-weight: 400;
   &.light {
     font-weight: 200;
+  }
+  &.alt-color {
+    color: $color-primary;
   }
 }
 .heading-highlight {
@@ -100,6 +112,9 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+}
+a {
+  text-decoration: none;
 }
 
 .paragraph,
@@ -112,7 +127,7 @@ ul {
   }
 }
 blockquote {
-  font-family: "Cormorant Garamond", serif;
+  font-family: $default-font-style;
   font-size: 5rem;
 }
 .breadcrumb {
@@ -124,10 +139,9 @@ blockquote {
 }
 .breadcrumb a {
   color: #428bca;
-  text-decoration: none;
 }
 .fad {
-  --fa-primary-color: gold;
+  --fa-primary-color: $color-white;
   --fa-secondary-opacity: 0.5;
   --fa-primary-opacity: 1;
 }

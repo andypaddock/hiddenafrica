@@ -1,5 +1,5 @@
 <?php $darkBG = get_sub_field('dark_background'); ?>
-<section class="testimonial-slider <?php if($darkBG == true): echo 'alt-color'; endif;?>">
+<section class="testimonial-slider <?php if($darkBG == true): echo 'alt-bg-color'; endif;?>">
     <div class="row w60">
         <div class="owl-carousel owl-theme testimonial-carousel">
 

@@ -1,15 +1,17 @@
-<section class="section-title">
+<section class="section-title" id="<?php the_sub_field('section_id'); ?>">
+    <div class="row centre-line w50">
+        <div class="line"></div>
+        <div></div>
+    </div>
 
-    <div class="row w40">
+    <div class="row <?php the_sub_field('column_size'); ?>">
 
-        <h2 class="heading-<?php the_sub_field('header_size'); ?> <?php
 
-if(get_sub_field('white_text'))
-{
-	echo 'alt-text';
-}
+        <h2 class="heading-secondary">
+            <span class="heading-secondary--sub"><?php the_sub_field('sub_title'); ?></span>
+            <span class="heading-secondary--main"><?php the_sub_field('title'); ?></span>
 
-?>"><?php the_sub_field('title'); ?></h2>
+        </h2>
 
 
     </div>

@@ -72,11 +72,10 @@ $mapimage = get_field('map_image');?>
 
 <div class="popup" id="popupmap">
     <div class="popup__content">
-        <div class="popup__full">
+        <div class="popup__full poster">
             <a href="#testimonial-section" class="popup__close">&times;</a>
             <img src="<?php echo $mapimage['sizes'] ['large']; ?>" />
         </div>
     </div>
 </div>
 <?php endif;?>
-<div class="breadcrumb"><?php get_breadcrumb(); ?></div>

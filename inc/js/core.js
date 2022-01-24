@@ -49,6 +49,23 @@ $(".testimonial-carousel").owlCarousel({
     autoplayHoverPause:true,
 });
 
+$(".dest-slider").owlCarousel({
+  loop:true,
+  margin:48,
+  center:true,
+  nav:true,
+  dots:false,
+  items:3,
+});
+$(".prop-slider").owlCarousel({
+  loop:true,
+  margin:48,
+  center:true,
+  nav:true,
+  dots:false,
+  items:1,
+});
+
 
 
 new Readmore('article');

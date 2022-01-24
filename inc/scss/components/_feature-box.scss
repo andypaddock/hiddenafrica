@@ -48,3 +48,25 @@
     flex-direction: row-reverse;
   }
 }
+.dest-slider {
+  .dest-item {
+    @include backgroundCover;
+    min-height: 25rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    padding: 0 2rem;
+
+    h2 {
+      font-family: $default-header-style;
+      color: $color-white;
+    }
+    a {
+      color: $color-white;
+      display: block;
+      border: 1px solid $color-white;
+      padding: 1rem;
+    }
+  }
+}

@@ -6,6 +6,15 @@
  */
 get_header(); ?>
 <span id="content"></span>
+<?php if (!is_front_page()): ?>
+<div class="breadcrumb"><?php get_breadcrumb(); ?></div>
+<div class="header__text-box">
+    <h1 class="heading-primary">
+        <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
+        <span class="heading-primary--main"><?php echo esc_html( get_the_title() ); ?></span>
+    </h1>
+</div>
+<?php endif; ?>
 <?php if( have_rows('main_page_elements') ): ?>
 <?php while( have_rows('main_page_elements') ): the_row(); ?>
 <?php if( get_row_layout() == 'faq_blocks' ): ?>
@@ -50,6 +59,12 @@ get_header(); ?>
 <?php get_template_part('template-parts/itinerary');?>
 <?php elseif( get_row_layout() == 'advertblock' ):?>
 <?php get_template_part('template-parts/advertblock');?>
+<?php elseif( get_row_layout() == 'image_and_text_block' ):?>
+<?php get_template_part('template-parts/imagetextblock');?>
+<?php elseif( get_row_layout() == 'destinations_slider' ):?>
+<?php get_template_part('template-parts/dest-slider');?>
+<?php elseif( get_row_layout() == 'prop_type_slider' ):?>
+<?php get_template_part('template-parts/prop-style');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
