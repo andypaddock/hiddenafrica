@@ -65,7 +65,7 @@
     transform: translateX(-10px);
   }
 }
-.owl-next {
+.testimonial-slider .owl-next {
   -moz-animation: bounce-right 2s infinite;
   -webkit-animation: bounce-right 2s infinite;
   animation: bounce-right 2s infinite;
@@ -94,7 +94,7 @@
     transform: translateX(10px);
   }
 }
-.owl-prev {
+.testimonial-slider .owl-prev {
   -moz-animation: bounce-left 2s infinite;
   -webkit-animation: bounce-left 2s infinite;
   animation: bounce-left 2s infinite;

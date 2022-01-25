@@ -10,14 +10,13 @@ body {
   font-family: $default-header-style;
   color: $color-black;
   backface-visibility: hidden;
-  margin-bottom: 6rem;
 
   &--main {
     display: block;
-    font-size: 7rem;
+    font-size: 5rem;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.2rem;
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -33,9 +32,9 @@ body {
 
   &--sub {
     display: block;
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 400;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.1rem;
     animation: moveInRight 1s ease-out;
     color: $color-primary;
 
@@ -104,6 +103,16 @@ body {
   &.alt-color {
     color: $color-primary;
   }
+  &--sub {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 200;
+    color: $color-primary;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
 }
 .heading-highlight {
   color: $color-primary;
@@ -144,4 +153,18 @@ blockquote {
   --fa-primary-color: $color-white;
   --fa-secondary-opacity: 0.5;
   --fa-primary-opacity: 1;
+}
+.underscores {
+  &::after {
+    content: "";
+    border-bottom: 1px solid $color-primary;
+    width: 2rem;
+    display: block;
+    padding-top: 1rem;
+  }
+}
+.meta {
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: $default-header-style;
 }

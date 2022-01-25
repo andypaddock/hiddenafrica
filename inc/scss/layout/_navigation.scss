@@ -75,9 +75,9 @@
   transform: translateX(-400px);
 }
 
-nav {
-  padding-top: 30px;
-}
+// nav {
+//   padding-top: 30px;
+// }
 
 .sidebar-list {
   padding: 0;
@@ -192,11 +192,11 @@ nav {
 
   a {
     text-decoration: none;
-    color: $color-white;
+    color: $color-black;
   }
   .arrow {
     text-align: center;
-    margin: 8% 0;
+    margin: 1% 0;
   }
   .bounce {
     -moz-animation: bounce 2s infinite;
@@ -222,12 +222,47 @@ nav {
 }
 .top-bar {
   .logo-bar {
-    padding: 2rem 0;
-    display: flex;
-    justify-content: space-between;
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     &__image {
       svg {
         height: 5rem;
+      }
+    }
+    
+    .nav-contacts {
+      
+        display: flex;
+        grid-gap: 1rem;
+        li {
+        list-style: none;
+        i {
+          background: $color-black;
+          border-radius: 50%;
+          padding: 1rem;
+          font-size: 1.3rem;
+          color: $color-white;
+        }
+        }
+      
+    }
+    &__contacts {
+      align-self: center;
+    }
+    &__image {
+      justify-self: center;
+      align-self: center;
+    }
+    &__button {
+      justify-self: end;
+      align-self: center;
+      .button {
+        display: unset;
+        color: $color-white;
+        background: $color-black;
+        font-weight: 400;
+        font-size: 1.4rem;
       }
     }
   }

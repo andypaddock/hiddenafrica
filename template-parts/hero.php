@@ -24,36 +24,31 @@ $mapimage = get_field('map_image');?>
 
 <?php elseif ($heroSwitch == 'image'):?>
 <div class="hero" style="background-image: url(<?php echo $heroImage['url']; ?>)">
+    <?php if (is_front_page()): ?>
     <div class="header__text-box">
         <h1 class="heading-<?php the_field('header_size'); ?>">
             <span class="heading-<?php the_field('header_size'); ?>--main"><?php the_field('header'); ?></span>
             <span class="heading-<?php the_field('header_size'); ?>--sub"><?php the_field('sub_header'); ?></span>
         </h1>
     </div>
-    <?php $quoteSwitch = get_field('quote_type');
-            if ($quoteSwitch == 'quote'): ?>
 
-    <div class="header__quote-box">
-        <blockquote><?php the_field('quote'); ?></blockquote>
-        <cite><?php the_field('cite'); ?></cite>
-    </div>
-    <?php elseif ($quoteSwitch == 'fade'):?>
 
-    <div class="header__quote-box text-fade">
-        <blockquote><?php the_field('fade_text_initial'); ?></blockquote>
-        <blockquote><?php the_field('fade_text_second'); ?></blockquote>
+    <div class="home-link row">
+        <?php 
+$link = get_field('home_link','options');
+if( $link ): 
+    $link_url = $link['url'];
+    $link_title = $link['title'];
+    $link_target = $link['target'] ? $link['target'] : '_self';
+    ?>
+        <a class="button outline" href="<?php echo esc_url( $link_url ); ?>"
+            target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+        <?php endif; ?>
     </div>
     <?php endif; ?>
-    <!-- <?php $mainBlocks = get_field('main_link_boxes');
-            if ($mainBlocks == 'yes'): ?>
-    <div class="main_links"><?php get_template_part('template-parts/main-boxes');?></div>
-    <?php else:?>
-    <div class="down_arrow">
-        <div class="arrow bounce">
-            <a class="fal fa-long-arrow-down fa-4x" href="#content"></a>
-        </div>
-    </div>
-    <?php endif; ?> -->
+
+
+
 </div>
 <?php elseif ($heroSwitch == 'map'):?>
 <div class="hero map-popup" style="background-image: url(<?php echo $mapimage['url']; ?>)">

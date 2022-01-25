@@ -23,7 +23,7 @@
             </div>
             <div class="text">
                 <div class="title">
-                    <h3 class="heading-secondary"><?php the_sub_field('title');?></h3>
+                    <h3 class="heading-secondary underscores"><?php the_sub_field('title');?></h3>
                 </div>
                 <h3 class="heading-tertiary alt-color"><?php the_sub_field('sub_title');?></h3>
                 <div class="content-text"><?php the_sub_field('text');?>

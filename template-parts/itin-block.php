@@ -1,4 +1,4 @@
-<section class="section-property-styles" id="<?php the_sub_field('section_id'); ?>">
+<section class="section-itinerary" id="<?php the_sub_field('section_id'); ?>">
     <div class="row <?php the_sub_field('column_size'); ?>">
 
 

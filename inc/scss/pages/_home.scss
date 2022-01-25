@@ -91,3 +91,20 @@
     }
   }
 }
+
+.home {
+  .heading-primary {
+    color: $color-white;
+    margin-bottom: 2rem;
+  
+    &--main {
+    text-transform: unset;
+    }
+  }
+  .home-link {
+    .outline {
+      border: 1px solid $color-white;
+      color: $color-white;
+    }
+  }
+}

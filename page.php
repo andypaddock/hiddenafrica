@@ -5,7 +5,7 @@
  * @package hiddenafrica
  */
 get_header(); ?>
-<span id="content"></span>
+
 <?php if (!is_front_page()): ?>
 <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
 <div class="header__text-box">
@@ -13,8 +13,14 @@ get_header(); ?>
         <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
         <span class="heading-primary--main"><?php echo esc_html( get_the_title() ); ?></span>
     </h1>
+    <div class="down_arrow">
+        <div class="arrow bounce">
+            <a class="fal fa-chevron-down fa-3x" href="#content"></a>
+        </div>
+    </div>
 </div>
 <?php endif; ?>
+<span id="content"></span>
 <?php if( have_rows('main_page_elements') ): ?>
 <?php while( have_rows('main_page_elements') ): the_row(); ?>
 <?php if( get_row_layout() == 'faq_blocks' ): ?>

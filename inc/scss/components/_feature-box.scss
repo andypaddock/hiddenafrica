@@ -70,3 +70,55 @@
     }
   }
 }
+.prop-slider {
+  .property-style-block {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 2rem;
+    .style-text {
+      padding: 5rem 0 0 5rem;
+      a {
+        color: $color-black;
+        display: block;
+        border: 1px solid $color-black;
+        padding: 1rem;
+      }
+    }
+    .style-image {
+      @include backgroundCover;
+    }
+  }
+}
+.itin-slider {
+  .itin-slide-block {
+    display: flex;
+    flex-direction: column;
+    background: white;
+
+    .itin-slide-image {
+      height: 25rem;
+      @include backgroundCover;
+    }
+    .itin-slide-text {
+      padding: 1rem 2rem;
+      .button {
+        font-size: inherit;
+        font-weight: 400;
+      }
+      a {
+        color: $color-black;
+      }
+      .underscores:after {
+        padding-top: 0.5rem;
+      }
+    }
+  }
+  .owl-stage > .active {
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  
+  .owl-stage > .active ~ .active {
+    opacity: 1;
+}
+}

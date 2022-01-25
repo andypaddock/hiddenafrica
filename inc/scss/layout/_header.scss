@@ -36,7 +36,7 @@
     @include backgroundCover;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     overflow: hidden;
   }
   video#bgvideo {
@@ -122,6 +122,4 @@
     }
   }
 }
-.home .heading-primary {
-  color: $color-white;
-}
+

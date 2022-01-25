@@ -14,8 +14,12 @@
     }
   }
   .line {
-    border-right: 1px solid $color-primary-dark;
-    height: 5rem;
+    border-right: 1px solid $color-black;
+    height: 2rem;
+  }
+  &.para {
+    min-height: 45rem;
+    @include backgroundPara;
   }
 }
 .section-title {
@@ -36,12 +40,6 @@
     padding: 0rem 20% 2rem 2rem;
     .heading-secondary {
       padding-right: 5rem;
-      &::after {
-        content: "";
-        border-bottom: 1px solid $color-primary;
-        width: 2rem;
-        display: block;
-      }
     }
     .heading-tertiary {
       padding: 1.5rem 0;
