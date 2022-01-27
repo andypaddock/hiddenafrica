@@ -1,18 +1,26 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all Safari Type Taxonomy
  *
  * @package hiddenafrica
  */
 get_header(); ?>
-<span id="content"></span>
+
+<?php if (!is_front_page()): ?>
 <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
 <div class="header__text-box">
     <h1 class="heading-primary">
         <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
-        <span class="heading-primary--main"><?php echo esc_html( get_the_title() ); ?></span>
+        <span class="heading-primary--main"><?php echo single_term_title(); ?></span>
     </h1>
+    <div class="down_arrow">
+        <div class="arrow bounce">
+            <a class="fal fa-chevron-down fa-3x" href="#content"></a>
+        </div>
+    </div>
 </div>
+<?php endif; ?>
+<span id="content"></span>
 <?php if( have_rows('main_page_elements') ): ?>
 <?php while( have_rows('main_page_elements') ): the_row(); ?>
 <?php if( get_row_layout() == 'faq_blocks' ): ?>
@@ -45,8 +53,24 @@ get_header(); ?>
 <?php get_template_part('template-parts/post_block');?>
 <?php elseif( get_row_layout() == 'map_locations' ):?>
 <?php get_template_part('template-parts/mappins');?>
+<?php elseif( get_row_layout() == 'single_button' ):?>
+<?php get_template_part('template-parts/singlebutton');?>
+<?php elseif( get_row_layout() == 'bordered_text' ):?>
+<?php get_template_part('template-parts/borderedcontent');?>
+<?php elseif( get_row_layout() == 'icon_boxes' ):?>
+<?php get_template_part('template-parts/iconboxes');?>
+<?php elseif( get_row_layout() == 'image_boxes' ):?>
+<?php get_template_part('template-parts/imageboxes');?>
 <?php elseif( get_row_layout() == 'itinerary_block' ):?>
 <?php get_template_part('template-parts/itinerary');?>
+<?php elseif( get_row_layout() == 'advertblock' ):?>
+<?php get_template_part('template-parts/advertblock');?>
+<?php elseif( get_row_layout() == 'image_and_text_block' ):?>
+<?php get_template_part('template-parts/imagetextblock');?>
+<?php elseif( get_row_layout() == 'destinations_slider' ):?>
+<?php get_template_part('template-parts/dest-slider');?>
+<?php elseif( get_row_layout() == 'prop_type_slider' ):?>
+<?php get_template_part('template-parts/prop-style');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

@@ -21,6 +21,15 @@
     min-height: 45rem;
     @include backgroundPara;
   }
+  .text-para {
+    padding: 2rem 0;
+    p {
+      text-align: left;
+    }
+    &.center-text p {
+      text-align: center;
+    }
+  }
 }
 .section-title {
   text-align: center;
@@ -29,7 +38,8 @@
   }
 }
 .count2 {
-  column-count: 2;
+  columns: 2;
+  column-gap: 3rem;
 }
 .image-text-block {
   display: grid;

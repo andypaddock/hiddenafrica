@@ -6,6 +6,19 @@
  */
 get_header(); ?>
 <span id="content"></span>
+<div class="breadcrumb"><?php get_breadcrumb(); ?></div>
+<div class="header__text-box">
+    <h1 class="heading-primary">
+        <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
+        <span class="heading-primary--main"><?php echo esc_html( get_the_title() ); ?></span>
+    </h1>
+    <div class="down_arrow">
+        <div class="arrow bounce">
+            <a class="fal fa-chevron-down fa-3x" href="#content"></a>
+        </div>
+    </div>
+    dest
+</div>
 <?php if( have_rows('main_page_elements') ): ?>
 <?php while( have_rows('main_page_elements') ): the_row(); ?>
 <?php if( get_row_layout() == 'faq_blocks' ): ?>
@@ -38,6 +51,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/post_block');?>
 <?php elseif( get_row_layout() == 'map_locations' ):?>
 <?php get_template_part('template-parts/mappins');?>
+<?php elseif( get_row_layout() == 'itinerary_block' ):?>
+<?php get_template_part('template-parts/itinerary');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

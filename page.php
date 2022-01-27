@@ -71,6 +71,20 @@ get_header(); ?>
 <?php get_template_part('template-parts/dest-slider');?>
 <?php elseif( get_row_layout() == 'prop_type_slider' ):?>
 <?php get_template_part('template-parts/prop-style');?>
+<?php elseif( get_row_layout() == 'type_filter' ):?>
+<?php get_template_part('template-parts/type_filter');?>
+<?php elseif( get_row_layout() == 'facility_icons' ):?>
+<?php get_template_part('template-parts/facility_icons');?>
+<?php elseif( get_row_layout() == 'gallery_block' ):?>
+<?php get_template_part('template-parts/gallery_block');?>
+<?php elseif( get_row_layout() == 'accor_block' ):?>
+<?php get_template_part('template-parts/accor_block');?>
+<?php elseif( get_row_layout() == 'button_block' ):?>
+<?php get_template_part('template-parts/button_block');?>
+<?php elseif( get_row_layout() == 'highlight_block' ):?>
+<?php get_template_part('template-parts/highlight_block');?>
+<?php elseif( get_row_layout() == 'advert_block' ):?>
+<?php get_template_part('template-parts/advert_block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

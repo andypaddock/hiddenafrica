@@ -104,6 +104,7 @@ function taxonomy_safaritype() {
     register_taxonomy( 'safaritype', array( 'destinations', 'properties', 'itineraries' ), array(
         'hierarchical'      => true,
         'labels'            => $labels,
+        'has_archive'       => true,
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
@@ -130,6 +131,7 @@ function taxonomy_destination() {
     register_taxonomy( 'destination', array(  'properties', 'itineraries' ), array(
         'hierarchical'      => true,
         'labels'            => $labels,
+        'has_archive'       => true,
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
@@ -156,6 +158,7 @@ function taxonomy_propertystyle() {
     register_taxonomy( 'propertystyle', array(  'properties'), array(
         'hierarchical'      => true,
         'labels'            => $labels,
+        'has_archive'       => true,
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,

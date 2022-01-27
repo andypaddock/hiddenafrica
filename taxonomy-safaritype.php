@@ -4,14 +4,27 @@
  *
  * @package hiddenafrica
  */
-get_header(); ?>
+get_header('headertax'); 
+
+$term = get_queried_object();
+
+
+// vars
+$heroSize = get_field('hero_section_size', $term);
+$color = get_field('color', $term);
+?>
+<header class="header <?php echo $heroSize; ?>">
+    <?php get_template_part('template-parts/taxhero');?>
+</header>
+
+<!--closes in footer.php-->
 
 <?php if (!is_front_page()): ?>
 <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
 <div class="header__text-box">
     <h1 class="heading-primary">
         <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
-        <span class="heading-primary--main"><?php echo esc_html( get_the_title() ); ?></span>
+        <span class="heading-primary--main"><?php echo single_term_title(); ?></span>
     </h1>
     <div class="down_arrow">
         <div class="arrow bounce">
@@ -71,18 +84,6 @@ get_header(); ?>
 <?php get_template_part('template-parts/dest-slider');?>
 <?php elseif( get_row_layout() == 'prop_type_slider' ):?>
 <?php get_template_part('template-parts/prop-style');?>
-<?php elseif( get_row_layout() == 'type_filter' ):?>
-<?php get_template_part('template-parts/type_filter');?>
-<?php elseif( get_row_layout() == 'facility_icons' ):?>
-<?php get_template_part('template-parts/facility_icons');?>
-<?php elseif( get_row_layout() == 'gallery_block' ):?>
-<?php get_template_part('template-parts/gallery_block');?>
-<?php elseif( get_row_layout() == 'accor_block' ):?>
-<?php get_template_part('template-parts/accor_block');?>
-<?php elseif( get_row_layout() == 'button_block' ):?>
-<?php get_template_part('template-parts/button_block');?>
-<?php elseif( get_row_layout() == 'highlight_block' ):?>
-<?php get_template_part('template-parts/highlight_block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

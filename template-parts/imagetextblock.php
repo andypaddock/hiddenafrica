@@ -18,7 +18,7 @@
                 while ( have_rows('blocks') ) : the_row();?>
         <?php $image = get_sub_field('image');
                 $rowReverse = get_sub_field('reverse_layout'); ?>
-        <div class="grid-item image-text-block <?php if($rowReverse == true): echo 'row-reverse'; endif; ?>">
+        <div class="grid-item tile image-text-block <?php if($rowReverse == true): echo 'row-reverse'; endif; ?>">
             <div class="image" style="background-image: url(<?php echo $image['sizes']['large']; ?>)">
             </div>
             <div class="text">

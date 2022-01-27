@@ -117,8 +117,76 @@
     opacity: 0;
     transition: all 0.5s;
   }
-  
+
   .owl-stage > .active ~ .active {
     opacity: 1;
+  }
 }
+.destination-grid {
+  .destination-item {
+    background: $color-white;
+    .dest-image {
+      @include backgroundCover;
+      height: 25rem;
+    }
+    .dest-text {
+      padding: 1rem 3rem;
+      p,
+      .button {
+        font-size: inherit;
+      }
+      .heading-secondary {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+  .itin-block {
+    background: $color-white;
+    .itin-image {
+      @include backgroundCover;
+      height: 25rem;
+    }
+    .itin-text {
+      padding: 1rem 3rem;
+      a {
+        color: $color-black;
+      }
+    }
+  }
+}
+.map-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  .image {
+    img {
+      @include imageSize;
+    }
+  }
+  .highlight-text {
+    .text {
+      padding: 0 4rem 2rem 0;
+    }
+    .heading-tertiary {
+      text-transform: uppercase;
+      font-family: $default-font-style;
+      font-size: 1.5rem;
+    }
+  }
+}
+.advert-hero {
+  min-height: 45rem;
+  @include backgroundCover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .advert_text {
+    width: 40%;
+    margin-left: 20%;
+    .heading-secondary,
+    .heading-secondary--sub,
+    p {
+      color: $color-white;
+    }
+  }
 }

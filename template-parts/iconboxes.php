@@ -4,7 +4,7 @@
             <?php
                 if( have_rows('icon_block') ):
                 while ( have_rows('icon_block') ) : the_row();?>
-            <div class="grid-item icon-block">
+            <div class="grid-item icon-block tile">
                 <div class="icon">
                     <?php the_sub_field('icon');?>
                 </div>

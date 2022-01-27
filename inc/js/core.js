@@ -1,7 +1,9 @@
 //@prepros-prepend mixitup.min.js
 //@prepros-prepend mixitup-pagination.js
+//@prepros-prepend jquery.magnific-popup.js
 //@prepros-prepend owl.carousel.min.js
 //@prepros-prepend readmore.js
+//@prepros-prepend scrollreveal.js
 
 jQuery(document).ready(function ($) {
 
@@ -75,6 +77,32 @@ jQuery(document).ready(function ($) {
     stagePadding: 200,
   });
 
+  // ========== Controller for lightbox elements
+
+$('#parent').magnificPopup({
+  delegate: 'a',
+  type: 'image',
+  gallery: {
+    enabled: true
+  }
+});
+
+$('.map-item .image').magnificPopup({
+  delegate: 'a',
+  type: 'image',
+  gallery: {
+    enabled: true
+  }
+});
+
+$(".toggle-block label").click(function () {
+  var otherLabels = $(this).parent().siblings(".item").find("label");
+  otherLabels.removeClass("collapsed");
+  otherLabels.next().slideUp();
+  $(this).toggleClass("collapsed");
+  $(this).next().slideToggle();
+});
+
 
 
   new Readmore('article');
@@ -103,6 +131,14 @@ jQuery(document).ready(function ($) {
   });
 
   // var mixer = mixitup('.filter-grid');
+  var containerEl = document.querySelector('.filter-grid');
+var mixer;
+
+if (containerEl) {
+    mixer = mixitup(containerEl, {
+         
+    });
+}
 
 
 
@@ -119,6 +155,58 @@ jQuery(document).ready(function ($) {
     });
 
   });
+
+
+
+  var slideLeft = {
+    distance: '40px',
+    origin: 'left',
+    opacity: 0.0,
+  reset:true,
+  duration: 1000,
+  delay:250,
+  mobile:false,
+  };
+  var slideRight = {
+    distance: '40px',
+    origin: 'right',
+    opacity: 0.0,
+  reset:true,
+  duration: 1000,
+  mobile:false,
+  };
+  var slideDown = {
+    distance: '40px',
+    origin: 'top',
+    opacity: 0.0,
+  reset:true,
+  duration: 1000,
+  mobile:false,
+  };
+  var slideUp = {
+    distance: '40px',
+    origin: 'bottom',
+    opacity: 0.0,
+  reset:true,
+  duration: 1000,
+  mobile:false,
+  };
+  var tileDown = {
+    distance: '40px',
+    origin: 'top',
+    opacity: 0.0,
+  reset:true,
+  duration: 1000,
+  mobile:false,
+  interval:40,
+  };
+  
+  ScrollReveal().reveal('.fmleft', slideLeft);
+  ScrollReveal().reveal('.fmtop', slideDown);
+  ScrollReveal().reveal('.fmbottom', slideUp);
+  ScrollReveal().reveal('.fmright', slideRight);
+  ScrollReveal().reveal('.tile', tileDown);
+  
 
 
 

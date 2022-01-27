@@ -1,0 +1,26 @@
+.filter-grid {
+  .filter-item {
+    background: $color-white;
+    &--image {
+      @include backgroundCover;
+      height: 30rem;
+    }
+    &--text {
+      padding: 2rem 3rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      align-items: center;
+      a {
+        color: $color-black;
+      }
+      .right_arrow {
+        padding: 2rem;
+      }
+    }
+  }
+}
+.controls {
+  ul li {
+    color: $color-black;
+  }
+}

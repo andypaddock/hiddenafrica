@@ -126,6 +126,10 @@
     background: none;
     border: 1px solid $color-black;
     color: $color-black;
+    &.light {
+      color: $color-white;
+      border: 1px solid $color-white;
+    }
   }
   &.textonly {
     background: none;
