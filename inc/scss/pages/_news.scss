@@ -1,0 +1,25 @@
+.single {
+    .header {
+        height: 50vh;
+    }
+    main {
+        p:first-of-type {
+            font-family: $alt-font-header;
+
+        }
+    }
+    .section-text {
+        text-align: left;
+        .heading-secondary {
+            font-family: $alt-font-header;
+            text-align: left;
+            &::after {
+                content: "";
+                border-bottom: 1px solid $color-primary;
+                width: 2rem;
+                display: block;
+                padding-top: 1rem;
+              }
+        }
+    }
+}

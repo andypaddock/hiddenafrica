@@ -85,6 +85,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/highlight_block');?>
 <?php elseif( get_row_layout() == 'advert_block' ):?>
 <?php get_template_part('template-parts/advert_block');?>
+<?php elseif( get_row_layout() == 'video_element' ):?>
+<?php get_template_part('template-parts/expanding_block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

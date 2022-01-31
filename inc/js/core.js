@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
     margin: 48,
     center: true,
     nav: true,
-    navText: ["<div class='nav-button owl-prev'>‹</div>", "<div class='nav-button owl-next'>›</div>"],
+    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right'></i></div>"],
     dots: false,
     items: 1,
   });
@@ -105,7 +105,9 @@ $(".toggle-block label").click(function () {
 
 
 
-  new Readmore('article');
+  new Readmore('article', {
+    collapsedHeight: 64,
+  });
 
 
   // SIDEBAR MOBILEMENU
@@ -208,7 +210,17 @@ if (containerEl) {
   ScrollReveal().reveal('.tile', tileDown);
   
 
-
+  $('.expvideo').parent().click(function () {
+    if($(this).children(".expvideo").get(0).paused){
+              $(this).children(".expvideo").get(0).play();   
+              $(this).children(".playpause").fadeOut();
+              document.querySelector(".wrapper").classList.add("expanded")
+      }else{       
+        $(this).children(".expvideo").get(0).pause();
+    $(this).children(".playpause").fadeIn();
+    document.querySelector(".wrapper").classList.remove("expanded")
+      }
+  });
 
 
 

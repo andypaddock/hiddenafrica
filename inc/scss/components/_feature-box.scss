@@ -74,9 +74,12 @@
   .property-style-block {
     display: grid;
     grid-template-columns: 2fr 3fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: "top main" "lt main" "lt main";
     grid-gap: 2rem;
     .style-text {
-      padding: 5rem 0 0 5rem;
+      // padding: 5rem 0 0 5rem;
+      grid-area: lt;
       a {
         color: $color-black;
         display: block;
@@ -85,7 +88,25 @@
       }
     }
     .style-image {
+      grid-area: main;
       @include backgroundCover;
+    }
+  }
+  .owl-nav {
+    padding: 0.5rem 2rem;
+    .owl-prev {
+      left: 3.5rem;
+      top: 0;
+      color: $color-black;
+      border: 1px solid $color-black;
+      background: none;
+    }
+    .owl-next {
+      left: 7rem;
+      right: unset;
+      top: 0;
+      color: $color-black;
+      border: 1px solid $color-black;
     }
   }
 }
@@ -188,5 +209,24 @@
     p {
       color: $color-white;
     }
+  }
+}
+.section-itinerary {
+  .row {
+    position: relative;
+  }
+  .mask {
+    position: absolute;
+    width: 20rem;
+    top: -0.5rem;
+    right: 3rem;
+    height: 100%;
+    background: rgb(239, 239, 239);
+    background: linear-gradient(
+      270deg,
+      rgba(239, 239, 239, 1) 30%,
+      rgba(239, 239, 239, 0) 100%
+    );
+    z-index: 2;
   }
 }

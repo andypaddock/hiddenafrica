@@ -1,4 +1,5 @@
 .icon-block {
+  padding: 2rem;
   text-align: center;
   .icon {
     i {
@@ -8,6 +9,12 @@
       background: $color-black;
       padding: 2rem;
       color: $color-white;
+    }
+  }
+  .icon-title {
+    padding: 2rem 0;
+    .underscores::after {
+      margin: 0 auto;
     }
   }
 }

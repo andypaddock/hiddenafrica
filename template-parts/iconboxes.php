@@ -9,7 +9,7 @@
                     <?php the_sub_field('icon');?>
                 </div>
                 <div class="icon-title">
-                    <h2 class="heading-tertiary"><?php the_sub_field('icon_title');?></h2>
+                    <h2 class="heading-tertiary underscores"><?php the_sub_field('icon_title');?></h2>
                 </div>
                 <div class="content-text"><?php the_sub_field('icon_description');?>
                     <?php 

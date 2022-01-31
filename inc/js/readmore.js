@@ -370,7 +370,7 @@ var resizeBoxes = debounce(function () {
 }, 100);
 var defaults = {
   speed: 200,
-  collapsedHeight: 48,
+  collapsedHeight: 100,
   heightMargin: 16,
   moreLink: '<span class="read-more"><a href="#">Read more</a></span>',
   lessLink: '<span class="read-less"><a href="#">Read less</a></span>',

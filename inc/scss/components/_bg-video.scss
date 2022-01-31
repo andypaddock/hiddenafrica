@@ -1,16 +1,54 @@
 .bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden;
+
+  &__content {
     height: 100%;
     width: 100%;
-    z-index: -1;
-    opacity: .15;
+    object-fit: cover;
+  }
+}
+.section-videoblock {
+  .wrapper {
+    position: relative;
+    max-height: 40rem;
     overflow: hidden;
-
-    &__content {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+    transition: $crawlEffect;
+    &.expanded {
+      max-height: 400rem;
     }
+    .expvideo {
+      width: 100%;
+    }
+    .playpause {
+      text-align: center;
+      color: $color-white;
+      font-family: $alt-font-style;
+      font-size: 1.5rem;
+      font-weight: 200;
+      font-style: italic;
+      width: 10rem;
+      height: 10rem;
+      position: absolute;
+      left: 0%;
+      right: 0%;
+      top: 0%;
+      bottom: 0%;
+      margin: auto;
+      background-size: contain;
+      background-position: center;
+      cursor: pointer;
+      i {
+        color: $color-white;
+        display: block;
+        padding-bottom: 2rem;
+      }
+    }
+  }
 }
