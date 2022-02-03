@@ -106,7 +106,7 @@ $(".toggle-block label").click(function () {
 
 
   new Readmore('article', {
-    collapsedHeight: 64,
+    collapsedHeight: 110,
   });
 
 
@@ -221,6 +221,18 @@ if (containerEl) {
     document.querySelector(".wrapper").classList.remove("expanded")
       }
   });
+
+  $(document).ready(function(){
+    $(".limit-four").slice(0, 4).show();
+    $("#loadMore").on("click", function(e){
+      e.preventDefault();
+      $(".limit-four:hidden").slice(0, 4).slideDown();
+      if($(".limit-four:hidden").length == 0) {
+        $("#loadMore").text("No Content").addClass("noContent");
+      }
+    });
+    
+  })
 
 
 

@@ -1,4 +1,5 @@
-<section class="section-iconboxes">
+<?php $bgColor = get_sub_field('bg_colour');?>
+<section class="section-iconboxes <?php if($bgColor == true): echo 'alt-bg'; endif; ?>">
     <div class="row <?php the_sub_field('column_size'); ?>">
         <div class="<?php the_sub_field('columns'); ?>">
             <?php

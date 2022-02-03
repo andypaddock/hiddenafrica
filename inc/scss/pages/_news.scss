@@ -23,3 +23,45 @@
         }
     }
 }
+.post-block {
+    .heading-secondary {
+        text-align: center;
+        padding: 2rem 0;
+    }
+    .post-grid {
+        .mix {
+            background: $color-white;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            .post-image {
+                height: 15rem;
+                @include backgroundCover;
+            }
+            .post-text {
+                padding: 1rem 2rem;
+                flex: 1;
+                .heading-secondary {
+                    text-align: left;
+                    padding: 0;
+                    &--sub {
+                        color: $color-black;
+                    }
+                }
+            }
+            .post-link {
+                padding: 1rem 2rem;
+                a {
+                    color: $color-black;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    padding-top: 1rem;
+                }
+            }
+            
+        }
+    }
+    .meta {
+        color: $color-primary;
+    }
+}

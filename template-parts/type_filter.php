@@ -2,6 +2,7 @@
     <?php
 $filterType = get_sub_field( 'filter_by' );?>
     <div class="row">
+        <?php if(get_sub_field('show_filters')):?>
         <div class="controls">
             <ul>
                 <?php $all_categories = get_terms( array(
@@ -17,7 +18,7 @@ $filterType = get_sub_field( 'filter_by' );?>
             </ul>
         </div>
 
-
+        <?php endif;?>
 
         <div class="testimonial-grid filter-grid">
             <?php

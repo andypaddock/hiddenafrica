@@ -51,6 +51,7 @@
     padding: 0rem 20% 2rem 2rem;
     .heading-secondary {
       padding-right: 5rem;
+      font-size: 5rem;
     }
     .heading-tertiary {
       padding: 1.5rem 0;
@@ -74,6 +75,39 @@
     }
   }
 }
+.staff-block {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+  .text {
+    padding: 0rem 0 0 2rem;
+    .heading-secondary {
+      padding-right: 5rem;
+      font-size: 5rem;
+    }
+    .heading-tertiary {
+      // padding: 1.5rem 0;
+      &.underscores:after {
+        padding-top: 0.5rem;
+      }
+    }
+    .content-text {
+      p {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+      }
+      
+    }
+    .button {
+      margin: 0;
+      padding: 0
+    }
+  }
+  .image {
+    @include backgroundCover;
+  }
+}
 .optional-header {
   text-align: center;
 }
@@ -85,6 +119,14 @@
     .heading-secondary {
       padding-right: 0;
       font-family: $alt-font-header;
+
+    }
+  }
+}
+.w80,.w60,.w40 {
+  .image-text-block {
+    .text {
+      padding: 0 0 2rem 2rem;
     }
   }
 }

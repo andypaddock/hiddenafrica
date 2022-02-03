@@ -3,7 +3,7 @@
 
         <?php if( have_rows('accordion_item') ): $count = 0; while ( have_rows('accordion_item') ) : the_row(); ?>
 
-        <div class="item">
+        <div class="item tile">
 
             <label>
                 <span class="heading"><?php the_sub_field('title'); ?></span>

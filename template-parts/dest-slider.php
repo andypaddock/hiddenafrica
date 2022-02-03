@@ -1,6 +1,12 @@
-<section class="section-destinations-slider" id="<?php the_sub_field('section_id'); ?>">
+<?php $bgColor = get_sub_field('bg_colour');?>
+<section class="section-destinations-slider <?php if($bgColor == true): echo 'alt-bg'; endif; ?>"
+    id="<?php the_sub_field('section_id'); ?>">
     <div class="row <?php the_sub_field('column_size'); ?>">
+        <h2 class="heading-secondary">
+            <span class="heading-secondary--sub"><?php the_sub_field('sub_title'); ?></span>
+            <span class="heading-secondary--main"><?php the_sub_field('title'); ?></span>
 
+        </h2>
 
         <?php 
 $terms = get_sub_field('select_destinations');

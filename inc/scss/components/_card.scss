@@ -212,3 +212,82 @@
     }
 
 }
+.post-grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 2rem;
+    .post-item {
+        flex: 1;
+        min-width: 30rem;
+        background: $color-white;
+        display: flex;
+        flex-direction: column;
+        .post-image {
+            height: 20rem;
+            @include backgroundCover;
+        }
+        .post-text {
+            padding: 2rem 4rem;
+            flex: 1;
+        }
+        .post-link {
+            padding: 0 4rem 2rem;
+        }
+        &.two-col {
+            min-width: 40rem;
+        }
+
+    }
+}
+.cust-post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    .post-item {
+        background: $color-white;
+        display: flex;
+        flex-direction: column;
+        .post-image {
+            height: 25rem;
+            @include backgroundCover;
+        }
+        .post-text {
+            padding: 2rem 4rem;
+            flex: 1;
+            .meta {
+                color: $color-primary;
+                &.underscores {
+                    &::after {
+                        padding-top: 0;
+                    }
+                }
+            }
+            .heading-secondary {
+                padding: 1rem 0;
+            }
+        }
+        .post-link {
+            padding: 0 4rem 2rem;
+        }
+
+    }
+}
+.limit-four {
+    display: none;
+  }
+  #loadMore {
+    color: $color-black;
+    display: block;
+    text-align: center;
+
+    transition: .3s;
+  }
+  #loadMore:hover {
+    
+    text-decoration: none;
+  }
+  .noContent {
+    color: #000 !important;
+    background-color: transparent !important;
+    pointer-events: none;
+  }

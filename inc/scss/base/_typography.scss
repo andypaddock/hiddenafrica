@@ -17,9 +17,6 @@ body {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
     @include respond(phone) {
       letter-spacing: 1rem;
       font-size: 5rem;
@@ -47,19 +44,17 @@ body {
 .heading-secondary {
   font-family: $default-header-style;
   font-size: 3rem;
-  line-height: 3.5rem;
+  line-height: 1;
   font-weight: 400;
-  display: inline-block;
+  // display: inline-block;
   color: $color-black;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
   &--main {
     display: block;
     font-weight: 400;
-    letter-spacing: 0.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
+    letter-spacing: 0.1rem;
+    
     @include respond(phone) {
       letter-spacing: 1rem;
       font-size: 5rem;
@@ -68,10 +63,9 @@ body {
 
   &--sub {
     display: block;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 400;
-    letter-spacing: 0.5rem;
-    animation: moveInRight 1s ease-out;
+    letter-spacing: 0.1rem;
     color: $color-primary;
     @include respond(phone) {
       letter-spacing: 0.5rem;
@@ -124,6 +118,7 @@ body {
 }
 a {
   text-decoration: none;
+  color: $color-black;
 }
 
 .paragraph,
@@ -161,6 +156,15 @@ blockquote {
     width: 2rem;
     display: block;
     padding-top: 1rem;
+  }
+}
+.overscores {
+  &::before {
+    content: "";
+    border-bottom: 1px solid $color-primary;
+    width: 2rem;
+    display: block;
+    padding-bottom: 1rem;
   }
 }
 .meta {

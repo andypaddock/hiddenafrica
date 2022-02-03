@@ -1,6 +1,14 @@
-<section class="post-block" id="post-section">
+<?php $bgColor = get_sub_field('bg_colour');?>
+<section class="post-block <?php if($bgColor == true): echo 'alt-bg'; endif; ?>"
+    id="<?php the_sub_field('section_id'); ?>">
 
-    <div class="row w80">
+    <div class="row <?php the_sub_field('column_size'); ?>">
+        <h2 class="heading-secondary">
+            <span class="heading-secondary--sub"><?php the_sub_field('sub_title'); ?></span>
+            <span class="heading-secondary--main"><?php the_sub_field('title'); ?></span>
+
+        </h2>
+        <?php if(get_sub_field('show_filters')):?>
         <div class="controls">
             <ul>
                 <?php $all_categories = get_categories(array(
@@ -14,14 +22,15 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-
+        <?php endif; ?>
 
 
         <div class="post-grid filter-grid">
             <?php
+            $numberPosts = get_sub_field('posts_to_show');
 $loop = new WP_Query(
     array(
-        'posts_per_page' => -1,
+        'posts_per_page' => $numberPosts,
     )
 );
 $counter = 0;
@@ -32,15 +41,25 @@ $counter++;
 ?>
             <?php $terms = get_the_category( $post->ID ); ?>
 
-            <div class="mix quote <?php foreach( $terms as $term ) echo ' ' . $term->slug; ?>">
+            <div class="mix tile quote <?php foreach( $terms as $term ) echo ' ' . $term->slug; ?>">
                 <a href="<?php echo get_permalink( $post->ID ); ?>">
-                    <div class="test-image" style="background-image: url(<?php echo $mainImage; ?>)">
-
-                        <?php get_template_part("inc/img/kitlogo"); ?>
+                    <div class="post-image" style="background-image: url(<?php echo $mainImage; ?>)">
 
                     </div>
                 </a>
-                <h2 class="heading-highlight"><?php the_title(); ?></h2>
+                <div class="post-text">
+                    <span class="meta"><?php echo get_the_date(); ?></span>
+                    <h2 class="heading-secondary">
+                        <a href="<?php echo get_permalink( $post->ID ); ?>">
+                            <span class="heading-secondary--sub underscores"><?php the_title(); ?></span>
+                        </a>
+                    </h2>
+                </div>
+                <div class="post-link">
+                    <a href="<?php echo get_permalink( $post->ID ); ?>">
+                        Read more
+                    </a>
+                </div>
             </div>
             <?php endwhile;
 wp_reset_postdata();
