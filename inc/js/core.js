@@ -70,11 +70,10 @@ jQuery(document).ready(function ($) {
   });
   $(".itin-slider").owlCarousel({
     loop: true,
-    margin: 12,
+    margin: 48,
     nav: true,
     dots: false,
-    items: 2,
-    stagePadding: 200,
+    items: 3,
   });
 
   // ========== Controller for lightbox elements
@@ -106,7 +105,7 @@ $(".toggle-block label").click(function () {
 
 
   new Readmore('article', {
-    collapsedHeight: 110,
+    collapsedHeight: 100,
   });
 
 

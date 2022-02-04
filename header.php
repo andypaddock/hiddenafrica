@@ -26,7 +26,7 @@
     <meta name="description" content="<?php echo $excerpt; ?>">
     <meta name="keywords" content=" ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo the_title(); ?></title>
+    <title><?php wp_title(''); ?></title>
     <script src="https://kit.fontawesome.com/4faa096376.js" crossorigin="anonymous" defer="defer"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />

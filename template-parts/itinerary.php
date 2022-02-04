@@ -1,5 +1,5 @@
 <section class="section-itinerary">
-    <div class="row">
+    <div class="row extended">
 
 
         <?php
@@ -36,7 +36,7 @@ echo ''.$terms.'';
             <?php endforeach; ?>
 
         </div>
-        <div class="mask"></div>
+        <!-- <div class="mask"></div> -->
         <?php 
     // Reset the global post object so that the rest of the page works correctly.
     wp_reset_postdata(); ?>

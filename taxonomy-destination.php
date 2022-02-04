@@ -4,7 +4,7 @@
  *
  * @package hiddenafrica
  */
-get_header('headertax'); 
+get_header(); 
 
 $term = get_queried_object();
 
@@ -13,9 +13,9 @@ $term = get_queried_object();
 $heroSize = get_field('hero_section_size', $term);
 $color = get_field('color', $term);
 ?>
-<header class="header <?php echo $heroSize; ?>">
+<!-- <header class="header <?php echo $heroSize; ?>">
     <?php get_template_part('template-parts/taxhero');?>
-</header>
+</header> -->
 
 <!--closes in footer.php-->
 
@@ -23,7 +23,7 @@ $color = get_field('color', $term);
 <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
 <div class="header__text-box">
     <h1 class="heading-primary">
-        <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
+        <span class="heading-primary--sub"><?php the_field('sub_header', $term); ?></span>
         <span class="heading-primary--main"><?php echo single_term_title(); ?></span>
     </h1>
     <div class="down_arrow">
@@ -34,59 +34,125 @@ $color = get_field('color', $term);
 </div>
 <?php endif; ?>
 <span id="content"></span>
-<?php if( have_rows('main_page_elements') ): ?>
-<?php while( have_rows('main_page_elements') ): the_row(); ?>
-<?php if( get_row_layout() == 'faq_blocks' ): ?>
-<?php get_template_part('template-parts/faqblock');?>
-<?php elseif( get_row_layout() == 'main_cat_links' ): ?>
-<?php get_template_part('template-parts/main-boxes-page');?>
-<?php elseif( get_row_layout() == 'text_blocks' ):?>
-<?php get_template_part('template-parts/text');?>
-<?php elseif( get_row_layout() == 'more_text' ):?>
-<?php get_template_part('template-parts/moretext');?>
-<?php elseif( get_row_layout() == 'tabbed' ):?>
-<?php get_template_part('template-parts/tabs');?>
-<?php elseif( get_row_layout() == 'section_title' ):?>
-<?php get_template_part('template-parts/title');?>
-<?php elseif( get_row_layout() == 'feature_boxes' ):?>
-<?php get_template_part('template-parts/boxes');?>
-<?php elseif( get_row_layout() == 'testimonial_block' ):?>
-<?php get_template_part('template-parts/testimonial_block');?>
-<?php elseif( get_row_layout() == 'testimonial_slider' ):?>
-<?php get_template_part('template-parts/testimonial');?>
-<?php elseif( get_row_layout() == 'single_testimonial' ):?>
-<?php get_template_part('template-parts/singletestimonial');?>
-<?php elseif( get_row_layout() == 'boxedcontent' ):?>
-<?php get_template_part('template-parts/boxedcontent');?>
-<?php elseif( get_row_layout() == 'contact_links' ):?>
-<?php get_template_part('template-parts/links');?>
-<?php elseif( get_row_layout() == 'shortcode' ):?>
-<?php get_template_part('template-parts/shortcode');?>
-<?php elseif( get_row_layout() == 'blog_posts' ):?>
-<?php get_template_part('template-parts/post_block');?>
-<?php elseif( get_row_layout() == 'map_locations' ):?>
-<?php get_template_part('template-parts/mappins');?>
-<?php elseif( get_row_layout() == 'single_button' ):?>
-<?php get_template_part('template-parts/singlebutton');?>
-<?php elseif( get_row_layout() == 'bordered_text' ):?>
-<?php get_template_part('template-parts/borderedcontent');?>
-<?php elseif( get_row_layout() == 'icon_boxes' ):?>
-<?php get_template_part('template-parts/iconboxes');?>
-<?php elseif( get_row_layout() == 'image_boxes' ):?>
-<?php get_template_part('template-parts/imageboxes');?>
-<?php elseif( get_row_layout() == 'itinerary_block' ):?>
-<?php get_template_part('template-parts/itinerary');?>
-<?php elseif( get_row_layout() == 'advertblock' ):?>
-<?php get_template_part('template-parts/advertblock');?>
-<?php elseif( get_row_layout() == 'image_and_text_block' ):?>
-<?php get_template_part('template-parts/imagetextblock');?>
-<?php elseif( get_row_layout() == 'destinations_slider' ):?>
-<?php get_template_part('template-parts/dest-slider');?>
-<?php elseif( get_row_layout() == 'prop_type_slider' ):?>
-<?php get_template_part('template-parts/prop-style');?>
-<?php endif; ?>
-<?php endwhile; ?>
-<?php endif; ?>
+<section>
+    <div class="row w40">
+        <article class="count1"><?php echo term_description(); ?></article>
+    </div>
+</section>
+
+
+<section class="section-title" id="gallery">
+    <div class="row centre-line w50">
+        <div class="line"></div>
+        <div></div>
+    </div>
+    <div class="row w40">
+        <h2 class="heading-secondary">
+            <span class="heading-secondary--sub"><?php the_field('gallery_sub_title', $term); ?></span>
+            <span class="heading-secondary--main"><?php the_field('gallery_title', $term); ?></span>
+        </h2>
+    </div>
+</section>
+
+
+<section class="gallery">
+    <div class="row">
+        <?php 
+$images = get_field('upload_images', $term);
+if( $images ): ?>
+        <div id="parent">
+            <?php foreach( $images as $image ): ?>
+            <div class="child tile">
+                <a href="<?php echo esc_url($image['url']); ?>">
+                    <img src="<?php echo esc_url($image['sizes']['large']); ?>"
+                        alt="<?php echo esc_attr($image['alt']); ?>" />
+                </a>
+                <p><?php echo esc_html($image['caption']); ?></p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+    </div>
+</section>
+
+
+<section class="section-title" id="itineraries">
+    <div class="row centre-line w50">
+        <div class="line"></div>
+        <div></div>
+    </div>
+    <div class="row w40">
+        <h2 class="heading-secondary">
+            <span class="heading-secondary--sub"><?php the_field('itin_sub_title', $term); ?></span>
+            <span class="heading-secondary--main"><?php the_field('itin_title', $term); ?></span>
+        </h2>
+    </div>
+</section>
+
+
+<section class="itineraries">
+    <div class="row w80">
+        <div class="itin-display-block grid-layout2">
+            <?php
+                $args = array(
+                    'post_type' => 'itineraries',
+                    'tax_query' => array(
+                    'relation' => 'AND',
+                        array(
+                            'taxonomy' => 'destination',
+                            'field' => 'slug',
+                            'terms' => array( $term->slug )
+                        ),
+                    )
+                );
+                $query = new WP_Query( $args );
+                if ( $query->have_posts() ): while ( $query->have_posts() ):
+                $query->the_post();
+                $campImage = get_sub_field('hero_image');?>
+
+
+            <div class="itinerary-item">
+                <div class="itin-item-image" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+
+                </div>
+
+                <div class="itin-item-text">
+                    <h3 class="heading-tertiary">
+                        <span class="heading-tertiary--sub underscores">
+                            <?php $terms = get_the_term_list( $post->ID, 'safaritype', '', ',' ); $terms = strip_tags( $terms ); 
+if ($terms) {
+echo ''.$terms.'';
+} else  {
+}
+?>
+                        </span>
+                        <span class="heading-tertiary--main"><a
+                                href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
+                    </h3>
+                    <span class="days"><?php the_field( 'how_long' ); ?></span>
+                    <div class="destination-meta">
+                        <div class="main"><?php $terms = get_the_terms( $post->ID, array( 'destination') ); ?>
+                            <?php foreach ( $terms as $term ) : ?>
+                            <p><?php echo $term->name; ?></p>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="sub">
+                        </div>
+                    </div>
+                </div>
+                <div class="itin-item-link">
+                    <a class="button outline" href="<?php the_permalink(); ?>"><?php the_field( 'cta_text' ); ?></a>
+                </div>
+            </div>
+
+
+            <!--item-->
+            <?php endwhile; endif;?>
+        </div>
+    </div>
+</section>
+
+
 
 
 <?php get_footer(); ?>

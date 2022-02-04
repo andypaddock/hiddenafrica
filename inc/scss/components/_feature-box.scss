@@ -134,14 +134,14 @@
       }
     }
   }
-  .owl-stage > .active {
-    opacity: 0;
-    transition: all 0.5s;
-  }
+  // .owl-stage > .active {
+  //   opacity: 0;
+  //   transition: all 0.5s;
+  // }
 
-  .owl-stage > .active ~ .active {
-    opacity: 1;
-  }
+  // .owl-stage > .active ~ .active {
+  //   opacity: 1;
+  // }
 }
 .destination-grid {
   .destination-item {
@@ -219,7 +219,7 @@
     position: absolute;
     width: 20rem;
     top: -0.5rem;
-    right: 3rem;
+    right: 0;
     height: 100%;
     background: rgb(239, 239, 239);
     background: linear-gradient(
@@ -228,5 +228,21 @@
       rgba(239, 239, 239, 0) 100%
     );
     z-index: 2;
+  }
+}
+.itinerary-item {
+  background: $color-white;
+  display: flex;
+  flex-direction: column;
+  .itin-item-image {
+    height: 25rem;
+    @include backgroundCover;
+  }
+  .itin-item-text {
+    flex: 1;
+    padding:1rem 3rem;
+  }
+  .itin-item-link {
+    padding: 0 3rem 2rem;
   }
 }

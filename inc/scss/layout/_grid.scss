@@ -113,3 +113,14 @@ section {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: $gutter-horizontal;
 }
+.row.extended {
+  max-width: unset;
+  .itin-slider {
+    margin-left: 15%;
+    .owl-stage {
+        .active~.active~.active {
+          opacity: 0.3;
+        }
+    }
+  }
+}
