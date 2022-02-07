@@ -75,6 +75,24 @@ get_header(); ?>
 <?php get_template_part('template-parts/facility_icons');?>
 <?php elseif( get_row_layout() == 'gallery_block' ):?>
 <?php get_template_part('template-parts/gallery_block');?>
+<?php elseif( get_row_layout() == 'accor_block' ):?>
+<?php get_template_part('template-parts/accor_block');?>
+<?php elseif( get_row_layout() == 'button_block' ):?>
+<?php get_template_part('template-parts/button_block');?>
+<?php elseif( get_row_layout() == 'highlight_block' ):?>
+<?php get_template_part('template-parts/highlight_block');?>
+<?php elseif( get_row_layout() == 'advert_block' ):?>
+<?php get_template_part('template-parts/advert_block');?>
+<?php elseif( get_row_layout() == 'video_element' ):?>
+<?php get_template_part('template-parts/expanding_block');?>
+<?php elseif( get_row_layout() == 'dest_block' ):?>
+<?php get_template_part('template-parts/dest-block');?>
+<?php elseif( get_row_layout() == 'cust_post_block' ):?>
+<?php get_template_part('template-parts/cust-post-block');?>
+<?php elseif( get_row_layout() == 'staff_block' ):?>
+<?php get_template_part('template-parts/staff-block');?>
+<?php elseif( get_row_layout() == 'site_wide_start_safari' ):?>
+<?php get_template_part('template-parts/site-wide-text');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

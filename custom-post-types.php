@@ -166,36 +166,9 @@ function taxonomy_propertystyle() {
     ));
 }
 
-// ====== Type Camps
-function taxonomy_camps() {
 
-    $labels = array(
-        'name'              => _x( 'Camp', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Camp', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Camps'   ),
-        'all_items'         => __( 'All Camps'     ),
-        'parent_item'       => __( 'Parent Camp'   ),
-        'parent_item_colon' => __( 'Parent Camp:'  ),
-        'edit_item'         => __( 'Edit Camp'     ),
-        'update_item'       => __( 'Update Camp'   ),
-        'add_new_item'      => __( 'Add New Camp'  ),
-        'new_item_name'     => __( 'New Camp' ),
-        'menu_name'         => __( 'Camps'         )
-    );
-
-    register_taxonomy( 'camps', array(  'properties'), array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'has_archive'       => true,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'camps', 'hierarchical' => true )
-    ));
-}
 
 
 add_action( 'init', 'taxonomy_propertystyle', 0 );
 add_action( 'init', 'taxonomy_safaritype', 0 );
 add_action( 'init', 'taxonomy_destination', 0 );
-add_action( 'init', 'taxonomy_camps', 0 );
