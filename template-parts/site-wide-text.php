@@ -1,24 +1,22 @@
-<?php $bgColor = get_sub_field('bg_colour');
-$textBGImage = get_sub_field('background_image');
-$backgroundSwitch = get_sub_field('select_background');
-$centerText = get_sub_field('center_text');
+<?php $bgColor = get_field('bg_colour', 'options');
+$textBGImage = get_field('background_image', 'options');
+$backgroundSwitch = get_field('select_background', 'options');
             if ($backgroundSwitch == 'full'): ?>
 <section class="section-text para <?php if($bgColor == true): echo 'alt-bg'; endif; ?>"
-    style="background-image: linear-gradient(rgba(0, 0, 0, <?php the_sub_field('image_overlay'); ?>), rgba(0, 0, 0, <?php the_sub_field('image_overlay'); ?>)), url(<?php echo $textBGImage['url']; ?>)">
+    style="background-image: linear-gradient(rgba(0, 0, 0, <?php the_field('image_overlay', 'options'); ?>), rgba(0, 0, 0, <?php the_field('image_overlay', 'options'); ?>)), url(<?php echo $textBGImage['url']; ?>)">
     <div class="row">
         <?php elseif ($backgroundSwitch == 'back'): ?>
         <section class="section-text <?php if($bgColor == true): echo 'alt-bg'; endif; ?>">
             <div class="row"
-                style="background-image:linear-gradient(rgba(0, 0, 0, <?php the_sub_field('image_overlay'); ?>), rgba(0, 0, 0, <?php the_sub_field('image_overlay'); ?>)), url(<?php echo $textBGImage['url']; ?>)">
+                style="background-image:linear-gradient(rgba(0, 0, 0, <?php the_field('image_overlay', 'options'); ?>), rgba(0, 0, 0, <?php the_field('image_overlay', 'options'); ?>)), url(<?php echo $textBGImage['url']; ?>)">
                 <?php else :?>
                 <section class="section-text <?php if($bgColor == true): echo 'alt-bg'; endif; ?>">
                     <div class="row">
                         <?php endif;?>
-                        <div
-                            class="row  <?php the_sub_field('column_size'); ?> text-para <?php if($centerText == true): echo 'center-text'; endif;?> <?php the_sub_field('para_cols'); ?>">
-                            <?php the_sub_field('paragraphs'); ?>
+                        <div class="row  <?php the_field('column_size', 'options'); ?> text-para">
+                            <?php the_field('paragraphs'); ?>
                             <?php 
-$link = get_sub_field('link');
+$link = get_field('link', 'options');
 if( $link ): 
     $link_url = $link['url'];
     $link_title = $link['title'];

@@ -93,6 +93,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/cust-post-block');?>
 <?php elseif( get_row_layout() == 'staff_block' ):?>
 <?php get_template_part('template-parts/staff-block');?>
+<?php elseif( get_row_layout() == 'site_wide_start_safari' ):?>
+<?php get_template_part('template-parts/site-wide-text');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
