@@ -115,6 +115,7 @@
     display: flex;
     flex-direction: column;
     background: white;
+    min-height: 50rem;
 
     .itin-slide-image {
       height: 25rem;
@@ -122,6 +123,7 @@
     }
     .itin-slide-text {
       padding: 1rem 2rem;
+      flex: 1;
       .button {
         font-size: inherit;
         font-weight: 400;
@@ -133,6 +135,20 @@
         padding-top: 0.5rem;
       }
     }
+    .itin-slide-button {
+      padding: 1rem 2rem 2rem;
+    }
+  }
+  .owl-prev,
+  .owl-next {
+    position: relative;
+    border: 1px solid $color-black;
+  }
+  .owl-prev {
+    left: -17%;
+  }
+  .owl-next {
+    right: 16%;
   }
   // .owl-stage > .active {
   //   opacity: 0;
@@ -240,7 +256,7 @@
   }
   .itin-item-text {
     flex: 1;
-    padding:1rem 3rem;
+    padding: 1rem 3rem;
   }
   .itin-item-link {
     padding: 0 3rem 2rem;

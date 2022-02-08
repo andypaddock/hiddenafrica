@@ -17,7 +17,7 @@ $heroSwitch = get_field('hero_type');
     <section>
         <div class="row w60">
             <div class="header__text-box">
-                <h2 class="heading-primary <?php if($lightHero == true): echo 'light-hero'; endif; ?>">
+                <h2 class="heading-primary fmtop <?php if($lightHero == true): echo 'light-hero'; endif; ?>">
                     <span class="heading-primary--main alt-font"><?php echo esc_html( get_the_title() ); ?></span>
                 </h2>
             </div>
@@ -30,7 +30,7 @@ $heroSwitch = get_field('hero_type');
     <section>
         <div class="row w60">
             <div class="header__text-box">
-                <h2 class="heading-primary <?php if($lightHero == true): echo 'light-hero'; endif; ?>">
+                <h2 class="heading-primary fmtop <?php if($lightHero == true): echo 'light-hero'; endif; ?>">
                     <span class="heading-primary--main alt-font"><?php echo esc_html( get_the_title() ); ?></span>
                 </h2>
             </div>

@@ -55,12 +55,23 @@ if( $featured_posts ): ?>
                     </h2>
                     <span class="days"><?php echo esc_html( $days_field ); ?></span>
                     <div class="destination-meta">
-                        <div class="main"><?php $terms = get_the_terms( $post->ID, array( 'destination') ); ?>
+                        <div class="main"><?php $terms = get_the_terms( $post->ID, array('destination') ); ?>
+
                             <?php foreach ( $terms as $term ) : ?>
-                            <p><?php echo $term->name; ?></p>
+                            <?php $placeType = get_field('dest_type', $term);?>
+                            <?php if ($placeType == 'country'):?>
+                            <span class="<?php the_field('dest_type', $term)?>"><?php echo $term->name; ?></span>
+                            <?php endif;?>
                             <?php endforeach; ?>
                         </div>
                         <div class="sub">
+
+                            <?php foreach ( $terms as $term ) : ?>
+                            <?php $placeType = get_field('dest_type', $term);?>
+                            <?php if ($placeType == 'place'):?>
+                            <span class="<?php the_field('dest_type', $term)?>"><?php echo $term->name; ?></span>
+                            <?php endif;?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
 

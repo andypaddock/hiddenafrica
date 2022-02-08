@@ -95,6 +95,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/staff-block');?>
 <?php elseif( get_row_layout() == 'site_wide_start_safari' ):?>
 <?php get_template_part('template-parts/site-wide-text');?>
+<?php elseif( get_row_layout() == 'place_slider' ):?>
+<?php get_template_part('template-parts/itin-place-slider');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

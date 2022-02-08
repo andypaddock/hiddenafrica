@@ -1,6 +1,6 @@
 .itin-facts {
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr 1fr;
   .heading-tertiary {
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -26,6 +26,34 @@
         content: "\a";
         white-space: pre;
       }
+    }
+    .country ~ .place {
+      &::after {
+        content: ",";
+      }
+    }
+    .country ~ .place {
+      &:last-of-type {
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+}
+.section-itin-camps {
+  .meta {
+    color: $color-primary;
+  }
+  .heading-secondary {
+    padding: 1rem 0;
+  }
+  p {
+    padding: 1rem 0;
+  }
+  .button {
+    i {
+      color: $color-primary;
     }
   }
 }

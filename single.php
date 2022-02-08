@@ -12,14 +12,15 @@ get_header(); ?>
             <div class="where">
                 <h3 class="heading-tertiary">Where To:</h3>
 
-
-                <?php 
+                <div class="meta">
+                    <?php 
 $terms = get_field('where_to');
 if( $terms ): ?>
-                <?php foreach( $terms as $term ): ?>
-                <span class="<?php the_field('dest_type', $term); ?>"><?php echo esc_html( $term->name ); ?></span>
-                <?php endforeach; ?>
-                <?php endif; ?>
+                    <?php foreach( $terms as $term ): ?>
+                    <span class="<?php the_field('dest_type', $term); ?>"><?php echo esc_html( $term->name ); ?></span>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
             </div>
             <div class="length">
                 <h3 class="heading-tertiary">How Long</h3>
@@ -128,6 +129,8 @@ if( $terms ): ?>
 <?php get_template_part('template-parts/staff-block');?>
 <?php elseif( get_row_layout() == 'site_wide_start_safari' ):?>
 <?php get_template_part('template-parts/site-wide-text');?>
+<?php elseif( get_row_layout() == 'place_slider' ):?>
+<?php get_template_part('template-parts/itin-place-slider');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

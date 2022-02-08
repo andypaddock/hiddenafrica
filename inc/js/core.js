@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
 
   $(".dest-slider").owlCarousel({
     loop: true,
-    margin: 48,
+    margin: 32,
     center: true,
     nav: true,
     dots: false,
@@ -70,8 +70,9 @@ jQuery(document).ready(function ($) {
   });
   $(".itin-slider").owlCarousel({
     loop: true,
-    margin: 48,
+    margin: 32,
     nav: true,
+    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right'></i></div>"],
     dots: false,
     items: 3,
   });
@@ -160,42 +161,42 @@ if (containerEl) {
 
 
   var slideLeft = {
-    distance: '40px',
-    origin: 'left',
-    opacity: 0.0,
+  distance: '40px',
+  origin: 'left',
+  opacity: 0.0,
   reset:true,
   duration: 1000,
   delay:250,
   mobile:false,
   };
   var slideRight = {
-    distance: '40px',
-    origin: 'right',
-    opacity: 0.0,
+  distance: '40px',
+  origin: 'right',
+  opacity: 0.0,
   reset:true,
   duration: 1000,
   mobile:false,
   };
   var slideDown = {
-    distance: '40px',
-    origin: 'top',
-    opacity: 0.0,
+  distance: '40px',
+  origin: 'top',
+  opacity: 0.0,
   reset:true,
   duration: 1000,
   mobile:false,
   };
   var slideUp = {
-    distance: '40px',
-    origin: 'bottom',
-    opacity: 0.0,
+  distance: '40px',
+  origin: 'bottom',
+  opacity: 0.0,
   reset:true,
   duration: 1000,
   mobile:false,
   };
   var tileDown = {
-    distance: '40px',
-    origin: 'top',
-    opacity: 0.0,
+  distance: '40px',
+  origin: 'top',
+  opacity: 0.0,
   reset:true,
   duration: 1000,
   mobile:false,

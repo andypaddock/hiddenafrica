@@ -30,8 +30,10 @@ echo ''.$terms.'';
                     </h3>
                     <span class="meta"><?php the_field( 'how_long' ); ?></span>
                     <div class="itin-destinations"></div>
-                    <a class="button outline" href="<?php the_permalink(); ?>"><?php the_field( 'cta_text' ); ?></a>
+
                 </div>
+                <div class="itin-slide-button"><a class="button outline"
+                        href="<?php the_permalink(); ?>"><?php the_field( 'cta_text' ); ?></a></div>
             </div>
             <?php endforeach; ?>
 
