@@ -256,6 +256,8 @@ if (containerEl) {
   ScrollReveal().reveal('.fmbottom', slideUp);
   ScrollReveal().reveal('.fmright', slideRight);
   ScrollReveal().reveal('.tile', tileDown);
+  ScrollReveal().reveal('.row-default', slideRight);
+  ScrollReveal().reveal('.row-reverse', slideLeft);
   
 
   $('.expvideo').parent().click(function () {

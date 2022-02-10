@@ -97,6 +97,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/site-wide-text');?>
 <?php elseif( get_row_layout() == 'place_slider' ):?>
 <?php get_template_part('template-parts/itin-place-slider');?>
+<?php elseif( get_row_layout() == 'simple_text' ):?>
+<?php get_template_part('template-parts/simple_text');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

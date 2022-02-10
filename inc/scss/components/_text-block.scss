@@ -40,10 +40,12 @@
     .left-col {
       flex: 1;
       padding: 2rem 5rem;
+      text-align: left;
     }
     .right-col {
       flex: 1;
       padding: 2rem 5rem;
+      text-align: left;
     }
     i {
       font-size: 5rem;
@@ -151,6 +153,7 @@
     .heading-secondary {
       padding-right: 0;
       font-family: $alt-font-header;
+      font-size: 4rem;
     }
   }
 }
@@ -161,5 +164,16 @@
     .text {
       padding: 0 0 2rem 2rem;
     }
+  }
+}
+.simple-text-block {
+  .call-out {
+    float: right;
+    width: 25rem;
+    margin-right: -10rem;
+    margin-top: -5rem;
+    color: $color-primary;
+    font-weight: 400;
+    padding: 2rem;
   }
 }
