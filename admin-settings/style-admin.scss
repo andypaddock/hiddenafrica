@@ -128,3 +128,11 @@ ul#adminmenu > li.current > a.current:after {
 #excerpt {
   height: 20em;
 }
+.acf-repeater .acf-table .acf-row:nth-child(odd) {
+  .acf-row-handle {
+    background: #e0e0e0;
+  }
+  .acf-fields {
+    background: #ededed;
+  }
+}

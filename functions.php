@@ -34,6 +34,13 @@ add_filter('menu_order', 'hiddenafrica_reorder_menu');
 /* Remove Comments Link */
 add_action('wp_before_admin_bar_render', 'hiddenafrica_manage_admin_bar');
 
+add_action(
+  'after_setup_theme',
+  function() {
+      add_theme_support( 'html5', [ 'script', 'style' ] );
+  }
+);
+
 
 /****************************************************/
 /*                     Functions                     /

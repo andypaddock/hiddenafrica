@@ -1,6 +1,6 @@
 <?php $bgColor = get_sub_field('bg_colour');?>
 <section class="section-hightlightmap <?php if($bgColor == true): echo 'alt-bg'; endif; ?>"
-    id="<?php the_sub_field('section_id'); ?>">
+    <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <div class="row <?php the_sub_field('column_size'); ?>">
 
         <?php $image = get_sub_field('map_image');

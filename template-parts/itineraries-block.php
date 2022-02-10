@@ -36,7 +36,8 @@ echo ''.$terms.'';
 
 ?></span>
                     <div class="itin-destinations"></div>
-                    <a class="button outline" href="<?php the_permalink(); ?>"><?php the_field( 'cta_text' ); ?></a>
+                    <a class="button outline" href="<?php the_permalink(); ?>"><?php the_field( 'cta_text' ); ?><i
+                            class="fa-light fa-chevron-right"></i></a>
                 </div>
             </div>
             <?php endforeach; ?>

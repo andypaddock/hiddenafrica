@@ -57,3 +57,17 @@
     }
   }
 }
+.itin-button {
+  display: flex;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  .text {
+    line-height: 1.2;
+    font-size: 1.4rem;
+    .camp-name {
+      display: block;
+      font-weight: 600;
+      font-size: initial;
+    }
+  }
+}

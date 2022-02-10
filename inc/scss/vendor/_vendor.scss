@@ -14,6 +14,9 @@
   position: relative;
   z-index: 1;
   padding: 0 8rem;
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
 .owl-carousel .owl-stage {
   position: relative;

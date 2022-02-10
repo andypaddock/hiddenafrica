@@ -1,13 +1,14 @@
 <section class="section-itin-camps <?php if($bgColor == true): echo 'alt-bg'; endif; ?>"
-    id="<?php the_sub_field('section_id'); ?>">
+    <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <div class="row <?php the_sub_field('column_size'); ?>">
-
-
-        <?php
-        $terms = get_sub_field('places_to_display');
-        if ($terms) : ?>
+        <?php if( have_rows('itinerary_maker') ): ?>
         <div class="prop-slider owl-carousel owl-theme">
-            <?php foreach ($terms as $term) : ?>
+            <?php while( have_rows('itinerary_maker') ): the_row();  ?>
+
+            <?php $term = get_sub_field('destination');
+        if( $term ): ?>
+
+
             <div class="property-style-block">
                 <?php $styleImage = get_field('hero_image', $term); ?>
                 <div class="style-text">
@@ -21,14 +22,20 @@ $parent = ( isset( $term->parent ) ) ? get_term_by( 'id', $term->parent, 'destin
 
 
                     <p><?php echo esc_html( $term->description ); ?></p>
-                    <a class="button outline" href="<?php echo esc_url(get_term_link($term)); ?>"><i
-                            class="far fa-home"></i>Find Out More</a>
+                    <a class="button outline itin-button" href="<?php echo esc_url(get_term_link($term)); ?>">
+                        <div class="icon"><i class="far fa-home"></i></div>
+                        <div class="text"><?php the_sub_field('number_of_nights'); ?> Nights in <span
+                                class="camp-name">Find Out More</span></div>
+                    </a>
                 </div>
                 <div class="style-image" style="background-image: url(<?php echo $styleImage['url']; ?>)">
 
                 </div>
             </div>
-            <?php endforeach; ?>
+
+
+            <?php endif; ?>
+            <?php endwhile; ?>
         </div>
         <?php endif; ?>
     </div>

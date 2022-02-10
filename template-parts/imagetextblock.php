@@ -1,18 +1,9 @@
-<?php $bgColor = get_sub_field('bg_colour');?>
-<section class="section-imagetext <?php if($bgColor == true): echo 'alt-bg'; endif; ?>"
-    id="<?php the_sub_field('section_id'); ?>">
+<?php $bgColor = get_sub_field('bg_colour');
+$noMobile = get_sub_field('hide_on_mobile');?>
+<section
+    class="section-imagetext <?php if($bgColor == true): echo 'alt-bg'; endif; ?> <?php the_sub_field('margin_size'); ?> <?php if($noMobile == true): echo 'no-mob'; endif; ?>"
+    <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <div class="row <?php the_sub_field('column_size'); ?>">
-        <?php if( get_sub_field('section_title') ): ?>
-        <div class="optional-header">
-            <div class="centre-line">
-                <div class="line"></div>
-                <div></div>
-            </div>
-            <h3 class="heading-tertiary alt-color"><?php the_sub_field('section_sub_title');?></h3>
-            <h3 class="heading-secondary"><?php the_sub_field('section_title');?></h3>
-        </div>
-        <?php endif; ?>
-
         <?php
                 if( have_rows('blocks') ):
                 while ( have_rows('blocks') ) : the_row();?>
@@ -35,7 +26,8 @@ if( $link ):
     $link_target = $link['target'] ? $link['target'] : '_self';
     ?>
                     <a class="button <?php the_sub_field('link_style');?>" href="<?php echo esc_url( $link_url ); ?>"
-                        target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                        target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
+                            class="fa-light fa-chevron-right"></i></a>
                     <?php endif; ?>
                 </div>
             </div>

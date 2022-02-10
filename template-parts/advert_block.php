@@ -1,6 +1,8 @@
-<?php $bgColor = get_sub_field('bg_colour');?>
-<section class="section-largeadvert <?php if($bgColor == true): echo 'alt-bg'; endif; ?>"
-    id="<?php the_sub_field('section_id'); ?>">
+<?php $bgColor = get_sub_field('bg_colour');
+$noMobile = get_sub_field('hide_on_mobile');?>
+<section
+    class="section-largeadvert <?php if($bgColor == true): echo 'alt-bg'; endif; ?> <?php the_sub_field('margin_size'); ?> <?php if($noMobile == true): echo 'no-mob'; endif; ?>"
+    <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <?php $advertImage = get_sub_field('advert_image'); ?>
 
     <div class="advert-hero" style="background-image: url(<?php echo $advertImage['url']; ?>)">
@@ -24,7 +26,8 @@ if( $link ):
     $link_target = $link['target'] ? $link['target'] : '_self';
     ?>
                         <a class="button outline light" href="<?php echo esc_url( $link_url ); ?>"
-                            target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                            target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
+                                class="fa-light fa-chevron-right"></i></a>
                         <?php endif; ?>
                     </div>
                 </div>

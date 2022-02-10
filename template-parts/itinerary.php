@@ -1,4 +1,5 @@
-<section class="section-itinerary">
+<section class="section-itinerary" <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>"
+    <?php endif; ?>>
     <div class="row extended">
 
 
@@ -33,7 +34,8 @@ echo ''.$terms.'';
 
                 </div>
                 <div class="itin-slide-button"><a class="button outline"
-                        href="<?php the_permalink(); ?>"><?php the_field( 'cta_text' ); ?></a></div>
+                        href="<?php the_permalink(); ?>"><?php the_field( 'cta_text' ); ?><i
+                            class="fa-light fa-chevron-right"></i></a></div>
             </div>
             <?php endforeach; ?>
 

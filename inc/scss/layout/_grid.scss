@@ -65,7 +65,9 @@
 }
 section {
   padding: 5rem 0;
-  // background: $color-primary-bg;
+  &.section-largeadvert {
+    padding: 0;
+  }
 }
 
 @media (min-width: 56.25rem) {
@@ -115,12 +117,16 @@ section {
 }
 .row.extended {
   max-width: unset;
+  overflow: hidden;
   .itin-slider {
     margin-left: 15%;
+    @include respond(tab-port) {
+      margin-left: 0;
+    }
     .owl-stage {
-        .active~.active~.active {
-          opacity: 0.3;
-        }
+      .active ~ .active ~ .active {
+        opacity: 0.3;
+      }
     }
   }
 }

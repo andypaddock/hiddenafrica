@@ -43,38 +43,86 @@ jQuery(document).ready(function ($) {
     loop: true,
     margin: 48,
     center: true,
-    nav: true,
-    dots: false,
-    items: 1,
     autoplay: true,
     autoplayTimeout: 6000,
     autoplayHoverPause: true,
+    responsive: {
+      0:{
+        items:1,
+        nav: false
+      },
+      600:{
+        items:1,
+        nav: false
+      },
+      1000:{
+        items:1,
+        nav: true,
+        dots: false
+      }
+    }
   });
 
   $(".dest-slider").owlCarousel({
     loop: true,
-    margin: 32,
     center: true,
-    nav: true,
-    dots: false,
-    items: 3,
+    margin: 32,
+    responsive: {
+      0:{
+        items:1,
+        nav: false
+      },
+      600:{
+        items:2,
+        nav: false
+      },
+      1000:{
+        items:3,
+        nav: true,
+        dots: false
+      }
+    }
   });
   $(".prop-slider").owlCarousel({
     loop: true,
     margin: 48,
     center: true,
-    nav: true,
     navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right'></i></div>"],
-    dots: false,
-    items: 1,
+    responsive: {
+      0:{
+        items:1,
+        nav: false
+      },
+      600:{
+        items:1,
+        nav: false
+      },
+      1000:{
+        items:1,
+        nav: true,
+        dots: false
+      }
+    }
   });
   $(".itin-slider").owlCarousel({
     loop: true,
     margin: 32,
-    nav: true,
     navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right'></i></div>"],
-    dots: false,
-    items: 3,
+    responsive: {
+      0:{
+        items:1,
+        nav: false
+      },
+      600:{
+        items:2,
+        nav: false
+      },
+      1000:{
+        items:3,
+        nav: true,
+        dots: false
+      }
+    }
   });
 
   // ========== Controller for lightbox elements

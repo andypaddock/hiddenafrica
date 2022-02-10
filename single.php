@@ -131,6 +131,8 @@ if( $terms ): ?>
 <?php get_template_part('template-parts/site-wide-text');?>
 <?php elseif( get_row_layout() == 'place_slider' ):?>
 <?php get_template_part('template-parts/itin-place-slider');?>
+<?php elseif( get_row_layout() == 'itin_accor_block' ):?>
+<?php get_template_part('template-parts/itin_accor_block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

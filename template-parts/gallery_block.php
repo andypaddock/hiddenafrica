@@ -1,4 +1,5 @@
-<section class="gallery">
+<section class="gallery" <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>"
+    <?php endif; ?>>
     <div class="row">
         <?php 
 $images = get_sub_field('upload_images');

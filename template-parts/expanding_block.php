@@ -1,4 +1,8 @@
-<section class="section-videoblock">
+<?php $bgColor = get_sub_field('bg_colour');
+$noMobile = get_sub_field('hide_on_mobile');
+        ?><section
+    class="section-videoblock <?php if($bgColor == true): echo 'alt-bg'; endif; ?><?php the_sub_field('margin_size'); ?> <?php if($noMobile == true): echo 'no-mob'; endif; ?>"
+    <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <div class="wrapper">
         <?php $largeVideo = get_sub_field('video_file');
 $largePoster = get_sub_field('poster_image');
