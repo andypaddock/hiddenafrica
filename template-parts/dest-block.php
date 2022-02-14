@@ -28,7 +28,7 @@ if( $destinations ): ?>
                 </div>
                 <div class="post-link">
                     <a class="button outline" href="<?php echo esc_url( get_term_link( $destination ) ); ?>">
-                        Find Out more
+                        Find Out more<i class="fa-light fa-chevron-right"></i>
                     </a>
                 </div>
             </div>

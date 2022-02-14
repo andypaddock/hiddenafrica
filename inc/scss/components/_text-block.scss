@@ -176,4 +176,21 @@
     font-weight: 400;
     padding: 2rem;
   }
+  .heading-secondary {
+    font-family: $alt-font-header;
+  }
+  .heading-tertiary {
+    font-family: $alt-font-header;
+  }
+
+  .overscores {
+    &::before {
+      margin-bottom: 1.5rem;
+    }
+  }
+  .underscores {
+    &::after {
+      margin-bottom: 1.5rem;
+    }
+  }
 }

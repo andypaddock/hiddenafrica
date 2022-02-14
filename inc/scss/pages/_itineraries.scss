@@ -71,3 +71,37 @@
     }
   }
 }
+.lodges {
+  .itin-item-text {
+    padding: 2rem 3rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+  }
+  .destination-meta {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+  }
+}
+.itineraries {
+  .itin-item-text {
+    padding: 2rem 3rem;
+    align-items: center;
+  }
+  .destination-meta {
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    .main {
+      span {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-right: 1px solid $color-primary;
+      }
+    }
+    .sub {
+      padding-left: 2rem;
+    }
+  }
+}

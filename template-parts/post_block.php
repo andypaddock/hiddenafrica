@@ -54,10 +54,11 @@ $counter++;
                             <span class="heading-secondary--sub underscores"><?php the_title(); ?></span>
                         </a>
                     </h2>
+                    <p><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?></p>
                 </div>
                 <div class="post-link">
-                    <a href="<?php echo get_permalink( $post->ID ); ?>">
-                        Read more
+                    <a class="overscores" href="<?php echo get_permalink( $post->ID ); ?>">
+                        Read more<i class="fa-light fa-chevron-right"></i>
                     </a>
                 </div>
             </div>

@@ -16,7 +16,7 @@ if( $terms ): ?>
 
 
                     <a class="button outline" href="<?php echo esc_url( get_term_link( $term ) ); ?>">View all
-                        <?php echo esc_html( $term->name ); ?> destinations</a>
+                        <?php echo esc_html( $term->name ); ?> destinations<i class="fa-light fa-chevron-right"></i></a>
                 </div>
             </div>
             <?php endforeach; ?>

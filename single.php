@@ -133,6 +133,8 @@ if( $terms ): ?>
 <?php get_template_part('template-parts/itin-place-slider');?>
 <?php elseif( get_row_layout() == 'itin_accor_block' ):?>
 <?php get_template_part('template-parts/itin_accor_block');?>
+<?php elseif( get_row_layout() == 'simple_text' ):?>
+<?php get_template_part('template-parts/simple_text');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

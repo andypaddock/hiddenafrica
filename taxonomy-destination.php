@@ -12,6 +12,7 @@ $term = get_queried_object();
 // vars
 $heroSize = get_field('hero_section_size', $term);
 $color = get_field('color', $term);
+$mapImage = get_field('destination_map', $term);
 ?>
 <!-- <header class="header <?php echo $heroSize; ?>">
     <?php get_template_part('template-parts/taxhero');?>
@@ -76,6 +77,77 @@ if( $images ): ?>
 </section>
 
 
+<section class="section-title" id="lodges">
+    <div class="row centre-line w50">
+        <div class="line"></div>
+        <div></div>
+    </div>
+    <div class="row w40">
+        <h2 class="heading-secondary">
+            <span class="heading-secondary--sub">Top Heading</span>
+            <span class="heading-secondary--main">Lodges in <?php echo single_term_title(); ?></span>
+        </h2>
+    </div>
+</section>
+
+
+<section class="lodges">
+    <div class="row">
+        <div class="itin-display-block grid-layout3">
+            <?php
+                $args = array(
+                    'post_type' => 'properties',
+                    'tax_query' => array(
+                    'relation' => 'AND',
+                        array(
+                            'taxonomy' => 'destination',
+                            'field' => 'slug',
+                            'terms' => array( $term->slug )
+                        ),
+                    )
+                );
+                $query = new WP_Query( $args );
+                if ( $query->have_posts() ): while ( $query->have_posts() ):
+                $query->the_post();
+                $campImage = get_sub_field('hero_image');?>
+
+
+            <div class="itinerary-item tile">
+                <div class="itin-item-image" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+
+                </div>
+
+                <div class="itin-item-text">
+                    <h3 class="heading-tertiary">
+                        <span class="heading-tertiary--sub">
+                            <?php $terms = get_the_term_list( $post->ID, 'destination', '' ,  ' > ' ); $terms = strip_tags( $terms ); 
+if ($terms) {
+echo ''.$terms.'';
+} else  {
+}
+
+?>
+                        </span>
+
+                        <span class="heading-tertiary--main"><a
+                                href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
+                    </h3>
+                    <div class="right_arrow">
+                        <div class="arrow bounce">
+                            <a class="fal fa-chevron-right fa-2x" href="<?php the_permalink(); ?>"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--item-->
+            <?php endwhile; endif;?>
+        </div>
+    </div>
+</section>
+
+
 <section class="section-title" id="itineraries">
     <div class="row centre-line w50">
         <div class="line"></div>
@@ -83,8 +155,8 @@ if( $images ): ?>
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub"><?php the_field('itin_sub_title', $term); ?></span>
-            <span class="heading-secondary--main"><?php the_field('itin_title', $term); ?></span>
+            <span class="heading-secondary--sub">Top Heading</span>
+            <span class="heading-secondary--main"><?php echo single_term_title(); ?> Itineraries</span>
         </h2>
     </div>
 </section>
@@ -111,7 +183,7 @@ if( $images ): ?>
                 $campImage = get_sub_field('hero_image');?>
 
 
-            <div class="itinerary-item">
+            <div class="itinerary-item tile">
                 <div class="itin-item-image" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
 
                 </div>
@@ -131,17 +203,26 @@ echo ''.$terms.'';
                     </h3>
                     <span class="days"><?php the_field( 'how_long' ); ?></span>
                     <div class="destination-meta">
-                        <div class="main"><?php $terms = get_the_terms( $post->ID, array( 'destination') ); ?>
+                        <div class="main">
+                            <?php $terms = get_the_terms( $post->ID, array( 'destination') ); ?>
                             <?php foreach ( $terms as $term ) : ?>
-                            <p><?php echo $term->name; ?></p>
+                            <?php $placeType = get_field('dest_type', $term); if ($placeType == 'country'):?>
+                            <span><?php echo $term->name; ?></span>
+                            <?php endif;?>
                             <?php endforeach; ?>
                         </div>
                         <div class="sub">
+                            <?php foreach ( $terms as $term ) : ?>
+                            <?php $placeType = get_field('dest_type', $term); if ($placeType == 'placecamp'):?>
+                            <span><?php echo $term->name; ?></span>
+                            <?php endif;?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
                 <div class="itin-item-link">
-                    <a class="button outline" href="<?php the_permalink(); ?>"><?php the_field( 'cta_text' ); ?></a>
+                    <a class="button outline" href="<?php the_permalink(); ?>"><?php the_field( 'cta_text' ); ?><i
+                            class="fa-light fa-chevron-right"></i></a>
                 </div>
             </div>
 
@@ -152,6 +233,29 @@ echo ''.$terms.'';
     </div>
 </section>
 
+<?php if( !empty( $mapImage ) ): ?>
+<section class="section-title" id="map">
+    <div class="row centre-line w50">
+        <div class="line"></div>
+        <div></div>
+    </div>
+    <div class="row w40">
+        <h2 class="heading-secondary">
+            <span class="heading-secondary--sub">Top Heading</span>
+            <span class="heading-secondary--main"><?php echo single_term_title(); ?> Map</span>
+        </h2>
+    </div>
+</section>
+<section class="section-map">
+
+    <div class="row">
+        <a class="image-popup-no-margins" href="<?php echo $mapImage['url']; ?>">
+            <img src="<?php echo $mapImage['sizes']['large']; ?>" alt="<?php echo $mapImage['alt']; ?>" />
+        </a>
+
+    </div>
+</section>
+<?php endif; ?>
 
 
 

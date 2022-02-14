@@ -78,7 +78,7 @@ if( $featured_posts ): ?>
                 </div>
                 <div class="post-link">
                     <a class="button outline" href="<?php echo esc_url( $permalink ); ?>">
-                        <?php echo esc_html( $custom_field ); ?>
+                        <?php echo esc_html( $custom_field ); ?><i class="fa-light fa-chevron-right"></i>
                     </a>
                 </div>
             </div>

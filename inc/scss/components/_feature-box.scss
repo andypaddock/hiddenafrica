@@ -80,6 +80,9 @@
     .style-text {
       // padding: 5rem 0 0 5rem;
       grid-area: lt;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       a {
         color: $color-black;
         border: 1px solid $color-black;
