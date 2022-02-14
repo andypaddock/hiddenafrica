@@ -26,6 +26,7 @@ $parent = ( isset( $term->parent ) ) ? get_term_by( 'id', $term->parent, 'destin
                         <div class="icon"><i class="far fa-home"></i></div>
                         <div class="text"><?php the_sub_field('number_of_nights'); ?> Nights in <span
                                 class="camp-name">Find Out More</span></div>
+                        <i class="fa-light fa-chevron-right"></i>
                     </a>
                 </div>
                 <div class="style-image" style="background-image: url(<?php echo $styleImage['url']; ?>)">

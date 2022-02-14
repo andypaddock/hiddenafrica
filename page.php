@@ -99,6 +99,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/itin-place-slider');?>
 <?php elseif( get_row_layout() == 'simple_text' ):?>
 <?php get_template_part('template-parts/simple_text');?>
+<?php elseif( get_row_layout() == 'multi_filter_blog_posts' ):?>
+<?php get_template_part('template-parts/multi_filter_post_block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

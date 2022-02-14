@@ -1,4 +1,5 @@
 //@prepros-prepend mixitup.min.js
+//@prepros-prepend mixitup-multifilter.min.js
 //@prepros-prepend mixitup-pagination.js
 //@prepros-prepend jquery.magnific-popup.js
 //@prepros-prepend owl.carousel.min.js
@@ -209,9 +210,18 @@ var mixer;
 
 if (containerEl) {
     mixer = mixitup(containerEl, {
+      multifilter: {
+        enable: true
+    }
          
     });
 }
+
+// var mixer = mixitup('.multi-grid', {
+//   multifilter: {
+//       enable: true
+//   }
+// });
 
 
 
