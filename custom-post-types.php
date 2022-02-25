@@ -101,7 +101,7 @@ function taxonomy_safaritype() {
         'menu_name'         => __( 'Safari Types'         )
     );
 
-    register_taxonomy( 'safaritype', array( 'destinations', 'properties', 'itineraries' ), array(
+    register_taxonomy( 'safaritype', array( 'destination', 'properties', 'itineraries' ), array(
         'hierarchical'      => true,
         'labels'            => $labels,
         'has_archive'       => true,

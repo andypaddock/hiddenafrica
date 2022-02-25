@@ -17,7 +17,7 @@
 
                     <?php
 $parent = ( isset( $term->parent ) ) ? get_term_by( 'id', $term->parent, 'destination' ) : false;
-?><span class="meta underscores"><?php echo $parent->name; ?></span>
+?><span class="meta italic underscores"><?php echo $parent->name; ?></span>
 
 
 
@@ -25,7 +25,7 @@ $parent = ( isset( $term->parent ) ) ? get_term_by( 'id', $term->parent, 'destin
                     <a class="button outline itin-button" href="<?php echo esc_url(get_term_link($term)); ?>">
                         <div class="icon"><i class="far fa-home"></i></div>
                         <div class="text"><?php the_sub_field('number_of_nights'); ?> Nights in <span
-                                class="camp-name">Find Out More</span></div>
+                                class="camp-name"><?php echo esc_html($term->name); ?></span></div>
                         <i class="fa-light fa-chevron-right"></i>
                     </a>
                 </div>

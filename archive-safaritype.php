@@ -18,6 +18,7 @@ get_header(); ?>
         </div>
     </div>
 </div>
+
 <?php if( have_rows('main_page_elements') ): ?>
 <?php while( have_rows('main_page_elements') ): the_row(); ?>
 <?php if( get_row_layout() == 'faq_blocks' ): ?>

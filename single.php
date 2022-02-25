@@ -7,19 +7,32 @@
 get_header(); ?>
 <?php if (is_singular('itineraries')):?>
 <section>
-    <div class="row w60">
+    <div class="row w80">
         <div class="itin-facts">
             <div class="where">
                 <h3 class="heading-tertiary">Where To:</h3>
 
                 <div class="meta">
-                    <?php 
+                    <!-- <?php 
 $terms = get_field('where_to');
 if( $terms ): ?>
                     <?php foreach( $terms as $term ): ?>
                     <span class="<?php the_field('dest_type', $term); ?>"><?php echo esc_html( $term->name ); ?></span>
                     <?php endforeach; ?>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
+
+                    <?php
+$taxonomy = 'destination'; // change this to your taxonomy
+$terms = wp_get_post_terms( $post->ID, $taxonomy, array( "fields" => "ids" ) );
+if( $terms ) {
+  echo '<ul>';
+
+  $terms = trim( implode( ',', (array) $terms ), ' ,' );
+  wp_list_categories( 'title_li=&taxonomy=' . $taxonomy . '&include=' . $terms );
+
+  echo '</ul>';
+}
+?>
                 </div>
             </div>
             <div class="length">

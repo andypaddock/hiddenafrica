@@ -112,6 +112,8 @@ if( $link ):
 
             <?php if (is_singular('destinations')):?>
             <?php get_template_part('template-parts/desthero');?>
+            <?php elseif (is_tax('safaritype')):?>
+            <?php get_template_part('template-parts/taxhero');?>
             <?php elseif (is_singular('itineraries')):?>
             <?php get_template_part('template-parts/itinhero');?>
             <?php elseif (is_single()):?>

@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,700;1,300&family=Work+Sans:wght@200;300;400;500&display=swap");
 body {
   font-family: $default-font-style;
-  font-weight: 200;
+  font-weight: 300;
   /*font-size: 16px;*/
   line-height: 1.7;
   color: $color-text;
@@ -49,8 +50,8 @@ body {
 
 .heading-secondary {
   font-family: $default-header-style;
-  font-size: 3rem;
-  line-height: 1.5;
+  font-size: 3.5rem;
+  line-height: 1.1;
   font-weight: 400;
   // display: inline-block;
   color: $color-black;
@@ -69,7 +70,7 @@ body {
 
   &--sub {
     display: block;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 400;
     letter-spacing: 0.1rem;
     color: $color-primary;
@@ -102,6 +103,7 @@ body {
   }
   &.alt-color {
     color: $color-primary;
+    font-style: italic;
   }
   &--sub {
     display: block;
@@ -181,4 +183,7 @@ blockquote {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
 }

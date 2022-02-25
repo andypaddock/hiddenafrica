@@ -4,9 +4,10 @@
     margin-bottom: 0;
     padding: 1rem 2rem;
     font-weight: bold;
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: space-between;
+    grid-template-columns: 1fr 3fr 1fr;
+    font-family: $default-header-style;
     cursor: pointer;
     span {
       color: $color-white;
@@ -25,6 +26,7 @@
     }
     i {
       transition: $fastEffect;
+      justify-self: end;
     }
 
     &.collapsed i {

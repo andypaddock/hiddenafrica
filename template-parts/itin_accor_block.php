@@ -8,7 +8,7 @@
         <div class="item tile">
 
             <label>
-                <span class="heading"><?php the_sub_field('day_description'); ?></span>
+                <span class="heading italic"><?php the_sub_field('day_description'); ?></span>
                 <span class="heading underscores"><?php the_sub_field('itin_step_title'); ?></span>
                 <i class="fal fa-chevron-right fa-2x"></i>
             </label>
