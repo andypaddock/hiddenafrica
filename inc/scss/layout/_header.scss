@@ -1,4 +1,8 @@
 .header {
+  margin-top: 10rem;
+  @include respond(tab-port) {
+    margin-top: 0;
+  }
   &.v25 {
     height: 25vh;
   }

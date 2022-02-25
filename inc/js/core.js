@@ -337,8 +337,6 @@ if (containerEl) {
           navbar.removeClass("scrollUp");
         }
         c = currentScrollTop;
-       
-       console.log(a);
     });
     
   });

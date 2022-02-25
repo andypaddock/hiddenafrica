@@ -18,7 +18,8 @@
                 <div class="footer_text">
                     <h3 class="heading-secondary">
                         <span class="heading-secondary--main"><?php the_field('footer_main_text'); ?></span>
-                        <span class="heading-secondary--sub italic"><?php the_field('footer_sub_heading'); ?></span>
+                        <span
+                            class="heading-secondary--sub italic underscores"><?php the_field('footer_sub_heading'); ?></span>
                     </h3>
                     <p><?php the_field('footer_text'); ?></p>
 
@@ -49,7 +50,7 @@ if( $link ):
                     <h3 class="heading-secondary">
                         <span class="heading-secondary--main"><?php the_field('footer_main_text','options'); ?></span>
                         <span
-                            class="heading-secondary--sub italic"><?php the_field('footer_sub_heading','options'); ?></span>
+                            class="heading-secondary--sub italic underscores"><?php the_field('footer_sub_heading','options'); ?></span>
                     </h3>
                     <p><?php the_field('footer_text','options'); ?></p>
 
@@ -182,6 +183,11 @@ if( $link ):
         </div>
         <div class="newsletter-block">
             <h3 class="heading-tertiary">Get to Know Us</h3>
+            <?php
+        if ( get_field('footer_shortcode','options') ) {
+            echo do_shortcode( get_field('footer_shortcode','options') );
+        }
+        ?>
         </div>
     </div>
 
