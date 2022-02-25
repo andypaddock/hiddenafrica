@@ -18,7 +18,7 @@
                 <div class="footer_text">
                     <h3 class="heading-secondary">
                         <span class="heading-secondary--main"><?php the_field('footer_main_text'); ?></span>
-                        <span class="heading-secondary--sub"><?php the_field('footer_sub_heading'); ?></span>
+                        <span class="heading-secondary--sub italic"><?php the_field('footer_sub_heading'); ?></span>
                     </h3>
                     <p><?php the_field('footer_text'); ?></p>
 
@@ -48,7 +48,8 @@ if( $link ):
                 <div class="footer_text">
                     <h3 class="heading-secondary">
                         <span class="heading-secondary--main"><?php the_field('footer_main_text','options'); ?></span>
-                        <span class="heading-secondary--sub"><?php the_field('footer_sub_heading','options'); ?></span>
+                        <span
+                            class="heading-secondary--sub italic"><?php the_field('footer_sub_heading','options'); ?></span>
                     </h3>
                     <p><?php the_field('footer_text','options'); ?></p>
 

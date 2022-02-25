@@ -10,7 +10,7 @@ get_header(); ?>
 <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
 <div class="header__text-box">
     <h1 class="heading-primary">
-        <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
+        <span class="heading-primary--sub italic"><?php the_field('sub_header'); ?></span>
         <span class="heading-primary--main"><?php echo esc_html( get_the_title() ); ?></span>
     </h1>
     <div class="down_arrow">
@@ -101,6 +101,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/simple_text');?>
 <?php elseif( get_row_layout() == 'multi_filter_blog_posts' ):?>
 <?php get_template_part('template-parts/multi_filter_post_block');?>
+<?php elseif( get_row_layout() == 'itin_filter_safari_type' ):?>
+<?php get_template_part('template-parts/itin_filter_safari_type');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

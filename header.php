@@ -46,6 +46,7 @@
     </div>
 
     <main>
+
         <div id="navbar" class="top-bar">
             <div class="logo-bar row">
                 <div class="logo-bar__contacts">
@@ -95,6 +96,7 @@ if( $link ):
                     ) ); ?>
             </menu>
         </div>
+
         <nav>
             <!-- nav-right -->
 
