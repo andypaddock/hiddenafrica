@@ -1,3 +1,14 @@
+.single-itineraries {
+  .header .hero {
+    justify-content: end;
+    .breadcrumb {
+      color: $color-white;
+      a {
+        color: $color-white;
+      }
+    }
+  }
+}
 .itin-facts {
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
@@ -154,4 +165,22 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 4rem;
+}
+.itin-slide-text {
+  .destination-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 0;
+    .main {
+      border-right: 1px solid $color-primary;
+      span {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+    }
+    .sub {
+      padding: 0 1rem;
+    }
+  }
 }

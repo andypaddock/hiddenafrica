@@ -5,13 +5,20 @@
  * @package hiddenafrica
  */
 get_header(); ?>
+<?php 
+$term = get_queried_object();
 
+// vars
+$heroSize = get_field('hero_section_size', $term);
+$heroImage = get_field('hero_image', $term); 
+?>
 <?php if (!is_front_page()): ?>
-<div class="breadcrumb"><?php get_breadcrumb(); ?></div>
+<div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
 <div class="header__text-box">
     <h1 class="heading-primary">
         <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
-        <span class="heading-primary--main"><?php echo single_term_title(); ?></span>
+        <span
+            class="heading-primary--main"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php echo single_term_title(); ?><?php endif ?></span>
     </h1>
     <div class="down_arrow">
         <div class="arrow bounce">
@@ -19,10 +26,43 @@ get_header(); ?>
         </div>
     </div>
 </div>
+
 <?php endif; ?>
+<section class="read-more">
+    <div class="row w40">
+
+        <article><?php echo term_description(); ?></article>
+
+    </div>
+</section>
 <span id="content"></span>
-<?php if( have_rows('main_page_elements') ): ?>
-<?php while( have_rows('main_page_elements') ): the_row(); ?>
+
+<section class="gallery" <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>"
+    <?php endif; ?>>
+    <div class="row">
+        <?php
+        $term = get_queried_object();
+$images = get_field('upload_images', $term);
+if( $images ): ?>
+        <div id="parent">
+            <?php foreach( $images as $image ): ?>
+            <div class="child tile">
+                <a href="<?php echo esc_url($image['url']); ?>">
+                    <img src="<?php echo esc_url($image['sizes']['large']); ?>"
+                        alt="<?php echo esc_attr($image['alt']); ?>" />
+                </a>
+                <p><?php echo esc_html($image['caption']); ?></p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+    </div>
+</section>
+
+
+<?php 
+if( have_rows('main_page_elements', $term) ): ?>
+<?php while( have_rows('main_page_elements', $term) ): the_row(); ?>
 <?php if( get_row_layout() == 'faq_blocks' ): ?>
 <?php get_template_part('template-parts/faqblock');?>
 <?php elseif( get_row_layout() == 'main_cat_links' ): ?>
@@ -71,9 +111,34 @@ get_header(); ?>
 <?php get_template_part('template-parts/dest-slider');?>
 <?php elseif( get_row_layout() == 'prop_type_slider' ):?>
 <?php get_template_part('template-parts/prop-style');?>
+<?php elseif( get_row_layout() == 'type_filter' ):?>
+<?php get_template_part('template-parts/type_filter');?>
+<?php elseif( get_row_layout() == 'facility_icons' ):?>
+<?php get_template_part('template-parts/facility_icons');?>
+<?php elseif( get_row_layout() == 'gallery_block' ):?>
+<?php get_template_part('template-parts/gallery_block');?>
+<?php elseif( get_row_layout() == 'accor_block' ):?>
+<?php get_template_part('template-parts/accor_block');?>
+<?php elseif( get_row_layout() == 'button_block' ):?>
+<?php get_template_part('template-parts/button_block');?>
+<?php elseif( get_row_layout() == 'highlight_block' ):?>
+<?php get_template_part('template-parts/highlight_block');?>
+<?php elseif( get_row_layout() == 'advert_block' ):?>
+<?php get_template_part('template-parts/advert_block');?>
+<?php elseif( get_row_layout() == 'video_element' ):?>
+<?php get_template_part('template-parts/expanding_block');?>
+<?php elseif( get_row_layout() == 'dest_block' ):?>
+<?php get_template_part('template-parts/dest-block');?>
+<?php elseif( get_row_layout() == 'cust_post_block' ):?>
+<?php get_template_part('template-parts/cust-post-block');?>
+<?php elseif( get_row_layout() == 'staff_block' ):?>
+<?php get_template_part('template-parts/staff-block');?>
+<?php elseif( get_row_layout() == 'site_wide_start_safari' ):?>
+<?php get_template_part('template-parts/site-wide-text');?>
+<?php elseif( get_row_layout() == 'itin_filter_property_style' ):?>
+<?php get_template_part('template-parts/itin_filter_property_style');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
-
 
 <?php get_footer(); ?>

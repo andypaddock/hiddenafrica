@@ -66,7 +66,6 @@ jQuery(document).ready(function ($) {
 
   $(".dest-slider").owlCarousel({
     loop: true,
-    center: true,
     margin: 32,
     responsive: {
       0:{
@@ -179,6 +178,10 @@ $(".toggle-block label").click(function () {
 
   new Readmore('article', {
     collapsedHeight: 96,
+  });
+
+  new Readmore('.readmore', {
+    collapsedHeight: 180,
   });
 
 

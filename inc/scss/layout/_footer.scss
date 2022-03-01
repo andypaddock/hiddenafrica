@@ -78,6 +78,7 @@
 .footer-navbar {
   display: grid;
   grid-template-columns: 2fr 1.5fr 1.5fr 1fr 1fr 3fr;
+  grid-template-rows: repeat(2, 1fr);
   padding: 3rem 0;
   @include respond(tab-port) {
     display: flex;
@@ -106,8 +107,16 @@
       }
     }
   }
+  .company-links {
+    grid-column: 2 / span 4;
+    grid-row: 2;
+    img {
+      height: 5rem;
+    }
+  }
   .newsletter-block {
     padding-left: 3rem;
+    grid-row: span 2;
     .mc4wp-form-fields {
       padding: 2rem 0;
       input {
@@ -132,9 +141,22 @@
       justify-content: space-between;
       grid-gap: 0.5rem;
       padding-bottom: 1rem;
+      @include respond(tab-port) {
+        flex-direction: column;
+        padding-bottom: 0.5rem;
+        input {
+          width: 100%;
+        }
+        label {
+          padding-bottom: 0.5rem;
+        }
+      }
     }
     .email {
       margin-right: 0.5rem;
+      @include respond(tab-port) {
+        margin: 0;
+      }
       input {
         width: 100%;
       }
@@ -232,6 +254,10 @@
     .footer_text {
       width: 35%;
       margin-left: 20%;
+      @include respond(tab-port) {
+        width: unset;
+        margin: 0;
+      }
       .heading-secondary {
         color: $color-white;
         &--sub {
@@ -254,6 +280,9 @@
       padding: 2rem 4rem 2rem;
       margin-bottom: 2rem;
       margin-left: -4rem;
+      @include respond(tab-port) {
+        margin: 0;
+      }
       .footer_button {
         display: block;
         color: $color-white;

@@ -16,7 +16,7 @@ $color = get_field('color', $term);
 <!--closes in footer.php-->
 
 <?php if (!is_front_page()): ?>
-<div class="breadcrumb"><?php get_breadcrumb(); ?></div>
+<div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
 <div class="header__text-box">
     <h1 class="heading-primary">
         <span class="heading-primary--sub"><?php the_field('sub_header', $term); ?></span>

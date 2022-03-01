@@ -55,4 +55,4 @@ $heroPoster = get_field('video_poster');?>
     <?php endif; ?> -->
 </div>
 <?php endif;?>
-<div class="breadcrumb"><?php get_breadcrumb(); ?></div>
+<div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>

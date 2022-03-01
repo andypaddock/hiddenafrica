@@ -21,11 +21,12 @@ $mapImage = get_field('destination_map', $term);
 <!--closes in footer.php-->
 
 <?php if (!is_front_page()): ?>
-<div class="breadcrumb"><?php get_breadcrumb(); ?></div>
+<div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
 <div class="header__text-box">
     <h1 class="heading-primary">
         <span class="heading-primary--sub"><?php the_field('sub_header', $term); ?></span>
-        <span class="heading-primary--main"><?php echo single_term_title(); ?></span>
+        <span
+            class="heading-primary--main"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php echo single_term_title(); ?><?php endif ?></span>
     </h1>
     <div class="down_arrow">
         <div class="arrow bounce">

@@ -4,7 +4,7 @@ $noMobile = get_sub_field('hide_on_mobile');?>
     class="safari-type-select <?php if($bgColor == true): echo 'alt-bg'; endif; ?> <?php the_sub_field('margin_size'); ?> <?php if($noMobile == true): echo 'no-mob'; endif; ?>"
     <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <div class="row <?php the_sub_field('column_size'); ?>">
-
+        <?php if(get_sub_field('show_filters')):?>
         <div class="controls">
             <ul>
                 <?php $all_categories = get_terms( array(
@@ -20,16 +20,16 @@ $noMobile = get_sub_field('hide_on_mobile');?>
                 <?php endforeach; ?>
             </ul>
         </div>
-
+        <?php endif; ?>
 
         <div class="safaritype-grid filter-grid cust-post-grid">
             <?php
-            $term_id = get_sub_field('select_type') ;
+            $term_id = get_sub_field('select_style') ;
             $args = array(
-                'post_type' => 'itineraries',
+                'post_type' => 'properties',
                 'tax_query' => array( 
                     array( 
-                        'taxonomy' => 'safaritype', //or tag or custom taxonomy
+                        'taxonomy' => 'propertystyle', //or tag or custom taxonomy
                         'field' => 'id', 
                         'terms' => array($term_id) 
                     ) 

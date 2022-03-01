@@ -114,7 +114,7 @@
   }
   .image {
     @include backgroundCover;
-    min-height: 25rem;
+    height: 35rem;
   }
   &.row-reverse {
     flex-direction: row-reverse;
@@ -153,6 +153,8 @@
     .button {
       margin: 0;
       padding: 0;
+      display: block;
+      font-style: italic;
     }
   }
   .image {
@@ -208,6 +210,23 @@
   .underscores {
     &::after {
       margin-bottom: 1.5rem;
+    }
+  }
+}
+.section-imagetext {
+  .image-text-block {
+    image {
+      height: 25rem;
+    }
+    .read-more,
+    .read-less {
+      text-align: left;
+      a {
+        font-style: italic;
+        &::before {
+          content: none;
+        }
+      }
     }
   }
 }

@@ -30,7 +30,28 @@ echo ''.$terms.'';
                                 href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
                     </h3>
                     <span class="meta"><?php the_field( 'how_long' ); ?></span>
-                    <div class="itin-destinations"></div>
+
+                    <div class="destination-meta">
+                        <div class="main"><?php $terms = get_the_terms( $post->ID, array('destination') ); ?>
+
+                            <?php foreach ( $terms as $term ) : ?>
+                            <?php $placeType = get_field('dest_type', $term);?>
+                            <?php if ($placeType == 'country'):?>
+                            <span class="<?php the_field('dest_type', $term)?>"><?php echo $term->name; ?></span>
+                            <?php endif;?>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="sub">
+
+                            <?php foreach ( $terms as $term ) : ?>
+                            <?php $placeType = get_field('dest_type', $term);?>
+                            <?php if ($placeType == 'place'):?>
+                            <span class="<?php the_field('dest_type', $term)?>"><?php echo $term->name; ?></span>
+                            <?php endif;?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+
 
                 </div>
                 <div class="itin-slide-button"><a class="button outline"

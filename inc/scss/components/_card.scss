@@ -260,6 +260,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
+  @include respond(phone) {
+    display: flex;
+    flex-direction: column;
+  }
+  &.tri-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .post-item {
     background: $color-white;
     display: flex;
@@ -284,7 +291,7 @@
       }
     }
     .post-link {
-      // padding: 0 4rem 2rem;
+      padding: 2rem 4rem;
     }
     .destination-meta {
       display: grid;

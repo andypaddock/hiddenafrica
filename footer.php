@@ -181,6 +181,28 @@ if( $link ):
             </ul>
             <?php endif; ?>
         </div>
+        <div class="company-links">
+
+
+            <?php if( have_rows('linked_companies','options') ): ?>
+            <?php while( have_rows('linked_companies','options') ): the_row(); ?>
+
+            <?php 
+$link = get_sub_field('link','options');
+if( $link ): 
+    $link_url = $link['url'];
+    $link_title = $link['title'];
+    $link_target = $link['target'] ? $link['target'] : '_self';
+    ?>
+            <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><img
+                    src="<?php the_sub_field('company_logo','options'); ?>" /></a>
+            <?php endif; ?>
+
+            <?php endwhile; ?>
+
+            <?php endif; ?>
+
+        </div>
         <div class="newsletter-block">
             <h3 class="heading-tertiary">Get to Know Us</h3>
             <?php

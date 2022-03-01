@@ -4,7 +4,7 @@
 
     <div class="row <?php the_sub_field('column_size'); ?>">
 
-        <div class="cust-post-grid">
+        <div class="cust-post-grid tri-col">
             <?php 
 $destinations = get_sub_field('select_dest_block_items');
 if( $destinations ): ?>

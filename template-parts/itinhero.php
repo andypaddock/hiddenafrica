@@ -36,6 +36,6 @@ $heroSwitch = get_field('hero_type');
             </div>
         </div>
     </section>
-    <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
+    <div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
 </div>
 <?php endif;?>

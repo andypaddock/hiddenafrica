@@ -16,7 +16,8 @@ $mapimage = get_field('map_image');?>
     </video>
     <div class="header__text-box">
         <h1 class="heading-<?php the_field('header_size'); ?>">
-            <span class="heading-<?php the_field('header_size'); ?>--main"><?php the_field('header'); ?></span>
+            <span
+                class="heading-<?php the_field('header_size'); ?>--main"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php the_title(); ?><?php endif ?></span>
             <span class="heading-<?php the_field('header_size'); ?>--sub"><?php the_field('sub_header'); ?></span>
         </h1>
     </div>
@@ -27,7 +28,8 @@ $mapimage = get_field('map_image');?>
     <?php if (is_front_page()): ?>
     <div class="header__text-box">
         <h1 class="heading-<?php the_field('header_size'); ?>">
-            <span class="heading-<?php the_field('header_size'); ?>--main"><?php the_field('header'); ?></span>
+            <span
+                class="heading-<?php the_field('header_size'); ?>--main"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php the_title(); ?><?php endif ?></span>
             <span class="heading-<?php the_field('header_size'); ?>--sub"><?php the_field('sub_header'); ?></span>
         </h1>
     </div>

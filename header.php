@@ -28,10 +28,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo is_front_page() ? get_bloginfo( 'name' ) : wp_title( '' ); ?></title>
     <script src="https://kit.fontawesome.com/4faa096376.js" crossorigin="anonymous" defer="defer"></script>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
     <?php wp_head(); ?>
 
 </head>
@@ -115,6 +111,8 @@ if( $link ):
             <?php if (is_singular('destinations')):?>
             <?php get_template_part('template-parts/desthero');?>
             <?php elseif (is_tax('safaritype')):?>
+            <?php get_template_part('template-parts/taxhero');?>
+            <?php elseif (is_tax('propertystyle')):?>
             <?php get_template_part('template-parts/taxhero');?>
             <?php elseif (is_singular('itineraries')):?>
             <?php get_template_part('template-parts/itinhero');?>

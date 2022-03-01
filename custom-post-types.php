@@ -155,7 +155,7 @@ function taxonomy_propertystyle() {
         'menu_name'         => __( 'Property Style'         )
     );
 
-    register_taxonomy( 'propertystyle', array(  'properties'), array(
+    register_taxonomy( 'propertystyle', array(  'properties', 'itineraries'), array(
         'hierarchical'      => true,
         'labels'            => $labels,
         'has_archive'       => true,
