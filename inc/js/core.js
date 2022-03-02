@@ -86,7 +86,6 @@ jQuery(document).ready(function ($) {
   $(".signature-itins").owlCarousel({
     loop: true,
     margin: 32,
-    autoHeight: true,
     responsive: {
       0:{
         items:1,
@@ -368,6 +367,12 @@ if (containerEl) {
     
   });
 
+  $(".map-link").click(function(){
+    $(".map-hero").addClass("visible")
+  });
+  $(".map-close").click(function(){
+    $(".map-hero").removeClass("visible")
+  });
 
 
 

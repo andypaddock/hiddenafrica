@@ -20,8 +20,8 @@ setup_postdata($post); ?>
                     </div>
                 </a>
                 <div class="post-text">
-                    <h3 class="heading-secondary">
-                        <span class="heading-secondary--sub italic">
+                    <h3 class="heading-tertiary">
+                        <span class="heading-tertiary--sub">
                             <?php $terms = get_the_term_list( $post->ID, 'safaritype', '', ',' ); $terms = strip_tags( $terms ); 
 if ($terms) {
 echo ''.$terms.'';
@@ -29,7 +29,7 @@ echo ''.$terms.'';
 }
 ?>
                         </span>
-                        <span class="heading-secondary--main underscores"><a
+                        <span class="heading-tertiary--main underscores"><a
                                 href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
                     </h3>
                     <p><?php $excerpt = wp_trim_words( get_field('excerpt' ), $num_words = 10, $more = '...' ); ?><?php echo ($excerpt);?>

@@ -4,7 +4,7 @@
  *
  * @package hiddenafrica
  */
-get_header(); 
+get_header('tax'); 
 
 $term = get_queried_object();
 
@@ -14,9 +14,20 @@ $heroSize = get_field('hero_section_size', $term);
 $color = get_field('color', $term);
 $mapImage = get_field('destination_map', $term);
 ?>
-<!-- <header class="header <?php echo $heroSize; ?>">
-    <?php get_template_part('template-parts/taxhero');?>
-</header> -->
+<header class="header map-hero">
+    <div class="hero map-popup">
+    </div>
+    <a href="#" class="map-close">&times;</a>
+    <img src="<?php echo $mapImage['sizes'] ['large']; ?>" />
+    <div class="map-link">
+        <a class="map-link" href="#">
+            <i class="far fa-bars"></i>
+            <span>See Whole Map</span>
+        </a>
+    </div>
+
+
+</header>
 
 <!--closes in footer.php-->
 

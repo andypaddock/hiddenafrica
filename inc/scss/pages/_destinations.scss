@@ -1,14 +1,75 @@
-.section-map {
-  img {
-    width: 100%;
+.tax-destination {
+  .section-map {
+    img {
+      width: 100%;
+    }
   }
-}
-.destination-block {
-  .tri-col {
-    .post-item {
-      .post-link {
-        padding: 2rem 4rem;
+  .destination-block {
+    .tri-col {
+      .post-item {
+        .post-link {
+          padding: 2rem 4rem;
+        }
       }
+    }
+  }
+  .map-hero {
+    position: relative;
+    .hero {
+      background: $color-primary;
+    }
+    img {
+      // height: 100%;
+      // opacity: 0;
+      transition: $slowEffect;
+      padding-top: 2rem;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+      width: 100%;
+      max-height: 50vh;
+      object-fit: cover;
+    }
+    .map-link {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
+      width: 50%;
+      text-align: center;
+      a {
+        color: $color-white;
+        font-weight: 400;
+        font-size: 1.5rem;
+        i {
+          font-size: 2rem;
+          display: block;
+        }
+      }
+    }
+    .map-close {
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+      font-size: 3rem;
+      color: $color-white;
+      cursor: pointer;
+      z-index: 1;
+    }
+  }
+  &.archive .header.visible {
+    height: 85vh;
+    transition: $slowEffect;
+    .hero {
+      filter: blur(5px);
+      transition: $slowEffect;
+    }
+    img {
+      opacity: 1;
+      max-height: 100%;
+      width: 100%;
+      object-fit: contain;
     }
   }
 }
