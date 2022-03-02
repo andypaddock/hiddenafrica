@@ -184,3 +184,26 @@
     }
   }
 }
+.signature-itins {
+  .post-item {
+    background: $color-white;
+    display: flex;
+    flex-direction: column;
+    .post-image {
+      @include backgroundCover;
+      height: 25rem;
+    }
+    .post-text {
+      padding: 1rem 2rem;
+      flex: 1;
+      .heading-secondary {
+        &--sub {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .post-link {
+      padding: 1rem 2rem 2rem;
+    }
+  }
+}

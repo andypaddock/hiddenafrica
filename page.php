@@ -103,6 +103,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/multi_filter_post_block');?>
 <?php elseif( get_row_layout() == 'itin_filter_safari_type' ):?>
 <?php get_template_part('template-parts/itin_filter_safari_type');?>
+<?php elseif( get_row_layout() == 'itin_sig_block' ):?>
+<?php get_template_part('template-parts/itin-sig-block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

@@ -230,3 +230,23 @@
     }
   }
 }
+.staff-block {
+  .read-more,
+  .read-less {
+    text-align: left;
+    padding-top: 2rem;
+    a {
+      font-style: italic;
+      color: $color-black;
+      &::before {
+        content: "";
+        border-bottom: 1px solid $color-primary;
+        border-right: none;
+        left: 0;
+        width: 2rem;
+        display: block;
+        padding-top: 2rem;
+      }
+    }
+  }
+}

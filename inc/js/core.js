@@ -83,6 +83,26 @@ jQuery(document).ready(function ($) {
       }
     }
   });
+  $(".signature-itins").owlCarousel({
+    loop: true,
+    margin: 32,
+    autoHeight: true,
+    responsive: {
+      0:{
+        items:1,
+        nav: false
+      },
+      600:{
+        items:2,
+        nav: false
+      },
+      1000:{
+        items:3,
+        nav: true,
+        dots: false
+      }
+    }
+  });
   $(".prop-slider").owlCarousel({
     loop: true,
     margin: 48,
@@ -182,6 +202,10 @@ $(".toggle-block label").click(function () {
 
   new Readmore('.readmore', {
     collapsedHeight: 180,
+  });
+
+  new Readmore('.staffreadmore', {
+    collapsedHeight: 120,
   });
 
 
