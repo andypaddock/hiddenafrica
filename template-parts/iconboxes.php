@@ -7,10 +7,12 @@ $noMobile = get_sub_field('hide_on_mobile');?>
         <div class="<?php the_sub_field('columns'); ?>">
             <?php
                 if( have_rows('icon_block') ):
-                while ( have_rows('icon_block') ) : the_row();?>
+                while ( have_rows('icon_block') ) : the_row();
+                $image = get_sub_field('main_icon');?>
             <div class="grid-item icon-block tile">
                 <div class="icon">
-                    <?php the_sub_field('icon');?>
+                    <?php if( $image ): ?><img src="<?php echo esc_url($image['sizes']['medium']); ?>"
+                        alt="<?php echo esc_attr($image['alt']); ?>" /><?php else: ?><?php the_sub_field('icon');?><?php endif; ?>
                 </div>
                 <div class="icon-title">
                     <h2 class="heading-tertiary underscores"><?php the_sub_field('icon_title');?></h2>
