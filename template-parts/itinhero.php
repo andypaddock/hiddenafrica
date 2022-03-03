@@ -23,10 +23,12 @@ $heroSwitch = get_field('hero_type');
             </div>
         </div>
     </section>
+    <div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
 </div>
 
 <?php elseif ($heroSwitch == 'image'):?>
-<div class="hero tester" style="background-image: url(<?php echo $heroImage['url']; ?>)">
+<div class="hero tester"
+    style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?><?php endif ?>)">
     <section>
         <div class="row w60">
             <div class="header__text-box">

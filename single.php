@@ -56,7 +56,8 @@ if( $terms ) {
 <div class="header__text-box">
     <h1 class="heading-primary">
         <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
-        <span class="heading-primary--main"><?php the_field('header'); ?></span>
+        <span
+            class="heading-primary--main"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php the_title(); ?><?php endif ?>
     </h1>
     <?php if (!is_singular('itineraries')):?>
     <div class="down_arrow">

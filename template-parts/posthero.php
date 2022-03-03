@@ -1,5 +1,6 @@
-<?php $heroImage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+<?php $heroImage = get_field('hero_image'); ?>
 
-<div class="hero" style="background-image: url(<?php echo $heroImage[0]; ?>)">
+<div class="hero"
+    style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?><?php endif ?>)">
 
 </div>
