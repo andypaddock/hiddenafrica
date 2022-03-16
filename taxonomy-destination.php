@@ -36,8 +36,7 @@ $mapImage = get_field('destination_map', $term);
 <div class="header__text-box">
     <h1 class="heading-primary">
         <span class="heading-primary--sub"><?php the_field('sub_header', $term); ?></span>
-        <span
-            class="heading-primary--main"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php echo single_term_title(); ?><?php endif ?></span>
+        <span class="heading-primary--main"><?php echo single_term_title(); ?></span>
     </h1>
     <div class="down_arrow">
         <div class="arrow bounce">
@@ -80,7 +79,6 @@ if( $images ): ?>
                     <img src="<?php echo esc_url($image['sizes']['large']); ?>"
                         alt="<?php echo esc_attr($image['alt']); ?>" />
                 </a>
-                <p><?php echo esc_html($image['caption']); ?></p>
             </div>
             <?php endforeach; ?>
         </div>
@@ -96,7 +94,7 @@ if( $images ): ?>
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub">Top Heading</span>
+            <span class="heading-secondary--sub"><?php the_field('lodges_sub_title', $term); ?></span>
             <span class="heading-secondary--main">Lodges in <?php echo single_term_title(); ?></span>
         </h2>
     </div>
@@ -125,7 +123,8 @@ if( $images ): ?>
 
 
             <div class="itinerary-item tile">
-                <div class="itin-item-image" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+                <div class="itin-item-image"
+                    style="background-image: url(<?php if ($campImage): ?><?php echo $campImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url($post->ID,'large'); ?><?php endif ?>)">
 
                 </div>
 
@@ -167,7 +166,7 @@ echo ''.$terms.'';
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub">Top Heading</span>
+            <span class="heading-secondary--sub"><?php the_field('itins_sub_title', $term); ?></span>
             <span class="heading-secondary--main"><?php echo single_term_title(); ?> Itineraries</span>
         </h2>
     </div>
@@ -192,11 +191,12 @@ echo ''.$terms.'';
                 $query = new WP_Query( $args );
                 if ( $query->have_posts() ): while ( $query->have_posts() ):
                 $query->the_post();
-                $campImage = get_sub_field('hero_image');?>
+                $campImage = get_field('hero_image');?>
 
 
             <div class="itinerary-item tile">
-                <div class="itin-item-image" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+                <div class="itin-item-image"
+                    style="background-image: url(<?php if ($campImage): ?><?php echo $campImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url($post->ID,'large'); ?><?php endif ?>)">
 
                 </div>
 
@@ -253,7 +253,7 @@ echo ''.$terms.'';
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub">Top Heading</span>
+            <span class="heading-secondary--sub"><?php the_field('map_sub_title', $term); ?></span>
             <span class="heading-secondary--main"><?php echo single_term_title(); ?> Map</span>
         </h2>
     </div>

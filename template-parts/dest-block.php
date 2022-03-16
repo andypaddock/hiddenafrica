@@ -11,7 +11,7 @@ if( $destinations ): ?>
             <?php foreach( $destinations as $destination ): ?>
             <?php $destImage = get_field('hero_image',$destination); ?>
             <div class="post-item tile <?php echo ' ' . $destination->slug; ?>">
-                <a href="<?php echo get_permalink( $post->ID ); ?>">
+                <a href="<?php echo esc_url( get_term_link( $destination ) ); ?>">
                     <div class="post-image" style="background-image: url(<?php echo $destImage['url']; ?>)">
 
                     </div>
@@ -19,12 +19,12 @@ if( $destinations ): ?>
                 <div class="post-text">
                     <span class="meta"><?php echo get_the_date(); ?></span>
                     <h2 class="heading-secondary">
-                        <a href="<?php echo get_permalink( $post->ID ); ?>">
+                        <a href="<?php echo esc_url( get_term_link( $destination ) ); ?>">
                             <span
                                 class="heading-secondary--main underscores"><?php echo esc_html( $destination->name ); ?></span>
                         </a>
                     </h2>
-                    <p><?php echo esc_html( $destination->description ); ?></p>
+                    <p><?php the_field('short_description',$destination); ?></p>
                 </div>
                 <div class="post-link">
                     <a class="button outline" href="<?php echo esc_url( get_term_link( $destination ) ); ?>">

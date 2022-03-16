@@ -10,7 +10,8 @@ if( $featured_posts ): ?>
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); ?>
             <div class="itin-block">
-                <div class="itin-image" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+                <div class="itin-image"
+                    style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID,'large'); ?>)">
 
                 </div>
                 <div class="itin-text">

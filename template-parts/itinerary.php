@@ -13,7 +13,7 @@ if( $featured_posts ): ?>
         setup_postdata($post); ?>
             <div class="itin-slide-block">
                 <div class="itin-slide-image"
-                    style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+                    style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID,'large'); ?>)">
 
                 </div>
                 <div class="itin-slide-text">
