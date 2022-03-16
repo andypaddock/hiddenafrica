@@ -86,6 +86,70 @@ if( $images ): ?>
     </div>
 </section>
 
+<?php if($term->parent == 0):?>
+
+<?php $queried_object = get_queried_object();
+$term_id = $queried_object->term_id; ?>
+
+<section class="section-title" id="areas">
+    <div class="row centre-line w50">
+        <div class="line"></div>
+        <div></div>
+    </div>
+    <div class="row w40">
+        <h2 class="heading-secondary">
+            <span class="heading-secondary--sub"><?php the_field('areas_sub_title', $term); ?></span>
+            <span class="heading-secondary--main">Areas of <?php echo single_term_title(); ?></span>
+        </h2>
+    </div>
+</section>
+<section class="section-property-styles"
+    <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
+    <div class="row">
+
+        <div class="prop-slider owl-carousel owl-theme">
+
+            <?php $terms = get_terms(
+    array(
+        'taxonomy'   => 'destination',
+        'hide_empty' => false,
+        'parent'     => $term_id,
+    )
+);?>
+            <?php if ( ! empty( $terms ) && is_array( $terms ) ) {
+    foreach ( $terms as $term ) { ?>
+            <div class="property-style-block">
+                <?php $styleImage = get_field('hero_image', $term); ?>
+                <div class="style-text">
+                    <h2 class="heading-secondary underscores">
+
+                        <span class="heading-secondary--main"><?php echo esc_html($term->name); ?></span>
+                        <span class="heading-secondary--sub light"><?php
+$parent = get_term_by( 'id', $term->parent, get_query_var( 'taxonomy' ) );
+if($parent):
+    echo $parent->name;
+endif;
+?></span>
+                    </h2>
+
+                    <p><?php the_field('short_description', $term); ?></p>
+                    <a class="button outline" href="<?php echo esc_url(get_term_link($term)); ?>">Find Out More<i
+                            class="fa-light fa-chevron-right"></i></a>
+                </div>
+                <div class="style-image" style="background-image: url(<?php echo $styleImage['url']; ?>)">
+
+                </div>
+            </div>
+            <?php
+    }
+} ?>
+
+
+
+        </div>
+    </div>
+</section>
+<?php endif; ?>
 
 <section class="section-title" id="lodges">
     <div class="row centre-line w50">

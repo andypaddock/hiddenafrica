@@ -95,6 +95,16 @@ get_header(); ?>
 <?php get_template_part('template-parts/staff-block');?>
 <?php elseif( get_row_layout() == 'site_wide_start_safari' ):?>
 <?php get_template_part('template-parts/site-wide-text');?>
+<?php elseif( get_row_layout() == 'place_slider' ):?>
+<?php get_template_part('template-parts/itin-place-slider');?>
+<?php elseif( get_row_layout() == 'simple_text' ):?>
+<?php get_template_part('template-parts/simple_text');?>
+<?php elseif( get_row_layout() == 'multi_filter_blog_posts' ):?>
+<?php get_template_part('template-parts/multi_filter_post_block');?>
+<?php elseif( get_row_layout() == 'itin_filter_safari_type' ):?>
+<?php get_template_part('template-parts/itin_filter_safari_type');?>
+<?php elseif( get_row_layout() == 'itin_sig_block' ):?>
+<?php get_template_part('template-parts/itin-sig-block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

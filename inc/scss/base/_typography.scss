@@ -78,6 +78,9 @@ body {
     @include respond(phone) {
       letter-spacing: 0.5rem;
     }
+    &.light {
+      font-weight: 200;
+    }
   }
   &.light {
     font-weight: 200;
