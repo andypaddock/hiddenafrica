@@ -105,6 +105,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/itin_filter_safari_type');?>
 <?php elseif( get_row_layout() == 'itin_sig_block' ):?>
 <?php get_template_part('template-parts/itin-sig-block');?>
+<?php elseif( get_row_layout() == 'facility_display' ):?>
+<?php get_template_part('template-parts/facility-display');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

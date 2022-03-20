@@ -21,7 +21,7 @@ $parent = ( isset( $term->parent ) ) ? get_term_by( 'id', $term->parent, 'destin
 
 
 
-                    <p><?php echo esc_html( $term->description ); ?></p>
+                    <p><?php the_field('short_description', $term); ?></p>
                     <a class="button outline itin-button" href="<?php echo esc_url(get_term_link($term)); ?>">
                         <div class="icon"><i class="far fa-home"></i></div>
                         <div class="text"><?php the_sub_field('number_of_nights'); ?> Nights in <span

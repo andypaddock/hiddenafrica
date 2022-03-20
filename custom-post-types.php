@@ -166,9 +166,38 @@ function taxonomy_propertystyle() {
     ));
 }
 
+// ====== Type Property Facilities
+function taxonomy_propertyfacility() {
+
+    $labels = array(
+        'name'              => _x( 'Facility', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Facility', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Facilities'   ),
+        'all_items'         => __( 'All Facilities'     ),
+        'parent_item'       => __( 'Parent Facility'   ),
+        'parent_item_colon' => __( 'Parent Facility'  ),
+        'edit_item'         => __( 'Edit Facility'     ),
+        'update_item'       => __( 'Update Facility'   ),
+        'add_new_item'      => __( 'Add New Facility'  ),
+        'new_item_name'     => __( 'New Facility' ),
+        'menu_name'         => __( 'Facility'         )
+    );
+
+    register_taxonomy( 'facility', array(  'properties' ), array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'has_archive'       => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'facility', 'hierarchical' => true )
+    ));
+}
+
 
 
 
 add_action( 'init', 'taxonomy_propertystyle', 0 );
 add_action( 'init', 'taxonomy_safaritype', 0 );
 add_action( 'init', 'taxonomy_destination', 0 );
+add_action( 'init', 'taxonomy_propertyfacility', 0 );
