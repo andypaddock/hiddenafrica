@@ -2,9 +2,9 @@
     <div class="row <?php the_sub_field('column_size'); ?>">
         <div class="<?php the_sub_field('columns'); ?>">
 
-            <?php foreach (get_the_terms(get_the_ID(), 'facility') as $cat): 
+            <?php foreach (get_the_terms(get_the_ID(), 'activity') as $cat): 
             
-            $image = get_field('icon',$cat); ?>
+                $image = get_field('icon',$cat); ?>
             <div class="grid-item facility-icons tile">
                 <div class="icon">
                     <img src="<?php echo esc_url($image['sizes']['medium']); ?>"

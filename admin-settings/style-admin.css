@@ -120,3 +120,14 @@ ul#adminmenu > li.current > a.current:after {
 .acf-repeater .acf-table .acf-row:nth-child(odd) .acf-fields {
   background: #ededed;
 }
+
+.acf-postbox .acf-input .acf-range-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.acf-postbox .acf-input .acf-range-wrap input[type=number] {
+  display: none;
+}
+.acf-postbox .acf-input .description {
+  color: white;
+}

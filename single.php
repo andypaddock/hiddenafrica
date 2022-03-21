@@ -152,4 +152,9 @@ if( $terms ) {
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
+<section class="comments-block alt-bg">
+    <div class="row w60">
+        <?php comments_template(); ?>
+    </div>
+</section>
 <?php get_footer(); ?>

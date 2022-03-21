@@ -136,3 +136,17 @@ ul#adminmenu > li.current > a.current:after {
     background: #ededed;
   }
 }
+.acf-postbox {
+  .acf-input {
+    .acf-range-wrap {
+      display: flex;
+      flex-direction: column;
+      input[type="number"] {
+        display: none;
+      }
+    }
+    .description {
+      color: white;
+    }
+  }
+}

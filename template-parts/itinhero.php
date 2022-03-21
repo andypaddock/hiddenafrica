@@ -7,7 +7,7 @@ $heroSwitch = get_field('hero_type');
             if ($heroSwitch == 'video'): ?>
 
 
-<div class="hero tester">
+<div class="hero tester imageoff-<?php the_field('image_offset');?>">
     <video playsinline autoplay muted loop poster="<?php echo $heroPoster['url'];?>" id="bgvideo">
         <?php if ($heroMobile): ?>
         <source src="<?php echo $heroMobile['url'];?>" type="video/mp4" media="all and (max-width: 480px)">
@@ -27,7 +27,7 @@ $heroSwitch = get_field('hero_type');
 </div>
 
 <?php elseif ($heroSwitch == 'image'):?>
-<div class="hero tester"
+<div class="hero tester imageoff-<?php the_field('image_offset');?>"
     style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?><?php endif ?>)">
     <section>
         <div class="row w60">
