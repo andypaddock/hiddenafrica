@@ -17,7 +17,9 @@
                 if( have_rows('blocks') ):
                 while ( have_rows('blocks') ) : the_row();?>
                 <div class="text tile">
+                    <?php if (get_sub_field('title')):?>
                     <h3 class="heading-tertiary"><?php the_sub_field('title');?></h3>
+                    <?php endif;?>
                     <?php the_sub_field('text');?>
                 </div>
 

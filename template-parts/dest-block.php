@@ -17,7 +17,7 @@ if( $destinations ): ?>
                     </div>
                 </a>
                 <div class="post-text">
-                    <span class="meta"><?php echo get_the_date(); ?></span>
+                    <span class="meta"><?php the_field('sub_header',$destination); ?></span>
                     <h2 class="heading-secondary">
                         <a href="<?php echo esc_url( get_term_link( $destination ) ); ?>">
                             <span

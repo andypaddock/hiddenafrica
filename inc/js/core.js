@@ -341,7 +341,31 @@ if (containerEl) {
       }
     });
     
-  })
+  });
+
+  $(".limit-six")
+  .slice(0, 6)
+  .show();
+$(".limit-six:hidden").css("opacity", 0);
+$("#viewAll").on("click", function(e) {
+  $(".limit-six:hidden") // Added :hidden
+    .slice(0, 5)
+    .slideDown("slow")
+    .animate(
+      {
+        opacity: 1
+      },
+      {
+        queue: false,
+        duration: "slow"
+      }
+    );
+  // We need to check the count of just the hidden items
+  if ($(".limit-six:hidden").length == 0) {
+    $("#viewAll").fadeOut("slow");
+  }
+  e.preventDefault();
+});
 
 
   $(document).ready(function () {

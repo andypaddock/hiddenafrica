@@ -1,7 +1,7 @@
 <section class="section-facilityicons">
     <div class="row <?php the_sub_field('column_size'); ?>">
         <div class="<?php the_sub_field('columns'); ?>">
-
+            <?php if (get_the_terms(get_the_ID(), 'activity')):?>
             <?php foreach (get_the_terms(get_the_ID(), 'activity') as $cat): 
             
                 $image = get_field('icon',$cat); ?>
@@ -14,7 +14,7 @@
                 </div>
             </div>
             <?php endforeach; ?>
-
+            <?php endif;?>
 
 
         </div>
