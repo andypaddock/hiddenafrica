@@ -347,3 +347,23 @@ function get_breadcrumb() {
       echo '</em>"';
   }
 }
+
+function taxonomy_hierarchy() {
+	global $post;
+	$taxonomy = 'destination'; //Put your custom taxonomy term here
+	$terms = wp_get_post_terms( $post->ID, $taxonomy );
+	foreach ( $terms as $term )
+        {
+	if ($term->parent == 0) // this gets the parent of the current post taxonomy
+	{$myparent = $term;}
+        }
+	echo ''.$myparent->name.'';
+	// Right, the parent is set, now let's get the children
+	foreach ( $terms as $term ) {
+		if ($term->parent != 0) // this ignores the parent of the current post taxonomy
+		{ 
+		$child_term = $term; // this gets the children of the current post taxonomy
+		echo ' <span class="sep"> | </span> '.$child_term->name.'';
+		}
+    }	
+}

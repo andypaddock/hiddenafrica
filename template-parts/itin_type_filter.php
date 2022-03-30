@@ -45,13 +45,7 @@ $counter++;
                 <div class="filter-item--text">
                     <h3 class="heading-tertiary">
                         <span class="heading-tertiary--sub">
-                            <?php $terms = get_the_term_list( $post->ID, 'safaritype', '' ,  ' > ' ); $terms = strip_tags( $terms ); 
-if ($terms) {
-echo ''.$terms.'';
-} else  {
-}
-
-?>
+                            <?php echo taxonomy_hierarchy(); ?>
                         </span>
 
                         <span class="heading-tertiary--main"><a

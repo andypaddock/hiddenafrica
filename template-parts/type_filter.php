@@ -27,6 +27,20 @@ $loop = new WP_Query(
     array(
         'post_type' => $filterElement, 
         'posts_per_page' => -1,
+        'meta_query' => array(
+            'relation' => 'OR',
+            array(
+                'key' => 'hidden_from_our_collection',
+                'value' => '1',
+                'compare' => '!='
+            ),
+            array(
+                'key' => 'hidden_from_our_collection',
+                'value' => '1',
+                'compare' => 'NOT EXISTS'
+            )
+        )
+        
     )
 );
 $counter = 0;
@@ -44,13 +58,9 @@ $counter++;
                 <div class="filter-item--text">
                     <h3 class="heading-tertiary">
                         <span class="heading-tertiary--sub">
-                            <?php $terms = get_the_term_list( $post->ID, 'destination', '' ,  ' > ' ); $terms = strip_tags( $terms ); 
-if ($terms) {
-echo ''.$terms.'';
-} else  {
-}
 
-?>
+                            <?php echo taxonomy_hierarchy(); ?>
+
                         </span>
 
                         <span class="heading-tertiary--main"><a

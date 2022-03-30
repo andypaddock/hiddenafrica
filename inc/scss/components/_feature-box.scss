@@ -206,10 +206,13 @@
       padding: 0 4rem 2rem 0;
       // font-size: 1.2rem;
     }
+    ul {
+      padding: 1.5rem ;
+    }
     .heading-tertiary {
       text-transform: uppercase;
-      font-family: $default-font-style;
-      font-size: 1.7rem;
+      font-family: $default-header-style;
+      font-size: 2rem;
     }
   }
 }

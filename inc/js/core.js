@@ -271,7 +271,6 @@ if (containerEl) {
   distance: '40px',
   origin: 'left',
   opacity: 0.0,
-  reset:true,
   duration: 1000,
   delay:250,
   mobile:false,
@@ -280,7 +279,6 @@ if (containerEl) {
   distance: '40px',
   origin: 'right',
   opacity: 0.0,
-  reset:true,
   duration: 1000,
   mobile:false,
   };
@@ -288,7 +286,6 @@ if (containerEl) {
   distance: '40px',
   origin: 'top',
   opacity: 0.0,
-  reset:true,
   duration: 1000,
   mobile:false,
   };
@@ -296,7 +293,6 @@ if (containerEl) {
   distance: '40px',
   origin: 'bottom',
   opacity: 0.0,
-  reset:true,
   duration: 1000,
   mobile:false,
   };
@@ -304,7 +300,6 @@ if (containerEl) {
   distance: '40px',
   origin: 'top',
   opacity: 0.0,
-  reset:true,
   duration: 1000,
   mobile:false,
   interval:40,
