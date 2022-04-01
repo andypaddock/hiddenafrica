@@ -306,12 +306,14 @@ article {
 .read-less {
   text-align: center;
   padding-top: 5rem;
-  font-family: $default-header-style;
+  
   a {
     color: $color-primary;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 700;
+    font-style: italic;
+    // font-weight: 700;
+    font-family: $default-header-style;
     position: relative;
     &::before {
       content: "";
