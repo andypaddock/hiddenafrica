@@ -299,7 +299,7 @@
 }
 article {
   p {
-    text-align: center;
+    // text-align: center;
   }
 }
 .read-more,
@@ -944,3 +944,10 @@ section {
   margin: 3rem 0;
   margin-bottom: 3rem;
 }}
+
+.frm_page_skip {
+  color: $color-primary;
+  background: transparent;
+  padding: 1rem 3rem;
+  border: 1px solid $color-primary;
+}

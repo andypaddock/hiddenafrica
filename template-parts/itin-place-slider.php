@@ -5,31 +5,29 @@
         <div class="prop-slider owl-carousel owl-theme">
             <?php while( have_rows('itinerary_maker') ): the_row();  ?>
 
-            <?php $term = get_sub_field('destination');
-        if( $term ): ?>
-
-
+            <?php $featured_post = get_sub_field('destination');
+        if( $featured_post ): ?>
             <div class="property-style-block">
-                <?php $styleImage = get_field('hero_image', $term); ?>
+                <?php $styleImage = get_field('hero_image', $term); 
+                $mainImage = get_the_post_thumbnail_url($featured_post->ID);
+                $permalink = get_permalink( $featured_post->ID );
+                $custom_field = get_field( 'short_description', $featured_post->ID ); ?>
                 <div class="style-text">
                     <span class="meta uppercase">Your Stay</span>
-                    <h2 class="heading-secondary"><?php echo esc_html($term->name); ?></h2>
+                    <h2 class="heading-secondary"><?php echo esc_html( $featured_post->post_title ); ?></h2>
 
                     <?php
-$parent = ( isset( $term->parent ) ) ? get_term_by( 'id', $term->parent, 'destination' ) : false;
+$parent = ( isset( $featured_post->parent ) ) ? get_term_by( 'id', $featured_post->parent, 'destination' ) : false;
 ?><span class="meta italic underscores"><?php echo $parent->name; ?></span>
-
-
-
-                    <p><?php the_field('short_description', $term); ?></p>
-                    <a class="button outline itin-button" href="<?php echo esc_url(get_term_link($term)); ?>">
+                    <p><?php echo substr( $custom_field,0,200 );?></p>
+                    <a class="button outline itin-button" href="<?php echo esc_url( $permalink ); ?>">
                         <div class="icon"><i class="far fa-home"></i></div>
                         <div class="text"><?php the_sub_field('number_of_nights'); ?> Nights in <span
-                                class="camp-name"><?php echo esc_html($term->name); ?></span></div>
+                                class="camp-name"><?php echo esc_html( $featured_post->post_title ); ?></span></div>
                         <i class="fa-light fa-chevron-right"></i>
                     </a>
                 </div>
-                <div class="style-image" style="background-image: url(<?php echo $styleImage['url']; ?>)">
+                <div class="style-image" style="background-image: url(<?php echo $mainImage; ?>)">
 
                 </div>
             </div>

@@ -79,7 +79,7 @@ if( $images ): ?>
         <div id="parent">
             <?php foreach( $images as $image ): ?>
             <div class="child limit-six">
-                <a href="<?php echo esc_url($image['url']); ?>">
+                <a href="<?php echo esc_url($image['url']); ?>" title="<?php echo esc_attr($image['caption']); ?>">
                     <img src="<?php echo esc_url($image['sizes']['large']); ?>"
                         alt="<?php echo esc_attr($image['alt']); ?>" />
                 </a>
