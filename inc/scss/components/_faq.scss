@@ -122,3 +122,9 @@
   display: none;
   padding-top: 10px;
 }
+.highlight {
+  background: $color-primary-bg-alt;
+}
+.alt-bg .highlight {
+  background: $color-primary-bg;
+}

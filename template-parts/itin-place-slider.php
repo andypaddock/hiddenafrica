@@ -13,17 +13,17 @@
                 $permalink = get_permalink( $featured_post->ID );
                 $custom_field = get_field( 'short_description', $featured_post->ID ); ?>
                 <div class="style-text">
-                    <span class="meta uppercase">Your Stay</span>
+                    <span class="meta uppercase"><?php the_sub_field('number_of_nights'); ?> Nights in</span>
                     <h2 class="heading-secondary"><?php echo esc_html( $featured_post->post_title ); ?></h2>
 
                     <?php
 $parent = ( isset( $featured_post->parent ) ) ? get_term_by( 'id', $featured_post->parent, 'destination' ) : false;
 ?><span class="meta italic underscores"><?php echo $parent->name; ?></span>
-                    <p><?php echo substr( $custom_field,0,200 );?></p>
+                    <p><?php echo wp_trim_words($custom_field);?></p>
                     <a class="button outline itin-button" href="<?php echo esc_url( $permalink ); ?>">
                         <div class="icon"><i class="far fa-home"></i></div>
-                        <div class="text"><?php the_sub_field('number_of_nights'); ?> Nights in <span
-                                class="camp-name"><?php echo esc_html( $featured_post->post_title ); ?></span></div>
+                        <div class="text"><span class="camp-name"><?php echo esc_html( $featured_post->post_title ); ?>
+                            </span>Read More</div>
                         <i class="fa-light fa-chevron-right"></i>
                     </a>
                 </div>

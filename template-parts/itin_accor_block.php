@@ -4,8 +4,8 @@
     <div class="toggle-block row <?php the_sub_field('column_size'); ?>">
 
         <?php if( have_rows('itinerary_maker') ): $count = 0; while ( have_rows('itinerary_maker') ) : the_row(); ?>
-
-        <div class="item tile">
+        <?php $bgHighlight = get_sub_field('highlight');?>
+        <div class="item tile <?php if($bgHighlight == true): echo 'highlight'; endif; ?>">
 
             <label>
                 <span class="heading italic"><?php the_sub_field('day_description'); ?></span>
