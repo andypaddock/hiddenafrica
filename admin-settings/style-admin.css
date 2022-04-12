@@ -131,3 +131,7 @@ ul#adminmenu > li.current > a.current:after {
 .acf-postbox .acf-input .description {
   color: white;
 }
+
+.acf-button-group.-vertical {
+  width: 100%;
+}

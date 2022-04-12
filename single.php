@@ -13,13 +13,6 @@ get_header(); ?>
                 <h3 class="heading-tertiary">Where To:</h3>
 
                 <div class="meta">
-                    <!-- <?php 
-$terms = get_field('where_to');
-if( $terms ): ?>
-                    <?php foreach( $terms as $term ): ?>
-                    <span class="<?php the_field('dest_type', $term); ?>"><?php echo esc_html( $term->name ); ?></span>
-                    <?php endforeach; ?>
-                    <?php endif; ?> -->
 
                     <?php
 $taxonomy = 'destination'; // change this to your taxonomy

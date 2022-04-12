@@ -49,43 +49,19 @@ $counter++;
 
                 <div class="filter-item--image" style="background-image: url(<?php echo $mainImage; ?>)">
                 </div>
-                <div class="post-text">
-                    <span class="meta underscores"><?php 
-    $terms = get_the_terms( $post->ID, 'safaritype' ); 
-    foreach($terms as $term) {
-      echo $term->name;
-    }
-?></span>
-                    <h2 class="heading-secondary">
-                        <a href="<?php the_permalink(); ?>">
-                            <span class="heading-secondary--main"><?php the_title(); ?></span>
-                        </a>
-                    </h2>
-                    <span class="days"><?php echo esc_html( $days_field ); ?></span>
-                    <div class="destination-meta">
-                        <div class="main"><?php $terms = get_the_terms( $post->ID, array('destination') ); ?>
+                <div class="filter-item--text">
+                    <h3 class="heading-tertiary">
+                        <span class="heading-tertiary--sub">
+                            <?php echo taxonomy_hierarchy(); ?>
+                        </span>
 
-                            <?php foreach ( $terms as $term ) : ?>
-                            <?php $placeType = get_field('dest_type', $term);?>
-                            <?php if ($placeType == 'country'):?>
-                            <span class="<?php the_field('dest_type', $term)?>"><?php echo $term->name; ?></span>
-                            <?php endif;?>
-                            <?php endforeach; ?>
+                        <span class="heading-tertiary--main"><a
+                                href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
+                    </h3>
+                    <div class="right_arrow">
+                        <div class="arrow bounce">
+                            <a class="fal fa-chevron-right fa-2x" href="<?php the_permalink(); ?>"></a>
                         </div>
-                        <div class="sub">
-
-                            <?php foreach ( $terms as $term ) : ?>
-                            <?php $placeType = get_field('dest_type', $term);?>
-                            <?php if ($placeType == 'place'):?>
-                            <span class="<?php the_field('dest_type', $term)?>"><?php echo $term->name; ?></span>
-                            <?php endif;?>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    <div class="post-link">
-                        <a class="button outline" href="<?php the_permalink(); ?>">
-                            <?php echo esc_html( $custom_field ); ?><i class="fa-light fa-chevron-right"></i>
-                        </a>
                     </div>
                 </div>
             </div>

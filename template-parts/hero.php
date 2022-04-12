@@ -24,7 +24,7 @@ $mapimage = get_field('map_image');?>
 </div>
 
 <?php elseif ($heroSwitch == 'image'):?>
-<div class="hero imageoff-<?php the_field('image_offset');?>"
+<div class="hero <?php the_field('image_anchor');?> imageoff-<?php the_field('image_offset');?>"
     style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?><?php endif ?>)">
     <?php if (is_front_page()): ?>
     <div class="header__text-box">

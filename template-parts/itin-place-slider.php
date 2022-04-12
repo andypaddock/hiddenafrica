@@ -19,7 +19,9 @@
                     <?php
 $parent = ( isset( $featured_post->parent ) ) ? get_term_by( 'id', $featured_post->parent, 'destination' ) : false;
 ?><span class="meta italic underscores"><?php echo $parent->name; ?></span>
-                    <p><?php echo wp_trim_words($custom_field);?></p>
+                    <p><?php
+echo wp_trim_words( get_sub_field('itin_step_desc'), 40, '...' );
+?></p>
                     <a class="button outline itin-button" href="<?php echo esc_url( $permalink ); ?>">
                         <div class="icon"><i class="far fa-home"></i></div>
                         <div class="text"><span class="camp-name"><?php echo esc_html( $featured_post->post_title ); ?>

@@ -18,38 +18,27 @@ if( $featured_posts ): ?>
                 </div>
                 <div class="itin-slide-text">
                     <h3 class="heading-tertiary">
-                        <span class="heading-tertiary--sub underscores">
-                            <?php $terms = get_the_term_list( $post->ID, 'safaritype', '', ',' ); $terms = strip_tags( $terms ); 
-if ($terms) {
-echo ''.$terms.'';
-} else  {
-}
-?>
+                        <span class="heading-tertiary--sub">
+                            <?php the_field( 'how_long' ); ?>
                         </span>
-                        <span class="heading-tertiary--main"><a
+                        <span class="heading-tertiary--main  underscores"><a
                                 href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
                     </h3>
-                    <span class="meta"><?php the_field( 'how_long' ); ?></span>
+                    <span class="meta"></span>
 
                     <div class="destination-meta">
-                        <div class="main"><?php $terms = get_the_terms( $post->ID, array('destination') ); ?>
-
-                            <?php foreach ( $terms as $term ) : ?>
-                            <?php $placeType = get_field('dest_type', $term);?>
-                            <?php if ($placeType == 'country'):?>
-                            <span class="<?php the_field('dest_type', $term)?>"><?php echo $term->name; ?></span>
-                            <?php endif;?>
+                        <?php 
+$terms = get_field('where_to');
+if( $terms ): ?>
+                        <ul id="places">
+                            <?php foreach( $terms as $term ): ?>
+                            <li>
+                                <?php echo esc_html( $term->name ); ?>
+                            </li>
                             <?php endforeach; ?>
-                        </div>
-                        <div class="sub">
+                        </ul>
+                        <?php endif; ?>
 
-                            <?php foreach ( $terms as $term ) : ?>
-                            <?php $placeType = get_field('dest_type', $term);?>
-                            <?php if ($placeType == 'place'):?>
-                            <span class="<?php the_field('dest_type', $term)?>"><?php echo $term->name; ?></span>
-                            <?php endif;?>
-                            <?php endforeach; ?>
-                        </div>
                     </div>
 
 

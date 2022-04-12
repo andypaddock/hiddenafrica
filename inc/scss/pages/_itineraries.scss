@@ -40,6 +40,7 @@
         ul {
           display: flex;
           flex-direction: row;
+          flex-wrap: wrap;
           li {
             display: flex;
             a {
@@ -145,19 +146,19 @@
     align-items: center;
   }
   .destination-meta {
-    padding-top: 2rem;
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    .main {
-      span {
-        display: block;
-        text-transform: uppercase;
-        font-weight: 700;
-        border-right: 1px solid $color-primary;
+    padding: 2rem 0;
+    #places {
+list-style: none;
+    
+      li {
+        border-left: 1px solid $color-black;
+        display: inline;
+  padding: 0 1rem;
+  &:first-child {
+    border-left: none;
+    padding: 0 1rem 0 0;
+  }
       }
-    }
-    .sub {
-      padding-left: 2rem;
     }
   }
 }
@@ -167,20 +168,23 @@
   grid-gap: 4rem;
 }
 .itin-slide-text {
+  .heading-tertiary {
+    line-height: 3rem;
+  }
   .destination-meta {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 1rem 0;
-    .main {
-      border-right: 1px solid $color-primary;
-      span {
-        display: block;
-        text-transform: uppercase;
-        font-weight: 400;
+    padding: 2rem 0;
+    #places {
+list-style: none;
+    
+      li {
+        border-left: 1px solid $color-black;
+        display: inline;
+  padding: 0 1rem;
+  &:first-child {
+    border-left: none;
+    padding: 0 1rem 0 0;
+  }
       }
-    }
-    .sub {
-      padding: 0 1rem;
     }
   }
 }

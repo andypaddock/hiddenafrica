@@ -289,21 +289,18 @@ echo ''.$terms.'';
                     </h3>
                     <span class="days"><?php the_field( 'how_long' ); ?></span>
                     <div class="destination-meta">
-                        <div class="main">
-                            <?php $terms = get_the_terms( $post->ID, array( 'destination') ); ?>
-                            <?php foreach ( $terms as $term ) : ?>
-                            <?php $placeType = get_field('dest_type', $term); if ($placeType == 'country'):?>
-                            <span><?php echo $term->name; ?></span>
-                            <?php endif;?>
+                        <?php 
+$terms = get_field('where_to');
+if( $terms ): ?>
+                        <ul id="places">
+                            <?php foreach( $terms as $term ): ?>
+                            <li>
+                                <?php echo esc_html( $term->name ); ?>
+                            </li>
                             <?php endforeach; ?>
-                        </div>
-                        <div class="sub">
-                            <?php foreach ( $terms as $term ) : ?>
-                            <?php $placeType = get_field('dest_type', $term); if ($placeType == 'placecamp'):?>
-                            <span><?php echo $term->name; ?></span>
-                            <?php endif;?>
-                            <?php endforeach; ?>
-                        </div>
+                        </ul>
+                        <?php endif; ?>
+
                     </div>
                 </div>
                 <div class="itin-item-link">

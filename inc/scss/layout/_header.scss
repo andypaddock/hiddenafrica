@@ -42,6 +42,15 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    &.top {
+      background-position: top;
+    }
+    &.bottom {
+      background-position: bottom;
+    }
+    &.center {
+      background-position: center;
+    }
   }
   video#bgvideo {
     position: absolute;

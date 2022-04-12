@@ -25,10 +25,14 @@
     margin-top: 3rem;
   }
 }
+@include respond(phone) {
+  
+
 @for $i from 1 through 10 {
   $base: 10;
   $offset: $base * $i;
   .imageoff-#{$offset} {
     background-position: $offset + 0% center !important;
   }
+}
 }

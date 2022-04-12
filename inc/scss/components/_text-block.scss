@@ -32,6 +32,9 @@
   }
   .site-wide-steps {
     display: flex;
+    @include respond(phone) {
+      flex-direction: column;
+    }
     .heading-primary {
       font-size: 2.5rem;
       font-weight: 100;
