@@ -12,53 +12,41 @@
 .itin-facts {
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
+  .where,.length,.price {
+    border-left: 1px solid $color-black;
+    padding: 0 1rem;
+  }
   .heading-tertiary {
     text-transform: uppercase;
     font-size: 1.5rem;
     padding: 0 0 1rem 1rem;
     font-weight: 700;
+    border-bottom: 1px solid $color-black;
   }
   .length {
     padding-right: 1rem;
   }
   .meta {
-    border-left: 1px solid $color-black;
-    padding: 0 1rem;
-    ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
+    padding: 1rem;
+    #places {
+list-style: none;
+    
       li {
-        display: grid;
-        grid-template-columns: 1fr 4fr;
-        a {
-          font-weight: 700;
-          &:after {
-            content: ":";
-          }
+        display: inline;
+        &::after {
+          content: ',';
         }
-        ul {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          li {
-            display: flex;
-            a {
-              font-weight: initial;
-              padding-right: 1rem;
-              &:after {
-                content: ",";
-              }
-            }
-          }
-          li:last-child {
-            a {
-              &:after {
-                content: none;
-              }
-            }
-          }
-        }
+  &:first-child {
+    border-left: none;
+    font-weight: 700;
+    &::after {
+      content: none;
+    }
+
+  }
+  &:last-child::after {
+    content: none;
+  }
       }
     }
   }
@@ -144,6 +132,12 @@
   .itin-item-text {
     padding: 2rem 3rem;
     align-items: center;
+    .heading-tertiary {
+      line-height: 3rem;
+      &--main {
+        font-weight: 700;
+      }
+    }
   }
   .destination-meta {
     padding: 2rem 0;
@@ -151,12 +145,20 @@
 list-style: none;
     
       li {
-        border-left: 1px solid $color-black;
         display: inline;
-  padding: 0 1rem;
+        &::after {
+          content: ',';
+        }
   &:first-child {
     border-left: none;
-    padding: 0 1rem 0 0;
+    font-weight: 700;
+    &::after {
+      content: none;
+    }
+
+  }
+  &:last-child::after {
+    content: none;
   }
       }
     }
@@ -177,12 +179,20 @@ list-style: none;
 list-style: none;
     
       li {
-        border-left: 1px solid $color-black;
         display: inline;
-  padding: 0 1rem;
+        &::after {
+          content: ',';
+        }
   &:first-child {
     border-left: none;
-    padding: 0 1rem 0 0;
+    font-weight: 700;
+    &::after {
+      content: none;
+    }
+
+  }
+  &:last-child::after {
+    content: none;
   }
       }
     }

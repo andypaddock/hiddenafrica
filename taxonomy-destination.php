@@ -14,41 +14,23 @@ $heroSize = get_field('hero_section_size', $term);
 $color = get_field('color', $term);
 $mapImage = get_field('destination_map', $term);
 ?>
-<!-- <header class="header map-hero">
-    <div class="hero map-popup">
-    </div>
-    <a href="#" class="map-close">&times;</a>
-    <img src="<?php echo $mapImage['sizes'] ['large']; ?>" />
-    <div class="map-link">
-        <a class="map-link" href="#">
-            <i class="far fa-bars"></i>
-            <span>See Whole Map</span>
-        </a>
-    </div>
-
-
-</header> -->
-
-<header class="header <?php echo $heroSize; ?>">
+<header class="header">
     <?php get_template_part('template-parts/taxhero');?>
+
+
+    <?php if (!is_front_page()): ?>
+    <div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
+    <div class="header__text-box">
+        <h1 class="heading-primary">
+            <span class="heading-primary--sub"><?php the_field('sub_header', $term); ?></span>
+            <span class="heading-primary--main"><?php echo single_term_title(); ?></span>
+        </h1>
+
+    </div>
+    <?php endif; ?>
 </header>
 
 <!--closes in footer.php-->
-
-<?php if (!is_front_page()): ?>
-<div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
-<div class="header__text-box">
-    <h1 class="heading-primary">
-        <span class="heading-primary--sub"><?php the_field('sub_header', $term); ?></span>
-        <span class="heading-primary--main"><?php echo single_term_title(); ?></span>
-    </h1>
-    <div class="down_arrow">
-        <div class="arrow bounce">
-            <a class="fal fa-chevron-down fa-3x" href="#content"></a>
-        </div>
-    </div>
-</div>
-<?php endif; ?>
 <span id="content"></span>
 <section>
     <div class="row w40">
@@ -78,7 +60,7 @@ $images = get_field('upload_images', $term);
 if( $images ): ?>
         <div id="parent">
             <?php foreach( $images as $image ): ?>
-            <div class="child limit-six">
+            <div class="child <?php the_field('images_to_display'); ?>">
                 <a href="<?php echo esc_url($image['url']); ?>" title="<?php echo esc_attr($image['caption']); ?>">
                     <img src="<?php echo esc_url($image['sizes']['large']); ?>"
                         alt="<?php echo esc_attr($image['alt']); ?>" />
@@ -271,12 +253,18 @@ echo ''.$terms.'';
             <div class="itinerary-item tile">
                 <div class="itin-item-image"
                     style="background-image: url(<?php if ($campImage): ?><?php echo $campImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url($post->ID,'large'); ?><?php endif ?>)">
-
+                    <div class="overlay-country">
+                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0') );?>
+                        <?php if( $terms ): ?>
+                        <?php foreach( $terms as $term ): ?>
+                        <span><?php echo esc_html( $term->name ); ?></span>
+                        <?php endforeach; ?><?php endif; ?>
+                    </div>
                 </div>
 
                 <div class="itin-item-text">
                     <h3 class="heading-tertiary">
-                        <span class="heading-tertiary--sub underscores">
+                        <span class="heading-tertiary--sub"><?php the_field( 'how_long' ); ?>
                             <?php $terms = get_the_term_list( $post->ID, 'safaritype', '', ',' ); $terms = strip_tags( $terms ); 
 if ($terms) {
 echo ''.$terms.'';
@@ -284,22 +272,24 @@ echo ''.$terms.'';
 }
 ?>
                         </span>
-                        <span class="heading-tertiary--main"><a
+                        <span class="heading-tertiary--main underscores"><a
                                 href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
                     </h3>
-                    <span class="days"><?php the_field( 'how_long' ); ?></span>
+
                     <div class="destination-meta">
                         <?php 
-$terms = get_field('where_to');
+$terms = wp_get_post_terms( $post->ID , 'destination', array('childless'=>'true') );
 if( $terms ): ?>
                         <ul id="places">
-                            <?php foreach( $terms as $term ): ?>
-                            <li>
-                                <?php echo esc_html( $term->name ); ?>
-                            </li>
+                            <li>Visiting:</li>
+                            <?php foreach( $terms as $term ):?>
+
+                            <li><?php echo ( $term->name ); ?></li>
                             <?php endforeach; ?>
                         </ul>
                         <?php endif; ?>
+
+
 
                     </div>
                 </div>

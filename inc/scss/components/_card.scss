@@ -276,7 +276,9 @@
       @include backgroundCover;
     }
     .post-text {
-      padding: 2rem 4rem;
+      padding: 2rem 4rem 4rem;
+      display: flex;
+      flex-direction: column;
       flex: 1;
       .meta {
         color: $color-primary;
@@ -299,12 +301,20 @@
   list-style: none;
       
         li {
-          border-left: 1px solid $color-black;
           display: inline;
-    padding: 0 1rem;
+          &::after {
+            content: ',';
+          }
     &:first-child {
       border-left: none;
-      padding: 0 1rem 0 0;
+      font-weight: 700;
+      &::after {
+        content: none;
+      }
+  
+    }
+    &:last-child::after {
+      content: none;
     }
         }
       }

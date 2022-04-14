@@ -126,10 +126,10 @@ ul#adminmenu > li.current > a.current:after {
   flex-direction: column;
 }
 .acf-postbox .acf-input .acf-range-wrap input[type=number] {
-  display: none;
+  min-width: 4rem;
 }
 .acf-postbox .acf-input .description {
-  color: white;
+  color: black;
 }
 
 .acf-button-group.-vertical {

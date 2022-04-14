@@ -23,6 +23,11 @@ $heroSwitch = get_field('hero_type');
             </div>
         </div>
     </section>
+    <div class="down_arrow">
+        <div class="arrow bounce">
+            <a class="fal fa-chevron-down fa-3x" href="#content"></a>
+        </div>
+    </div>
     <div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
 </div>
 
@@ -31,6 +36,15 @@ $heroSwitch = get_field('hero_type');
     style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?><?php endif ?>)">
     <section>
         <div class="row w60">
+            <div class="overlay-country">
+                <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0') );?>
+                <?php if( $terms ): ?>
+                <?php foreach( $terms as $term ): ?>
+                <span><?php echo esc_html( $term->name ); ?></span>
+                <?php endforeach; ?><?php endif; ?>
+            </div>
+        </div>
+        <div class="row w60">
             <div class="header__text-box">
                 <h2 class="heading-primary fmtop <?php if($lightHero == true): echo 'light-hero'; endif; ?>">
                     <span class="heading-primary--main alt-font"><?php echo esc_html( get_the_title() ); ?></span>
@@ -38,6 +52,47 @@ $heroSwitch = get_field('hero_type');
             </div>
         </div>
     </section>
-    <div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
+    <div class="down_arrow">
+        <div class="arrow bounce">
+            <a class="fal fa-chevron-down fa-3x" href="#content"></a>
+        </div>
+    </div>
+
 </div>
 <?php endif;?>
+<div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
+<?php if (is_singular('itineraries')):?>
+<section class="quick-facts">
+    <div class="row w80">
+        <div class="itin-facts">
+            <div class="where">
+                <h3 class="heading-tertiary">Where To:</h3>
+
+                <div class="meta">
+
+                    <?php 
+$terms = wp_get_post_terms( $post->ID , 'destination', array('childless'=>'true') );
+if( $terms ): ?>
+                    <ul id="places">
+                        <li>Visiting:</li>
+                        <?php foreach( $terms as $term ):?>
+
+                        <li><?php echo ( $term->name ); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="length">
+                <h3 class="heading-tertiary">How Long</h3>
+                <div class="meta"><?php the_field('how_long'); ?></div>
+            </div>
+            <div class="price">
+                <h3 class="heading-tertiary">How Much</h3>
+                <div class="meta"><?php the_field('how_much'); ?></div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<?php endif; ?>

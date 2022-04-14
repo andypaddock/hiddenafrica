@@ -17,19 +17,13 @@ $titleStyle = get_sub_field ('style');?>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
-                <div class="content-text">
-                    <?php
-                if( have_rows('paragraphs') ):
-                while ( have_rows('paragraphs') ) : the_row();
-                $callOut = get_sub_field ('call_out');?>
-
-
-                    <?php if($callOut == true):?>
-                    <div class="call-out"><?php the_sub_field('text_block');?></div>
-                    <?php else:?>
-                    <?php the_sub_field('text_block');?>
-                    <?php endif; ?>
-                    <?php endwhile; endif;?>
+                <div class="included-text <?php the_sub_field('columns');?>">
+                    <div class="main-column">
+                        <?php the_sub_field('column_one');?>
+                    </div>
+                    <div class="alt-column">
+                        <?php the_sub_field('column_two');?>
+                    </div>
                 </div>
             </div>
         </div>

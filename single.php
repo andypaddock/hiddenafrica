@@ -5,62 +5,8 @@
  * @package hiddenafrica
  */
 get_header(); ?>
-<?php if (is_singular('itineraries')):?>
-<section>
-    <div class="row w80">
-        <div class="itin-facts">
-            <div class="where">
-                <h3 class="heading-tertiary">Where To:</h3>
 
-                <div class="meta">
 
-                    <?php
-$taxonomy = 'destination'; // change this to your taxonomy
-$terms = wp_get_post_terms( $post->ID, $taxonomy, array( "fields" => "ids" ) );
-if( $terms ) {
-  echo '<ul>';
-
-  $terms = trim( implode( ',', (array) $terms ), ' ,' );
-  wp_list_categories( 'title_li=&taxonomy=' . $taxonomy . '&include=' . $terms );
-
-  echo '</ul>';
-}
-?>
-                </div>
-            </div>
-            <div class="length">
-                <h3 class="heading-tertiary">How Long</h3>
-                <div class="meta"><?php the_field('how_long'); ?></div>
-            </div>
-            <div class="price">
-                <h3 class="heading-tertiary">How Much</h3>
-                <div class="meta"><?php the_field('how_much'); ?></div>
-            </div>
-        </div>
-    </div>
-    <div class="down_arrow">
-        <div class="arrow bounce">
-            <a class="fal fa-chevron-down fa-3x" href="#content"></a>
-        </div>
-    </div>
-</section>
-<?php endif; ?>
-<?php if (!is_front_page()): ?>
-<div class="header__text-box">
-    <h1 class="heading-primary">
-        <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
-        <span
-            class="heading-primary--main"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php the_title(); ?><?php endif ?>
-    </h1>
-    <?php if (!is_singular('itineraries')):?>
-    <div class="down_arrow">
-        <div class="arrow bounce">
-            <a class="fal fa-chevron-down fa-3x" href="#content"></a>
-        </div>
-    </div>
-    <?php endif; ?>
-</div>
-<?php endif; ?>
 <span id="content"></span>
 <?php if( have_rows('main_page_elements') ): ?>
 <?php while( have_rows('main_page_elements') ): the_row(); ?>
@@ -142,6 +88,8 @@ if( $terms ) {
 <?php get_template_part('template-parts/itin_accor_block');?>
 <?php elseif( get_row_layout() == 'simple_text' ):?>
 <?php get_template_part('template-parts/simple_text');?>
+<?php elseif( get_row_layout() == 'whats_included' ):?>
+<?php get_template_part('template-parts/whats_included');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

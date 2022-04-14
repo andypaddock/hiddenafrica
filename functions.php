@@ -170,7 +170,7 @@ show_admin_bar(false);
 
 
 function my_acf_google_map_api( $api ){
-    $api['key'] = 'AIzaSyAww1oT-GyrFh_DTnnBF6LwtUBkEVunVlU';
+    $api['key'] = 'AIzaSyClrCRpYppmoqOu5RPPM-Aj71LsNq6lMHY';
     return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

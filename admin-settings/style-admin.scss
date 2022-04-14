@@ -142,11 +142,12 @@ ul#adminmenu > li.current > a.current:after {
       display: flex;
       flex-direction: column;
       input[type="number"] {
-        display: none;
+        // display: none;
+        min-width: 4rem;
       }
     }
     .description {
-      color: white;
+      color: black;
     }
   }
 }

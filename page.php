@@ -6,20 +6,7 @@
  */
 get_header(); ?>
 
-<?php if (!is_front_page()): ?>
-<div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
-<div class="header__text-box">
-    <h1 class="heading-primary">
-        <span class="heading-primary--sub italic"><?php the_field('sub_header'); ?></span>
-        <span class="heading-primary--main"><?php echo esc_html( get_the_title() ); ?></span>
-    </h1>
-    <div class="down_arrow">
-        <div class="arrow bounce">
-            <a class="fal fa-chevron-down fa-3x" href="#content"></a>
-        </div>
-    </div>
-</div>
-<?php endif; ?>
+
 <span id="content"></span>
 <?php if( have_rows('main_page_elements') ): ?>
 <?php while( have_rows('main_page_elements') ): the_row(); ?>
@@ -105,6 +92,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/itin_filter_safari_type');?>
 <?php elseif( get_row_layout() == 'itin_sig_block' ):?>
 <?php get_template_part('template-parts/itin-sig-block');?>
+<?php elseif( get_row_layout() == 'image_and_text_slider' ):?>
+<?php get_template_part('template-parts/slick-slider');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

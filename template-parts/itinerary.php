@@ -14,12 +14,23 @@ if( $featured_posts ): ?>
             <div class="itin-slide-block">
                 <div class="itin-slide-image"
                     style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
-
+                    <div class="overlay-country">
+                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0') );?>
+                        <?php if( $terms ): ?>
+                        <?php foreach( $terms as $term ): ?>
+                        <span><?php echo esc_html( $term->name ); ?></span>
+                        <?php endforeach; ?><?php endif; ?>
+                    </div>
                 </div>
                 <div class="itin-slide-text">
                     <h3 class="heading-tertiary">
                         <span class="heading-tertiary--sub">
-                            <?php the_field( 'how_long' ); ?>
+                            <?php the_field( 'how_long' ); ?> <?php $terms = get_the_term_list( $post->ID, 'safaritype', '', ',' ); $terms = strip_tags( $terms ); 
+if ($terms) {
+echo ''.$terms.'';
+} else  {
+}
+?>
                         </span>
                         <span class="heading-tertiary--main  underscores"><a
                                 href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
@@ -28,13 +39,13 @@ if( $featured_posts ): ?>
 
                     <div class="destination-meta">
                         <?php 
-$terms = get_field('where_to');
+$terms = wp_get_post_terms( $post->ID , 'destination', array('childless'=>'true') );
 if( $terms ): ?>
                         <ul id="places">
-                            <?php foreach( $terms as $term ): ?>
-                            <li>
-                                <?php echo esc_html( $term->name ); ?>
-                            </li>
+                            <li>Visiting:</li>
+                            <?php foreach( $terms as $term ):?>
+
+                            <li><?php echo ( $term->name ); ?></li>
                             <?php endforeach; ?>
                         </ul>
                         <?php endif; ?>

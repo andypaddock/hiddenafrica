@@ -64,6 +64,26 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  $(".slick-center").owlCarousel({
+    loop: true,
+    center: true,
+    items: 3,
+    margin: -30,
+    nav:true,
+    dots:true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2
+      },
+      1170: {
+        items: 3
+      }
+    }
+  });
+
   $(".dest-slider").owlCarousel({
     loop: true,
     margin: 32,
@@ -196,7 +216,7 @@ $(".toggle-block label").click(function () {
 
 
   new Readmore('article', {
-    collapsedHeight: 95,
+    collapsedHeight: 105,
   });
 
   new Readmore('.readmore', {
@@ -344,7 +364,7 @@ if (containerEl) {
 $(".limit-six:hidden").css("opacity", 0);
 $("#viewAll").on("click", function(e) {
   $(".limit-six:hidden") // Added :hidden
-    .slice(0, 5)
+    .slice(0, 6)
     .slideDown("slow")
     .animate(
       {
@@ -357,9 +377,57 @@ $("#viewAll").on("click", function(e) {
     );
   // We need to check the count of just the hidden items
   if ($(".limit-six:hidden").length == 0) {
-    $("#viewAll").fadeOut("slow");
+    $("#viewmorelink").fadeOut("slow");
   }
   e.preventDefault();
+});
+
+$(".limit-three")
+.slice(0, 3)
+.show();
+$(".limit-three:hidden").css("opacity", 0);
+$("#viewAll").on("click", function(e) {
+$(".limit-three:hidden") // Added :hidden
+  .slice(0, 6)
+  .slideDown("slow")
+  .animate(
+    {
+      opacity: 1
+    },
+    {
+      queue: false,
+      duration: "slow"
+    }
+  );
+// We need to check the count of just the hidden items
+if ($(".limit-three:hidden").length == 0) {
+  $("#viewmorelink").fadeOut("slow");
+}
+e.preventDefault();
+});
+
+$(".limit-nine")
+.slice(0, 6)
+.show();
+$(".limit-nine:hidden").css("opacity", 0);
+$("#viewAll").on("click", function(e) {
+$(".limit-nine:hidden") // Added :hidden
+  .slice(0, 3)
+  .slideDown("slow")
+  .animate(
+    {
+      opacity: 1
+    },
+    {
+      queue: false,
+      duration: "slow"
+    }
+  );
+// We need to check the count of just the hidden items
+if ($(".limit-nine:hidden").length == 0) {
+  $("#viewmorelink").fadeOut("slow");
+}
+e.preventDefault();
 });
 
 
@@ -392,6 +460,9 @@ $("#viewAll").on("click", function(e) {
   $(".map-close").click(function(){
     $(".map-hero").removeClass("visible")
   });
+
+
+  // GETTING RID OF OWL 
 
 
 

@@ -49,10 +49,25 @@ if( $link ):
         <?php endif; ?>
     </div>
     <?php endif; ?>
-
+    <div class="down_arrow">
+        <div class="arrow bounce">
+            <a class="fal fa-chevron-down fa-3x" href="#content"></a>
+        </div>
+    </div>
 
 
 </div>
+<?php if (!is_front_page()): ?>
+<div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
+<div class="header__text-box">
+    <h1 class="heading-primary">
+
+        <span class="heading-primary--main"><?php echo esc_html( get_the_title() ); ?></span>
+        <span class="heading-primary--sub italic"><?php the_field('sub_header'); ?></span>
+    </h1>
+
+</div>
+<?php endif; ?>
 <?php elseif ($heroSwitch == 'map'):?>
 <div class="hero map-popup" style="background-image: url(<?php echo $mapimage['url']; ?>)">
 

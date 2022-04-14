@@ -4,6 +4,17 @@
     &--image {
       @include backgroundCover;
       height: 30rem;
+      .overlay-country {
+        color: $color-white;
+        margin: 2rem 1.5rem;
+        display: flex;
+        grid-gap: 1rem;
+        flex-wrap: wrap;
+        span {
+        background: $color-black;
+        padding: 0.5rem 1rem;
+        }
+      }
     }
     &--text {
       padding: 2rem 3rem;

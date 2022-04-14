@@ -28,6 +28,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo is_front_page() ? get_bloginfo( 'name' ) : wp_title( '' ); ?></title>
     <script src="https://kit.fontawesome.com/4faa096376.js" crossorigin="anonymous" defer="defer"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
     <?php wp_head(); ?>
 
 </head>
@@ -106,7 +108,7 @@ if( $link ):
 
 
         </nav>
-        <header class="header <?php the_field('hero_section_size'); ?>">
+        <header class="header">
 
             <?php if (is_singular('destinations')):?>
             <?php get_template_part('template-parts/desthero');?>

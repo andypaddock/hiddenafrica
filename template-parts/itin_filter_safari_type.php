@@ -48,9 +48,21 @@ $counter++;
             <div class="mix tile post-item <?php foreach( $terms as $term ) echo ' ' . $term->slug; ?>">
 
                 <div class="filter-item--image" style="background-image: url(<?php echo $mainImage; ?>)">
+                    <div class="overlay-country">
+                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0') );?>
+                        <?php if( $terms ): ?>
+                        <?php foreach( $terms as $term ): ?>
+                        <span><?php echo esc_html( $term->name ); ?></span>
+                        <?php endforeach; ?><?php endif; ?>
+                    </div>
                 </div>
                 <div class="post-text">
-                    <span class="meta "><?php echo esc_html( $days_field ); ?></span>
+                    <span class="meta "><?php echo esc_html( $days_field ); ?> <?php $terms = get_the_term_list( $post->ID, 'safaritype', '', ',' ); $terms = strip_tags( $terms ); 
+if ($terms) {
+echo ''.$terms.'';
+} else  {
+}
+?></span>
                     <h2 class="heading-secondary underscores">
                         <a href="<?php the_permalink(); ?>">
                             <span class="heading-secondary--main"><?php the_title(); ?></span>
@@ -58,23 +70,26 @@ $counter++;
                     </h2>
                     <div class="destination-meta">
                         <?php 
-$terms = get_field('where_to');
+$terms = wp_get_post_terms( $post->ID , 'destination', array('childless'=>'true') );
 if( $terms ): ?>
                         <ul id="places">
-                            <?php foreach( $terms as $term ): ?>
-                            <li>
-                                <?php echo esc_html( $term->name ); ?>
-                            </li>
+                            <li>Visiting:</li>
+                            <?php foreach( $terms as $term ):?>
+
+                            <li><?php echo ( $term->name ); ?></li>
                             <?php endforeach; ?>
                         </ul>
                         <?php endif; ?>
 
+
+
                     </div>
-                    <div class="post-link">
-                        <a class="button outline" href="<?php the_permalink(); ?>">
-                            <?php echo esc_html( $custom_field ); ?><i class="fa-light fa-chevron-right"></i>
-                        </a>
-                    </div>
+
+                </div>
+                <div class="post-link">
+                    <a class="button outline" href="<?php the_permalink(); ?>">
+                        <?php echo esc_html( $custom_field ); ?><i class="fa-light fa-chevron-right"></i>
+                    </a>
                 </div>
             </div>
             <?php endwhile;
