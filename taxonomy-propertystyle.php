@@ -44,7 +44,7 @@ $heroImage = get_field('hero_image', $term);
         $term = get_queried_object();
 $images = get_field('upload_images', $term);
 if( $images ): ?>
-        <div id="parent <?php the_field('images_to_display'); ?>">
+        <div id="parent <?php the_field('images_to_display', $term); ?>">
             <?php foreach( $images as $image ): ?>
             <div class="child tile">
                 <a href="<?php echo esc_url($image['url']); ?>" title="<?php echo esc_attr($image['caption']); ?>">

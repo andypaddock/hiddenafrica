@@ -364,7 +364,7 @@ if (containerEl) {
 $(".limit-six:hidden").css("opacity", 0);
 $("#viewAll").on("click", function(e) {
   $(".limit-six:hidden") // Added :hidden
-    .slice(0, 6)
+    .slice(0, 9)
     .slideDown("slow")
     .animate(
       {
@@ -382,13 +382,13 @@ $("#viewAll").on("click", function(e) {
   e.preventDefault();
 });
 
-$(".limit-three")
+$("#parent .limit-three")
 .slice(0, 3)
 .show();
-$(".limit-three:hidden").css("opacity", 0);
+$("#parent .limit-three:hidden").css("opacity", 0);
 $("#viewAll").on("click", function(e) {
-$(".limit-three:hidden") // Added :hidden
-  .slice(0, 6)
+$("#parent .limit-three:hidden") // Added :hidden
+  .slice(0, 9)
   .slideDown("slow")
   .animate(
     {
@@ -400,7 +400,7 @@ $(".limit-three:hidden") // Added :hidden
     }
   );
 // We need to check the count of just the hidden items
-if ($(".limit-three:hidden").length == 0) {
+if ($("#parent .limit-three:hidden").length == 0) {
   $("#viewmorelink").fadeOut("slow");
 }
 e.preventDefault();
@@ -412,7 +412,7 @@ $(".limit-nine")
 $(".limit-nine:hidden").css("opacity", 0);
 $("#viewAll").on("click", function(e) {
 $(".limit-nine:hidden") // Added :hidden
-  .slice(0, 3)
+  .slice(0, 9)
   .slideDown("slow")
   .animate(
     {

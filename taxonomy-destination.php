@@ -60,7 +60,7 @@ $images = get_field('upload_images', $term);
 if( $images ): ?>
         <div id="parent">
             <?php foreach( $images as $image ): ?>
-            <div class="child <?php the_field('images_to_display'); ?>">
+            <div class="child <?php the_field('images_to_display', $term); ?>">
                 <a href="<?php echo esc_url($image['url']); ?>" title="<?php echo esc_attr($image['caption']); ?>">
                     <img src="<?php echo esc_url($image['sizes']['large']); ?>"
                         alt="<?php echo esc_attr($image['alt']); ?>" />
