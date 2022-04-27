@@ -216,7 +216,7 @@ $(".toggle-block label").click(function () {
 
 
   new Readmore('article', {
-    collapsedHeight: 105,
+    collapsedHeight: 120,
   });
 
   new Readmore('.readmore', {
