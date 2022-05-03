@@ -11,7 +11,7 @@ $noMobile = get_sub_field('hide_on_mobile');?><section
 
 
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub"><?php the_sub_field('sub_title'); ?></span>
+            <span class="heading-secondary--sub italic"><?php the_sub_field('sub_title'); ?></span>
             <span class="heading-secondary--main"><?php the_sub_field('title'); ?></span>
 
         </h2>
