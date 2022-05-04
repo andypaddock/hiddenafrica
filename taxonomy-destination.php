@@ -22,7 +22,7 @@ $mapImage = get_field('destination_map', $term);
     <div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
     <div class="header__text-box">
         <h1 class="heading-primary">
-            <span class="heading-primary--sub"><?php the_field('sub_header', $term); ?></span>
+            <span class="heading-primary--sub italic"><?php the_field('sub_header', $term); ?></span>
             <span class="heading-primary--main"><?php echo single_term_title(); ?></span>
         </h1>
 
@@ -46,7 +46,7 @@ $mapImage = get_field('destination_map', $term);
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub"><?php the_field('gallery_sub_title', $term); ?></span>
+            <span class="heading-secondary--sub italic"><?php the_field('gallery_sub_title', $term); ?></span>
             <span class="heading-secondary--main"><?php the_field('gallery_title', $term); ?></span>
         </h2>
     </div>
@@ -60,7 +60,7 @@ $images = get_field('upload_images', $term);
 if( $images ): ?>
         <div id="parent">
             <?php foreach( $images as $image ): ?>
-            <div class="child <?php the_field('images_to_display', $term); ?>">
+            <div class="child limit-three">
                 <a href="<?php echo esc_url($image['url']); ?>" title="<?php echo esc_attr($image['caption']); ?>">
                     <img src="<?php echo esc_url($image['sizes']['large']); ?>"
                         alt="<?php echo esc_attr($image['alt']); ?>" />
@@ -90,7 +90,7 @@ $term_id = $queried_object->term_id; ?>
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub"><?php the_field('areas_sub_title', $term); ?></span>
+            <span class="heading-secondary--sub italic"><?php the_field('areas_sub_title', $term); ?></span>
             <span class="heading-secondary--main">Areas of <?php echo single_term_title(); ?></span>
         </h2>
     </div>
@@ -150,7 +150,7 @@ endif;
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub"><?php the_field('lodges_sub_title', $term); ?></span>
+            <span class="heading-secondary--sub italic"><?php the_field('lodges_sub_title', $term); ?></span>
             <span class="heading-secondary--main">Lodges in <?php echo single_term_title(); ?></span>
         </h2>
     </div>
@@ -222,7 +222,7 @@ echo ''.$terms.'';
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub"><?php the_field('itins_sub_title', $term); ?></span>
+            <span class="heading-secondary--sub italic"><?php the_field('itins_sub_title', $term); ?></span>
             <span class="heading-secondary--main"><?php echo single_term_title(); ?> Itineraries</span>
         </h2>
     </div>
@@ -254,7 +254,7 @@ echo ''.$terms.'';
                 <div class="itin-item-image"
                     style="background-image: url(<?php if ($campImage): ?><?php echo $campImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url($post->ID,'large'); ?><?php endif ?>)">
                     <div class="overlay-country">
-                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0') );?>
+                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0', 'exclude' => '104,105') );?>
                         <?php if( $terms ): ?>
                         <?php foreach( $terms as $term ): ?>
                         <span><?php echo esc_html( $term->name ); ?></span>
@@ -306,7 +306,7 @@ if( $terms ): ?>
     </div>
 </section>
 
-<?php if( !empty( $mapImage ) ): ?>
+<!-- <?php if( !empty( $mapImage ) ): ?>
 <section class="section-title" id="map">
     <div class="row centre-line w50">
         <div class="line"></div>
@@ -314,7 +314,7 @@ if( $terms ): ?>
     </div>
     <div class="row w40">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub"><?php the_field('map_sub_title', $term); ?></span>
+            <span class="heading-secondary--sub italic"><?php the_field('map_sub_title', $term); ?></span>
             <span class="heading-secondary--main"><?php echo single_term_title(); ?> Map</span>
         </h2>
     </div>
@@ -328,8 +328,8 @@ if( $terms ): ?>
 
     </div>
 </section>
-<?php endif; ?>
+<?php endif; ?> -->
 
 
-
+<?php get_template_part('template-parts/dest_highlight_block');?>
 <?php get_footer(); ?>

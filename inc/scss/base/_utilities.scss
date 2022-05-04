@@ -36,3 +36,11 @@
   }
 }
 }
+
+@for $i from 1 through 10 {
+  $base: 10;
+  $shade: $base * $i;
+  .darkoverlay-#{$shade} {
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, $shade + 0%);
+  }
+}

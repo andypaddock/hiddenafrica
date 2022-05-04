@@ -99,6 +99,9 @@
         height: 30rem;
       }
     }
+    .heading-secondary {
+      padding-bottom: 2rem;
+    }
   }
   .owl-nav {
     padding: 0.5rem 2rem;
@@ -240,6 +243,7 @@
   }
   .map-box {
     position: relative;
+    min-height: 45rem;
     .overlay-country {
       position: absolute;
       z-index: 2;

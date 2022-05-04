@@ -10,7 +10,7 @@ $noMobile = get_sub_field('hide_on_mobile');?>
                 <?php $all_categories = get_terms( array(
   'taxonomy' => 'destination',
   'hide_empty' => true,
-  'parent' => 0
+  'parent' => 0, 
 ) );?>
                 <li>Filter</li>
                 <li type="button" data-filter="all">All</li>
@@ -49,7 +49,7 @@ $counter++;
 
                 <div class="filter-item--image" style="background-image: url(<?php echo $mainImage; ?>)">
                     <div class="overlay-country">
-                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0') );?>
+                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0', 'exclude' => '104,105') );?>
                         <?php if( $terms ): ?>
                         <?php foreach( $terms as $term ): ?>
                         <span><?php echo esc_html( $term->name ); ?></span>

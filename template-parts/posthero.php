@@ -1,7 +1,7 @@
 <?php $heroImage = get_field('hero_image'); ?>
 
-<div class="hero <?php the_field('image_anchor');?> imageoff-<?php the_field('image_offset');?>"
-    style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?><?php endif ?>)">
+<div class="hero <?php the_field('image_anchor');?> imageoff-<?php the_field('image_offset');?>  darkoverlay-<?php the_field('image_overlay');?>"
+    style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['sizes'] ['hero-image']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'hero-image' ); ?><?php endif ?>)">
     <div class="down_arrow">
         <div class="arrow bounce">
             <a class="fal fa-chevron-down fa-3x" href="#content"></a>

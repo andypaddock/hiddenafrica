@@ -1,6 +1,6 @@
 <?php $linkSwitch = get_field('force', 'options');?>
-<?php if($linkSwitch == false): ?>
-<?php $bgColor = get_sub_field('bg_colour');
+
+<?php $bgColor = get_field('bg_colour', 'options');
 $textBGImage = get_field('background_image', 'options');
 $backgroundSwitch = get_field('select_background', 'options');
             if ($backgroundSwitch == 'full'): ?>
@@ -55,4 +55,3 @@ if( $link ):
                         </div>
                     </div>
                 </section>
-                <?php endif; ?>

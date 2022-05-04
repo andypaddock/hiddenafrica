@@ -367,3 +367,7 @@ function taxonomy_hierarchy() {
 		}
     }	
 }
+add_action( 'after_setup_theme', 'silver_hero_image' );
+function silver_hero_image() {
+    add_image_size( 'hero-image', 1920 ); // 1920 pixels wide (and unlimited height)
+}

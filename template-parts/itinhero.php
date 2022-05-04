@@ -32,12 +32,12 @@ $heroSwitch = get_field('hero_type');
 </div>
 
 <?php elseif ($heroSwitch == 'image'):?>
-<div class="hero <?php the_field('image_anchor');?> tester imageoff-<?php the_field('image_offset');?>"
-    style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?><?php endif ?>)">
+<div class="hero <?php the_field('image_anchor');?> tester imageoff-<?php the_field('image_offset');?> darkoverlay-<?php the_field('image_overlay');?>"
+    style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['sizes'] ['hero-image']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'hero-image' ); ?><?php endif ?>)">
     <section>
         <div class="row w60">
             <div class="overlay-country">
-                <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0') );?>
+                <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0', 'exclude' => '104,105') );?>
                 <?php if( $terms ): ?>
                 <?php foreach( $terms as $term ): ?>
                 <span><?php echo esc_html( $term->name ); ?></span>

@@ -63,10 +63,6 @@ ul#adminmenu > li.current > a.current:after {
   content: "";
 }
 
-.post-type-page .acf-postbox {
-  background: #362c3a;
-  border-color: #362c3a;
-}
 .post-type-page #poststuff h2 {
   font-size: 14px;
   color: #cec7c0;
@@ -74,11 +70,6 @@ ul#adminmenu > li.current > a.current:after {
 }
 .post-type-page .acf-fields > .acf-field {
   border-color: #bcb5ae !important;
-}
-.post-type-page .inside.acf-fields > .acf-field > .acf-label {
-  color: white;
-  text-transform: uppercase;
-  font-size: 24px;
 }
 .post-type-page .acf-flexible-content .layout {
   background: #cec7c0;

@@ -24,8 +24,8 @@ $mapimage = get_field('map_image');?>
 </div>
 
 <?php elseif ($heroSwitch == 'image'):?>
-<div class="hero <?php the_field('image_anchor');?> imageoff-<?php the_field('image_offset');?>"
-    style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?><?php endif ?>)">
+<div class="hero <?php the_field('image_anchor');?> imageoff-<?php the_field('image_offset');?> darkoverlay-<?php the_field('image_overlay');?>"
+    style="background-image: url(<?php if ($heroImage): ?><?php echo $heroImage['sizes'] ['hero-image']; ?><?php else: ?><?php echo get_the_post_thumbnail_url( get_the_ID(), 'hero-image' ); ?><?php endif ?>)">
     <?php if (is_front_page()): ?>
     <div class="header__text-box">
         <h1 class="heading-<?php the_field('header_size'); ?>">

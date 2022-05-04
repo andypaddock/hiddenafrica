@@ -15,7 +15,7 @@ if( $featured_posts ): ?>
                 <div class="itin-slide-image"
                     style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
                     <div class="overlay-country">
-                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0') );?>
+                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0', 'exclude' => '104,105') );?>
                         <?php if( $terms ): ?>
                         <?php foreach( $terms as $term ): ?>
                         <span><?php echo esc_html( $term->name ); ?></span>

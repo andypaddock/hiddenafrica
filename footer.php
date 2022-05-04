@@ -5,6 +5,10 @@
  */
 ?>
 <div class="filler-block"></div>
+<?php $linkSwitch = get_field('force', 'options');?>
+<?php if($linkSwitch == true): ?>
+<?php get_template_part('template-parts/force-site-wide-text');?>
+<?php endif; ?>
 <div class="footer-message"><?php $footerSwitch = get_field('footer_override');
             if ($footerSwitch == 'alternate'): ?>
 
