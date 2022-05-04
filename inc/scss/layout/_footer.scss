@@ -253,7 +253,7 @@
 
     .footer_text {
       width: 35%;
-      margin-left: 20%;
+      margin-left: 10%;
       @include respond(tab-port) {
         width: unset;
         margin: 0;
@@ -276,10 +276,8 @@
     }
     .footer_link {
       border: 1px solid $color-white;
-      border-radius: 0.5rem;
       padding: 2rem 4rem 2rem;
       margin-bottom: 2rem;
-      margin-left: -4rem;
       @include respond(tab-port) {
         margin: 0;
       }
