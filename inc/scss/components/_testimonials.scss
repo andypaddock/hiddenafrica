@@ -1,5 +1,6 @@
 .testimonial-slider {
   text-align: center;
+  background: $color-primary;
   .quote {
     .centre-line {
       display: flex;
@@ -14,7 +15,6 @@
     }
   }
   .quote-cite {
-    color: $color-primary;
     text-transform: uppercase;
     font-weight: 700;
   }

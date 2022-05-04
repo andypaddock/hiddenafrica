@@ -67,8 +67,8 @@ jQuery(document).ready(function ($) {
   $(".slick-center").owlCarousel({
     loop: true,
     center: true,
-    items: 3,
-    margin: -30,
+    items: 1,
+    margin:20,
     nav:true,
     dots:true,
     responsive: {
@@ -76,10 +76,10 @@ jQuery(document).ready(function ($) {
         items: 1
       },
       768: {
-        items: 2
+        items: 1
       },
       1170: {
-        items: 3
+        items: 1
       }
     }
   });

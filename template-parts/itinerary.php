@@ -24,7 +24,7 @@ if( $featured_posts ): ?>
                 </div>
                 <div class="itin-slide-text">
                     <h3 class="heading-tertiary">
-                        <span class="heading-tertiary--sub">
+                        <span class="heading-tertiary--sub italic">
                             <?php the_field( 'how_long' ); ?> <?php $terms = get_the_term_list( $post->ID, 'safaritype', '', ',' ); $terms = strip_tags( $terms ); 
 if ($terms) {
 echo ''.$terms.'';

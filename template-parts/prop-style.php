@@ -9,7 +9,7 @@
         <div class="prop-slider owl-carousel owl-theme">
             <?php foreach ($terms as $term) : ?>
             <div class="property-style-block">
-                <?php $styleImage = get_field('custom_image', $term); ?>
+                <?php $styleImage = get_field('hero_image', $term); ?>
                 <div class="style-text">
                     <h2 class="heading-secondary underscores"><?php echo esc_html($term->name); ?></h2>
                     <p><?php echo mb_strimwidth($term->description, 0, 300, "..."); ?>
