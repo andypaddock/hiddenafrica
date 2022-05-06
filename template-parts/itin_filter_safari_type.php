@@ -27,6 +27,7 @@ $noMobile = get_sub_field('hide_on_mobile');?>
             $term_id = get_sub_field('select_type') ;
             $args = array(
                 'post_type' => 'itineraries',
+                'posts_per_page' => -1,
                 'tax_query' => array( 
                     array( 
                         'taxonomy' => 'safaritype', //or tag or custom taxonomy

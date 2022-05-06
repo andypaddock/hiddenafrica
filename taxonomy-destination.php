@@ -37,7 +37,7 @@ $mapImage = get_field('destination_map', $term);
         <article class="count1"><?php echo term_description(); ?></article>
     </div>
 </section>
-
+<?php get_template_part('template-parts/dest_highlight_block');?>
 
 <section class="section-title" id="gallery">
     <div class="row centre-line w50">
@@ -331,5 +331,5 @@ if( $terms ): ?>
 <?php endif; ?> -->
 
 
-<?php get_template_part('template-parts/dest_highlight_block');?>
+
 <?php get_footer(); ?>
