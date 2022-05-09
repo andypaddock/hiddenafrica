@@ -36,14 +36,7 @@ list-style: none;
         &::after {
           content: ',';
         }
-  &:first-child {
-    border-left: none;
-    font-weight: 700;
-    &::after {
-      content: none;
-    }
-
-  }
+  
   &:last-child::after {
     content: none;
   }

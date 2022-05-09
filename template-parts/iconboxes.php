@@ -15,7 +15,9 @@ $noMobile = get_sub_field('hide_on_mobile');?>
                         alt="<?php echo esc_attr($image['alt']); ?>" /><?php else: ?><?php the_sub_field('icon');?><?php endif; ?>
                 </div>
                 <div class="icon-title">
-                    <h2 class="heading-tertiary underscores"><?php the_sub_field('icon_title');?></h2>
+                    <h2
+                        class="heading-tertiary <?php if(get_sub_field('icon_description')): echo 'underscores'; endif; ?>">
+                        <?php the_sub_field('icon_title');?></h2>
                 </div>
                 <div class="content-text"><?php the_sub_field('icon_description');?>
                     <?php 

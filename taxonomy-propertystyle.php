@@ -28,7 +28,7 @@ $heroImage = get_field('hero_image', $term);
     <?php endif; ?>
 </header>
 <section class="read-more">
-    <div class="row w40">
+    <div class="row w60">
 
         <article><?php echo term_description(); ?></article>
 

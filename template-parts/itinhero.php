@@ -74,7 +74,7 @@ $heroSwitch = get_field('hero_type');
 $terms = wp_get_post_terms( $post->ID , 'destination', array('childless'=>'true') );
 if( $terms ): ?>
                     <ul id="places">
-                        <li>Visiting:</li>
+
                         <?php foreach( $terms as $term ):?>
 
                         <li><?php echo ( $term->name ); ?></li>
