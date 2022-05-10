@@ -33,7 +33,7 @@ $mapImage = get_field('destination_map', $term);
 <!--closes in footer.php-->
 <span id="content"></span>
 <section>
-    <div class="row w40">
+    <div class="row w60">
         <article class="count1"><?php echo term_description(); ?></article>
     </div>
 </section>
@@ -77,11 +77,12 @@ if( $images ): ?>
         <a id="viewAll" class="view-more-btn" href="#">View More</a>
     </div>
 </section>
-
-<?php if($term->parent == 0):?>
-
 <?php $queried_object = get_queried_object();
 $term_id = $queried_object->term_id; ?>
+<?php if($term->parent == 0 || $term_id == ('106') || $term_id == ('107')):?>
+
+
+
 
 <section class="section-title" id="areas">
     <div class="row centre-line w50">
@@ -143,6 +144,25 @@ endif;
 </section>
 <?php endif; ?>
 
+<!-- LODGES IN DESTINATION -->
+<?php $queried_object = get_queried_object();
+$term_id = $queried_object->term_id; ?>
+
+<?php
+                $args = array(
+                    'post_type' => 'properties',
+                    'tax_query' => array(
+                    'relation' => 'AND',
+                        array(
+                            'taxonomy' => 'destination',
+                            'field' => 'id', 
+                        'terms' => array($term_id) 
+                        ),
+                    )
+                );
+                $query = new WP_Query( $args );
+                if ( $query->have_posts() ): ?>
+
 <section class="section-title" id="lodges">
     <div class="row centre-line w50">
         <div class="line"></div>
@@ -161,19 +181,7 @@ endif;
     <div class="row">
         <div class="itin-display-block grid-layout3">
             <?php
-                $args = array(
-                    'post_type' => 'properties',
-                    'tax_query' => array(
-                    'relation' => 'AND',
-                        array(
-                            'taxonomy' => 'destination',
-                            'field' => 'slug',
-                            'terms' => array( $term->slug )
-                        ),
-                    )
-                );
-                $query = new WP_Query( $args );
-                if ( $query->have_posts() ): while ( $query->have_posts() ):
+                 while ( $query->have_posts() ):
                 $query->the_post();
                 $campImage = get_sub_field('hero_image');?>
 
@@ -215,6 +223,22 @@ echo ''.$terms.'';
 </section>
 
 
+<!-- ITINERARIES IN DESTINATION -->
+<?php
+                $args = array(
+                    'post_type' => 'itineraries',
+                    'tax_query' => array(
+                    'relation' => 'AND',
+                        array(
+                            'taxonomy' => 'destination',
+                            'field' => 'id', 
+                            'terms' => array($term_id) 
+                        ),
+                    )
+                );
+                $query = new WP_Query( $args );
+                if ( $query->have_posts() ): ?>
+
 <section class="section-title" id="itineraries">
     <div class="row centre-line w50">
         <div class="line"></div>
@@ -233,19 +257,7 @@ echo ''.$terms.'';
     <div class="row w80">
         <div class="itin-display-block grid-layout2">
             <?php
-                $args = array(
-                    'post_type' => 'itineraries',
-                    'tax_query' => array(
-                    'relation' => 'AND',
-                        array(
-                            'taxonomy' => 'destination',
-                            'field' => 'slug',
-                            'terms' => array( $term->slug )
-                        ),
-                    )
-                );
-                $query = new WP_Query( $args );
-                if ( $query->have_posts() ): while ( $query->have_posts() ):
+                 while ( $query->have_posts() ):
                 $query->the_post();
                 $campImage = get_field('hero_image');?>
 

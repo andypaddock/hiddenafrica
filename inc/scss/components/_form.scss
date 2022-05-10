@@ -75,3 +75,9 @@ span.wpcf7-not-valid-tip {
   box-shadow: 0px 7px 16px -7px rgba(0, 0, 0, 0.4);
   border: 0;
 }
+.with_frm_style .frm_form_fields {
+  min-height: 70vh;
+  .with_frm_style fieldset {
+    height: 100%;
+  }
+}

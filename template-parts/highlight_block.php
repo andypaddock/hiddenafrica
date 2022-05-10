@@ -22,10 +22,10 @@
                 // ADD YOUR ACCESS TOKEN FROM
                 // https://account.mapbox.com
                 mapboxgl.accessToken =
-                    'pk.eyJ1IjoiYW5keXBhZGRvY2siLCJhIjoiY2tjb3JnYXo3MGg3aTJ1bGQ3Z3hsY3RkaCJ9.Nuw5WXsnHTCDJhtjXzryUw';
+                    'pk.eyJ1Ijoic2lsdmVybGVzcyIsImEiOiJjaXNibDlmM2gwMDB2Mm9tazV5YWRmZTVoIn0.ilTX0t72N3P3XbzGFhUKcg';
                 const map = new mapboxgl.Map({
                     container: 'map', // container ID
-                    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+                    style: 'mapbox://styles/silverless/cl2ysw1v0001g14qn6ytjdl64', // style URL
                     center: [<?php 
 $centreLocation = get_sub_field('center_position');?>
                         <?php echo esc_attr($centreLocation['lng']); ?>,

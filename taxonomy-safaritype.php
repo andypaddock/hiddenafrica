@@ -31,7 +31,7 @@ $color = get_field('color', $term);
 <?php endif; ?>
 <span id="content"></span>
 <section class="read-more">
-    <div class="row w40">
+    <div class="row w60">
 
         <article><?php echo term_description(); ?></article>
 

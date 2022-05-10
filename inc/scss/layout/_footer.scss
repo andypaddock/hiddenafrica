@@ -260,6 +260,7 @@
       }
       .heading-secondary {
         color: $color-white;
+        font-size: 4rem;
         &--sub {
           color: $color-white;
           font-weight: 400;
@@ -269,6 +270,7 @@
         display: block;
         color: $color-white;
         padding: 1rem 0;
+        font-size: 1.6rem;
       }
       .underscores:after {
         border-bottom: 1px solid $color-white;

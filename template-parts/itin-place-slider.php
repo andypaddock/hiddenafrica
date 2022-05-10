@@ -13,7 +13,7 @@
                 $permalink = get_permalink( $featured_post->ID );
                 $custom_field = get_field( 'short_description', $featured_post->ID ); ?>
                 <div class="style-text">
-                    <span class="meta uppercase"><?php the_sub_field('number_of_nights'); ?> Nights in</span>
+                    <span class="meta uppercase"><?php the_sub_field('number_of_nights'); ?> Nights </span>
                     <h2 class="heading-secondary"><?php echo esc_html( $featured_post->post_title ); ?></h2>
 
                     <?php

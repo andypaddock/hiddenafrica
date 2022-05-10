@@ -4,65 +4,98 @@
  *
  * @package ridgeway
  */
-get_header();?>
-<!-- ******************* Hero Content ******************* -->
+get_header('contact');?>
 
-<?php get_template_part("template-parts/contacthero"); ?>
+<span id="content"></span>
+<?php if( have_rows('main_page_elements') ): ?>
+<?php while( have_rows('main_page_elements') ): the_row(); ?>
+<?php if( get_row_layout() == 'faq_blocks' ): ?>
+<?php get_template_part('template-parts/faqblock');?>
+<?php elseif( get_row_layout() == 'main_cat_links' ): ?>
+<?php get_template_part('template-parts/main-boxes-page');?>
+<?php elseif( get_row_layout() == 'text_blocks' ):?>
+<?php get_template_part('template-parts/text');?>
+<?php elseif( get_row_layout() == 'more_text' ):?>
+<?php get_template_part('template-parts/moretext');?>
+<?php elseif( get_row_layout() == 'tabbed' ):?>
+<?php get_template_part('template-parts/tabs');?>
+<?php elseif( get_row_layout() == 'section_title' ):?>
+<?php get_template_part('template-parts/title');?>
+<?php elseif( get_row_layout() == 'feature_boxes' ):?>
+<?php get_template_part('template-parts/boxes');?>
+<?php elseif( get_row_layout() == 'testimonial_block' ):?>
+<?php get_template_part('template-parts/testimonial_block');?>
+<?php elseif( get_row_layout() == 'testimonial_slider' ):?>
+<?php get_template_part('template-parts/testimonial');?>
+<?php elseif( get_row_layout() == 'single_testimonial' ):?>
+<?php get_template_part('template-parts/singletestimonial');?>
+<?php elseif( get_row_layout() == 'boxedcontent' ):?>
+<?php get_template_part('template-parts/boxedcontent');?>
+<?php elseif( get_row_layout() == 'contact_links' ):?>
+<?php get_template_part('template-parts/links');?>
+<?php elseif( get_row_layout() == 'shortcode' ):?>
+<?php get_template_part('template-parts/shortcode');?>
+<?php elseif( get_row_layout() == 'blog_posts' ):?>
+<?php get_template_part('template-parts/post_block');?>
+<?php elseif( get_row_layout() == 'map_locations' ):?>
+<?php get_template_part('template-parts/mappins');?>
+<?php elseif( get_row_layout() == 'single_button' ):?>
+<?php get_template_part('template-parts/singlebutton');?>
+<?php elseif( get_row_layout() == 'bordered_text' ):?>
+<?php get_template_part('template-parts/borderedcontent');?>
+<?php elseif( get_row_layout() == 'icon_boxes' ):?>
+<?php get_template_part('template-parts/iconboxes');?>
+<?php elseif( get_row_layout() == 'image_boxes' ):?>
+<?php get_template_part('template-parts/imageboxes');?>
+<?php elseif( get_row_layout() == 'itinerary_block' ):?>
+<?php get_template_part('template-parts/itinerary');?>
+<?php elseif( get_row_layout() == 'advertblock' ):?>
+<?php get_template_part('template-parts/advertblock');?>
+<?php elseif( get_row_layout() == 'image_and_text_block' ):?>
+<?php get_template_part('template-parts/imagetextblock');?>
+<?php elseif( get_row_layout() == 'destinations_slider' ):?>
+<?php get_template_part('template-parts/dest-slider');?>
+<?php elseif( get_row_layout() == 'prop_type_slider' ):?>
+<?php get_template_part('template-parts/prop-style');?>
+<?php elseif( get_row_layout() == 'type_filter' ):?>
+<?php get_template_part('template-parts/type_filter');?>
+<?php elseif( get_row_layout() == 'facility_icons' ):?>
+<?php get_template_part('template-parts/facility_icons');?>
+<?php elseif( get_row_layout() == 'gallery_block' ):?>
+<?php get_template_part('template-parts/gallery_block');?>
+<?php elseif( get_row_layout() == 'accor_block' ):?>
+<?php get_template_part('template-parts/accor_block');?>
+<?php elseif( get_row_layout() == 'button_block' ):?>
+<?php get_template_part('template-parts/button_block');?>
+<?php elseif( get_row_layout() == 'highlight_block' ):?>
+<?php get_template_part('template-parts/highlight_block');?>
+<?php elseif( get_row_layout() == 'advert_block' ):?>
+<?php get_template_part('template-parts/advert_block');?>
+<?php elseif( get_row_layout() == 'video_element' ):?>
+<?php get_template_part('template-parts/expanding_block');?>
+<?php elseif( get_row_layout() == 'dest_block' ):?>
+<?php get_template_part('template-parts/dest-block');?>
+<?php elseif( get_row_layout() == 'cust_post_block' ):?>
+<?php get_template_part('template-parts/cust-post-block');?>
+<?php elseif( get_row_layout() == 'staff_block' ):?>
+<?php get_template_part('template-parts/staff-block');?>
+<?php elseif( get_row_layout() == 'site_wide_start_safari' ):?>
+<?php get_template_part('template-parts/site-wide-text');?>
+<?php elseif( get_row_layout() == 'place_slider' ):?>
+<?php get_template_part('template-parts/itin-place-slider');?>
+<?php elseif( get_row_layout() == 'simple_text' ):?>
+<?php get_template_part('template-parts/simple_text');?>
+<?php elseif( get_row_layout() == 'multi_filter_blog_posts' ):?>
+<?php get_template_part('template-parts/multi_filter_post_block');?>
+<?php elseif( get_row_layout() == 'itin_filter_safari_type' ):?>
+<?php get_template_part('template-parts/itin_filter_safari_type');?>
+<?php elseif( get_row_layout() == 'itin_sig_block' ):?>
+<?php get_template_part('template-parts/itin-sig-block');?>
+<?php elseif( get_row_layout() == 'image_and_text_slider' ):?>
+<?php get_template_part('template-parts/slick-slider');?>
+<?php endif; ?>
+<?php endwhile; ?>
+<?php endif; ?>
 
-<!-- ******************* Hero Content END ******************* -->
 
-<div class="contact-title-block">
-    <div class="row">
-        <div class="container">
-            <div class="subhero-title">
-                <h1 class="heading-hero"><?php the_field('heading');?></h1>
-            </div>
-
-        </div>
-    </div>
-</div>
-<div class="right-bleed">
-    <div class="row">
-        <div class="container">
-            <div class="contact-page">
-                <div class="contact-page__sidebar">
-                    <div class="contact-logo"><?php get_template_part("inc/img/featherlogo");?></div>
-                    <div class="contact-details">
-
-
-                        <?php if( have_rows('team_member_details', 'options') ): ?>
-                        <?php while( have_rows('team_member_details', 'options') ): the_row(); ?>
-                        <div class="team-block">
-                            <h2 class="heading-secondary"><?php the_sub_field('team_name'); ?></h2>
-                            <h3 class="pub-date"><a class="robo-font"
-                                    href="tel:<?php the_sub_field('team_phone_number');?>"><?php the_sub_field('team_phone_number');?></a>
-                            </h3>
-                            <h3 class="pub-date"><a class="robo-font"
-                                    href="mailto:<?php the_sub_field('team_email_address');?>"><?php the_sub_field('team_email_address');?></a>
-                            </h3>
-                        </div>
-
-
-                        <?php endwhile; ?>
-                        <?php endif; ?>
-
-                        <div class="address-block">
-
-                            <p><?php the_field('address_block', 'options');?></p>
-
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-                <div class="contact-page__main"><?php the_field('copy');?>
-                    <?php echo do_shortcode('[contact-form-7 id="3897" title="Contact Form"]');?>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-<?php get_footer();?>
+<?php get_footer(); ?>

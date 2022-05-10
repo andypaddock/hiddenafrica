@@ -5,7 +5,20 @@
  * @package hiddenafrica
  */
 get_header(); ?>
+<section>
+    <div class="row w60">
+        <div class="header__text-box">
+            <h1 class="heading-primary">
 
+                <span
+                    class="heading-primary--main"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php the_title(); ?><?php endif ?></span>
+                <span
+                    class="heading-primary--sub italic"><?php if (get_field('sub_header')): ?><?php the_field('sub_header'); ?><?php endif ?></span>
+            </h1>
+
+        </div>
+    </div>
+</section>
 
 <span id="content"></span>
 <?php if( have_rows('main_page_elements') ): ?>

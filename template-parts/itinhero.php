@@ -95,4 +95,5 @@ if( $terms ): ?>
     </div>
 
 </section>
+
 <?php endif; ?>
