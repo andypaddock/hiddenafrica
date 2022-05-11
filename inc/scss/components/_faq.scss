@@ -1,18 +1,10 @@
-.toggle-block {
+.toggle-block, .toggle-dates {
   label {
     position: relative;
     margin-bottom: 0;
-    padding: 1rem 2rem;
     font-weight: bold;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 3fr 1fr;
     font-family: $default-header-style;
     cursor: pointer;
-    span {
-      color: $color-white;
-    }
-
     .heading {
       margin-bottom: 0;
       font-size: 1.5rem;
@@ -33,15 +25,12 @@
       transform: rotate(90deg);
     }
   }
-
   .content {
     display: none;
-    padding: 1rem 2rem;
   }
   .item {
-    border: 1px solid $color-black;
     margin-bottom: 2rem;
-    padding: 0 2rem;
+    
     .underscores::after {
       opacity: 0;
       padding-top: 0;
@@ -51,6 +40,107 @@
     .collapsed .underscores::after {
       opacity: 1;
       padding-top: 1rem;
+    }
+  }
+}
+.toggle-block {
+  span {
+    color: $color-white;
+  }
+  .item {
+    border: 1px solid $color-black;
+    padding: 0 2rem;
+  }
+  label {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 1rem 2rem;
+  }
+  .content {
+    padding: 1rem 2rem;
+  }
+}
+.toggle-dates {
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-black;
+    padding: 1rem 0;
+  }
+  .item {
+    padding: 0;
+  }
+  .content {
+    padding: 2rem 0;
+    p {
+      font-size: 2rem;
+    }
+  }
+  .dates-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2rem 0;
+    tr {
+      &:nth-of-type(odd) {
+        background: $color-white;
+      }
+      td {
+        text-align: center;
+        padding: 0.75rem 0;
+        border-right: 1px solid #dddddd;
+        &:last-of-type {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+.toggle-rates {
+  padding: 3rem 0;
+  p {
+    font-size: 2rem;
+    padding-top: 1.5rem;
+  }
+  .rates-table {
+    width: 100%;
+    padding: 2rem 0;
+    border-collapse: collapse;
+    tr {
+      text-align: left;
+      &:nth-of-type(odd) {
+        background: $color-white;
+      }
+      td {
+        text-align: left;
+        padding: 0.75rem 1rem;
+        border-right: 1px solid #dddddd;
+        &:last-of-type {
+          border-right: none;
+        }
+        &:first-of-type {
+          border-right: none;
+        }
+      }
+      th {
+        background: unset;
+      }
+    }
+    thead {
+      tr th {
+        background-color: #efefef;
+        text-align: left;
+        padding: 0.75rem 1rem;
+      }
+    }
+    tbody {
+      tr td:first-of-type {
+        background-color: #efefef;
+        text-align: left;
+        font-weight: bold;
+        padding-left: 0;
+      }
     }
   }
 }

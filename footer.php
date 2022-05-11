@@ -82,9 +82,31 @@ if( $link ):
 
     <div class="row footer-navbar">
         <div class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part("inc/img/footerlogo"); ?></a>
+            <div class="contact-details">
+                <?php if( have_rows('reservation_links','options') ): ?>
+                <ul class="lower-footer-links">
+                    <?php while( have_rows('reservation_links','options') ): the_row(); ?>
+                    <li>
+                        <?php 
+$link = get_sub_field('links','options');
+if( $link ): 
+    $link_url = $link['url'];
+    $link_title = $link['title'];
+    $link_target = $link['target'] ? $link['target'] : '_self';
+    ?>
+                        <a href="<?php echo esc_url( $link_url ); ?>"
+                            target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                        <?php endif; ?>
+                    </li>
+                    <?php endwhile; ?>
+                </ul>
+                <?php endif; ?>
+            </div>
             <?php if( have_rows('social_media_links','options') ): ?>
             <ul class="social-links">
+                <li>FOLLOW US</li>
                 <?php while( have_rows('social_media_links','options') ): the_row(); ?>
+
                 <li>
                     <?php 
 $link = get_sub_field('social_media_link','options');
@@ -101,27 +123,7 @@ if( $link ):
             </ul>
             <?php endif; ?>
         </div>
-        <div class="contact-details">
-            <h3 class="heading-tertiary">Reservations</h3>
-            <?php if( have_rows('reservation_links','options') ): ?>
-            <ul class="lower-footer-links">
-                <?php while( have_rows('reservation_links','options') ): the_row(); ?>
-                <li>
-                    <?php 
-$link = get_sub_field('links','options');
-if( $link ): 
-    $link_url = $link['url'];
-    $link_title = $link['title'];
-    $link_target = $link['target'] ? $link['target'] : '_self';
-    ?>
-                    <a href="<?php echo esc_url( $link_url ); ?>"
-                        target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-                    <?php endif; ?>
-                </li>
-                <?php endwhile; ?>
-            </ul>
-            <?php endif; ?>
-        </div>
+
         <div class="explore-links">
             <h3 class="heading-tertiary">Explore Our World</h3>
             <?php if( have_rows('explore_menu_items','options') ): ?>
@@ -142,6 +144,24 @@ if( $link ):
                 <?php endwhile; ?>
             </ul>
             <?php endif; ?>
+            <h3 class="heading-tertiary">Our Latest Blog Posts</h3>
+            <?php
+    $args = array(
+        'post_type' => 'post',
+        'post_per_page' => 4,
+    );
+
+    $post_query = new WP_Query($args);
+
+    if($post_query->have_posts() ) {
+        while($post_query->have_posts() ) {
+            $post_query->the_post();
+            ?>
+            <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+            <?php
+            }
+        }
+?>
         </div>
         <div class="about-links">
             <h3 class="heading-tertiary">Get to Know Us</h3>
@@ -163,52 +183,32 @@ if( $link ):
                 <?php endwhile; ?>
             </ul>
             <?php endif; ?>
-        </div>
-        <div class="privacy-links">
-            <h3 class="heading-tertiary">Important Stuff</h3>
-            <?php if( have_rows('important_menu_items','options') ): ?>
-            <ul class="lower-footer-links">
-                <?php while( have_rows('important_menu_items','options') ): the_row(); ?>
-                <li>
-                    <?php 
+
+            <div class="company-links">
+
+
+                <?php if( have_rows('linked_companies','options') ): ?>
+                <?php while( have_rows('linked_companies','options') ): the_row(); ?>
+
+                <?php 
 $link = get_sub_field('link','options');
 if( $link ): 
     $link_url = $link['url'];
     $link_title = $link['title'];
     $link_target = $link['target'] ? $link['target'] : '_self';
     ?>
-                    <a href="<?php echo esc_url( $link_url ); ?>"
-                        target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-                    <?php endif; ?>
-                </li>
+                <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><img
+                        src="<?php the_sub_field('company_logo','options'); ?>" /></a>
+                <?php endif; ?>
+
                 <?php endwhile; ?>
-            </ul>
-            <?php endif; ?>
-        </div>
-        <div class="company-links">
 
+                <?php endif; ?>
 
-            <?php if( have_rows('linked_companies','options') ): ?>
-            <?php while( have_rows('linked_companies','options') ): the_row(); ?>
-
-            <?php 
-$link = get_sub_field('link','options');
-if( $link ): 
-    $link_url = $link['url'];
-    $link_title = $link['title'];
-    $link_target = $link['target'] ? $link['target'] : '_self';
-    ?>
-            <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><img
-                    src="<?php the_sub_field('company_logo','options'); ?>" /></a>
-            <?php endif; ?>
-
-            <?php endwhile; ?>
-
-            <?php endif; ?>
-
+            </div>
         </div>
         <div class="newsletter-block">
-            <h3 class="heading-tertiary">Get to Know Us</h3>
+            <h3 class="heading-tertiary">Sign up for exclusive news and inspiration</h3>
             <?php
         if ( get_field('footer_shortcode','options') ) {
             echo do_shortcode( get_field('footer_shortcode','options') );

@@ -103,7 +103,19 @@ get_header(); ?>
 <?php get_template_part('template-parts/simple_text');?>
 <?php elseif( get_row_layout() == 'whats_included' ):?>
 <?php get_template_part('template-parts/whats_included');?>
+<?php elseif( get_row_layout() == 'rates_accor_block' ):?>
+<?php get_template_part('template-parts/rates_accor_block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
+
+
+<?php $displayLogo = get_field('where_to_display','options');
+if(in_array('all', $displayLogo)): ?>
+<?php get_template_part('template-parts/logo_slider');?>
+<?php endif; ?>
+
+
+
+
 <?php get_footer(); ?>

@@ -64,6 +64,29 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  $(".logo-carousel").owlCarousel({
+    loop: false,
+    center: true,
+    autoplay: true,
+    autoplayTimeout: 6000,
+    autoplayHoverPause: true,
+    responsive: {
+      0:{
+        items:1,
+        nav: false
+      },
+      600:{
+        items:2,
+        nav: false
+      },
+      1000:{
+        items:4,
+        nav: true,
+        dots: false
+      }
+    }
+  });
+
   $(".slick-center").owlCarousel({
     loop: true,
     center: true,
@@ -206,6 +229,14 @@ $('.image-popup-no-margins').magnificPopup({
 });
 
 $(".toggle-block label").click(function () {
+  var otherLabels = $(this).parent().siblings(".item").find("label");
+  otherLabels.removeClass("collapsed");
+  otherLabels.next().slideUp();
+  $(this).toggleClass("collapsed");
+  $(this).next().slideToggle();
+});
+
+$(".toggle-dates label").click(function () {
   var otherLabels = $(this).parent().siblings(".item").find("label");
   otherLabels.removeClass("collapsed");
   otherLabels.next().slideUp();
