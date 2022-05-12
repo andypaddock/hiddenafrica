@@ -81,7 +81,7 @@ if( $link ):
 
 
     <div class="row footer-navbar">
-        <div class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part("inc/img/footerlogo"); ?></a>
+        <div class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part("inc/img/hiddenlogo"); ?></a>
             <div class="contact-details">
                 <?php if( have_rows('reservation_links','options') ): ?>
                 <ul class="lower-footer-links">
@@ -102,6 +102,16 @@ if( $link ):
                 </ul>
                 <?php endif; ?>
             </div>
+            <?php 
+$link = get_sub_field('reservation_link','options');
+if( $link ): 
+    $link_url = $link['url'];
+    $link_title = $link['title'];
+    $link_target = $link['target'] ? $link['target'] : '_self';
+    ?>
+            <a href="<?php echo esc_url( $link_url ); ?>"
+                target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+            <?php endif; ?>
             <?php if( have_rows('social_media_links','options') ): ?>
             <ul class="social-links">
                 <li>FOLLOW US</li>
@@ -145,7 +155,8 @@ if( $link ):
             </ul>
             <?php endif; ?>
             <h3 class="heading-tertiary">Our Latest Blog Posts</h3>
-            <?php
+            <ul class="lower-footer-links">
+                <?php
     $args = array(
         'post_type' => 'post',
         'post_per_page' => 4,
@@ -157,11 +168,12 @@ if( $link ):
         while($post_query->have_posts() ) {
             $post_query->the_post();
             ?>
-            <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-            <?php
+                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                <?php
             }
         }
 ?>
+            </ul>
         </div>
         <div class="about-links">
             <h3 class="heading-tertiary">Get to Know Us</h3>

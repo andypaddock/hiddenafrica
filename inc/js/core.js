@@ -47,6 +47,7 @@ jQuery(document).ready(function ($) {
     autoplay: true,
     autoplayTimeout: 6000,
     autoplayHoverPause: true,
+    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left fa-2x'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right fa-2x'></i></div>"],
     responsive: {
       0:{
         items:1,
@@ -65,11 +66,11 @@ jQuery(document).ready(function ($) {
   });
 
   $(".logo-carousel").owlCarousel({
-    loop: false,
-    center: true,
+    loop: true,
     autoplay: true,
     autoplayTimeout: 6000,
     autoplayHoverPause: true,
+    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left fa-2x'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right fa-2x'></i></div>"],
     responsive: {
       0:{
         items:1,
@@ -110,6 +111,7 @@ jQuery(document).ready(function ($) {
   $(".dest-slider").owlCarousel({
     loop: true,
     margin: 32,
+    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left fa-2x'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right fa-2x'></i></div>"],
     responsive: {
       0:{
         items:1,
@@ -129,6 +131,7 @@ jQuery(document).ready(function ($) {
   $(".signature-itins").owlCarousel({
     loop: true,
     margin: 32,
+    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left fa-2x'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right fa-2x'></i></div>"],
     responsive: {
       0:{
         items:1,
@@ -149,7 +152,7 @@ jQuery(document).ready(function ($) {
     loop: true,
     margin: 48,
     center: true,
-    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right'></i></div>"],
+    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left fa-2x'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right fa-2x'></i></div>"],
     responsive: {
       0:{
         items:1,
@@ -169,7 +172,7 @@ jQuery(document).ready(function ($) {
   $(".itin-slider").owlCarousel({
     loop: true,
     margin: 32,
-    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right'></i></div>"],
+    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left fa-2x'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right fa-2x'></i></div>"],
     responsive: {
       0:{
         items:1,
@@ -255,7 +258,7 @@ $(".toggle-dates label").click(function () {
   });
 
   new Readmore('.staffreadmore', {
-    collapsedHeight: 120,
+    collapsedHeight: 128,
   });
 
 

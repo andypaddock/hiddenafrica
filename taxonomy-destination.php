@@ -195,7 +195,7 @@ $term_id = $queried_object->term_id; ?>
                 <div class="itin-item-text">
                     <h3 class="heading-tertiary">
                         <span class="heading-tertiary--sub">
-                            <?php $terms = get_the_term_list( $post->ID, 'destination', '' ,  ' > ' ); $terms = strip_tags( $terms ); 
+                            <?php $terms = get_the_term_list( $post->ID, 'destination', '' ,  ' | ' ); $terms = strip_tags( $terms ); 
 if ($terms) {
 echo ''.$terms.'';
 } else  {

@@ -87,8 +87,22 @@
   .logo {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    grid-row: 1/3;
+    svg {
+      width: 80%;
+      path {
+        fill: $color-white;
+      }
+    }
+    .contact-details {
+      padding: 0.5rem 0 3rem 0;
+      p {
+        font-size: 1.2rem;
+      }
+      .lower-footer-links {
+        padding-right: 1rem;
+        
+      }
+    }
   }
   .nav {
     padding: 3rem 0;
@@ -107,13 +121,25 @@
       }
     }
   }
+  .explore-links {
+    padding-top: 3.5rem;
+    p {
+      margin: 0;
+    }
+    a {
+      color: $color-white;
+    }
+  }
+  .about-links {
+    padding-top: 3.5rem;
+  }
   .company-links {
     img {
       height: 5rem;
     }
   }
   .newsletter-block {
-    padding-left: 3rem;
+    padding: 3.5rem 0 0 3rem;
     .mc4wp-form-fields {
       padding: 2rem 0;
       input {
@@ -166,23 +192,16 @@
 
   .heading-tertiary {
     text-transform: uppercase;
-    font-size: 1rem;
-    padding-bottom: 1rem;
+    font-size: 1.3rem;
+    padding: 0rem 0 2rem;
     font-family: $default-font-style;
+    font-weight: 700;
   }
-  .contact-details {
-    p {
-      font-size: 1.2rem;
-    }
-    .lower-footer-links {
-      padding-right: 1rem;
-    }
-  }
+  
   .lower-footer-links {
     li {
       list-style: none;
-      padding: 0.5rem 0;
-      font-size: 1rem;
+      font-size: 1.2rem;
       a {
         color: $color-white;
       }
@@ -191,10 +210,9 @@
   .social-links {
     display: flex;
     grid-gap: 2rem;
-    justify-content: center;
     li {
       list-style: none;
-
+font-weight: 400;
       i {
         color: $color-white;
         font-size: 1.7rem;

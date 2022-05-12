@@ -94,9 +94,13 @@ get_header(); ?>
 <?php get_template_part('template-parts/itin-sig-block');?>
 <?php elseif( get_row_layout() == 'image_and_text_slider' ):?>
 <?php get_template_part('template-parts/slick-slider');?>
+<?php elseif( get_row_layout() == 'logo_slider' ):?>
+<?php get_template_part('template-parts/logo_slider');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
+
+
 <?php $displayLogo = get_field('where_to_display','options');
 if(in_array('all', $displayLogo)): ?>
 <?php get_template_part('template-parts/logo_slider');?>

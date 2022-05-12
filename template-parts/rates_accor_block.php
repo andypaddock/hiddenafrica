@@ -10,7 +10,7 @@ $noMobile = get_sub_field('hide_on_mobile');?>
         <div class="item tile">
 
             <label>
-                <h2 class="heading-secondary alt-color">
+                <h2 class="heading-secondary">
                     <span class="heading-secondary--main"><?php the_sub_field('table_header'); ?></span>
 
                 </h2>
@@ -84,7 +84,7 @@ if ( ! empty ( $table ) ) {
         <div class="rates-block tile">
 
 
-            <h2 class="heading-secondary alt-color">
+            <h2 class="heading-secondary">
                 <span class="heading-secondary--main"><?php the_sub_field('table_header'); ?></span>
 
             </h2>
@@ -142,8 +142,8 @@ echo '</tbody>';
 
 echo '</table>';
 } ?>
-            <?php if( get_sub_field('rates_table_optional_text') ): ?><p class="italic alt-font">
-                <?php the_sub_field('rates_table_optional_text'); ?></p><?php endif; ?>
+            <?php if( get_sub_field('rates_optional_text') ): ?><p class="italic alt-font">
+                <?php the_sub_field('rates_optional_text'); ?></p><?php endif; ?>
 
 
         </div>

@@ -8,13 +8,14 @@ get_header(); ?>
 <section>
     <div class="row w60">
         <div class="header__text-box">
-            <h1 class="heading-primary">
+            <h2 class="heading-secondary">
+                <span
+                    class="heading-secondary--sub italic"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php the_title(); ?><?php endif ?></span>
 
                 <span
-                    class="heading-primary--main"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php the_title(); ?><?php endif ?></span>
-                <span
-                    class="heading-primary--sub italic"><?php if (get_field('sub_header')): ?><?php the_field('sub_header'); ?><?php endif ?></span>
-            </h1>
+                    class="heading-secondary--main"><?php if (get_field('sub_header')): ?><?php the_field('sub_header'); ?><?php endif ?></span>
+
+            </h2>
 
         </div>
     </div>
@@ -113,9 +114,7 @@ get_header(); ?>
 <?php $displayLogo = get_field('where_to_display','options');
 if(in_array('all', $displayLogo)): ?>
 <?php get_template_part('template-parts/logo_slider');?>
+<?php elseif (in_array('itin', $displayLogo)): ?>
+<?php get_template_part('template-parts/logo_slider');?>
 <?php endif; ?>
-
-
-
-
 <?php get_footer(); ?>

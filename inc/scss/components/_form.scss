@@ -81,3 +81,11 @@ span.wpcf7-not-valid-tip {
     height: 100%;
   }
 }
+.frm_image_options .frm_image_option_container .frm_empty_url, .frm_image_options .frm_image_option_container img {
+  object-fit: contain;
+  height: unset;
+}
+.frm_image_option_container.frm_label_with_image {
+  padding: 3rem 3rem 0 3rem;
+  background: $color-white;
+}
