@@ -144,85 +144,6 @@ endif;
 </section>
 <?php endif; ?>
 
-<!-- LODGES IN DESTINATION -->
-<?php $queried_object = get_queried_object();
-$term_id = $queried_object->term_id; ?>
-
-<?php
-                $args = array(
-                    'post_type' => 'properties',
-                    'tax_query' => array(
-                    'relation' => 'AND',
-                        array(
-                            'taxonomy' => 'destination',
-                            'field' => 'id', 
-                        'terms' => array($term_id) 
-                        ),
-                    )
-                );
-                $query = new WP_Query( $args );
-                if ( $query->have_posts() ): ?>
-
-<section class="section-title" id="lodges">
-    <div class="row centre-line w50">
-        <div class="line"></div>
-        <div></div>
-    </div>
-    <div class="row w40">
-        <h2 class="heading-secondary">
-            <span class="heading-secondary--sub italic"><?php the_field('lodges_sub_title', $term); ?></span>
-            <span class="heading-secondary--main">Lodges in <?php echo single_term_title(); ?></span>
-        </h2>
-    </div>
-</section>
-
-
-<section class="lodges">
-    <div class="row">
-        <div class="itin-display-block grid-layout3">
-            <?php
-                 while ( $query->have_posts() ):
-                $query->the_post();
-                $campImage = get_sub_field('hero_image');?>
-
-
-            <div class="itinerary-item tile">
-                <div class="itin-item-image"
-                    style="background-image: url(<?php if ($campImage): ?><?php echo $campImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url($post->ID,'large'); ?><?php endif ?>)">
-
-                </div>
-
-                <div class="itin-item-text">
-                    <h3 class="heading-tertiary">
-                        <span class="heading-tertiary--sub">
-                            <?php $terms = get_the_term_list( $post->ID, 'destination', '' ,  ' | ' ); $terms = strip_tags( $terms ); 
-if ($terms) {
-echo ''.$terms.'';
-} else  {
-}
-
-?>
-                        </span>
-
-                        <span class="heading-tertiary--main"><a
-                                href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
-                    </h3>
-                    <div class="right_arrow">
-                        <div class="arrow bounce">
-                            <a class="fal fa-chevron-right fa-2x" href="<?php the_permalink(); ?>"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!--item-->
-            <?php endwhile; endif;?>
-        </div>
-    </div>
-</section>
-
-
 <!-- ITINERARIES IN DESTINATION -->
 <?php
                 $args = array(
@@ -317,6 +238,87 @@ if( $terms ): ?>
         </div>
     </div>
 </section>
+
+<!-- LODGES IN DESTINATION -->
+<?php $queried_object = get_queried_object();
+$term_id = $queried_object->term_id; ?>
+
+<?php
+                $args = array(
+                    'post_type' => 'properties',
+                    'tax_query' => array(
+                    'relation' => 'AND',
+                        array(
+                            'taxonomy' => 'destination',
+                            'field' => 'id', 
+                        'terms' => array($term_id) 
+                        ),
+                    )
+                );
+                $query = new WP_Query( $args );
+                if ( $query->have_posts() ): ?>
+
+<section class="section-title" id="lodges">
+    <div class="row centre-line w50">
+        <div class="line"></div>
+        <div></div>
+    </div>
+    <div class="row w40">
+        <h2 class="heading-secondary">
+            <span class="heading-secondary--sub italic"><?php the_field('lodges_sub_title', $term); ?></span>
+            <span class="heading-secondary--main">Lodges in <?php echo single_term_title(); ?></span>
+        </h2>
+    </div>
+</section>
+
+
+<section class="lodges">
+    <div class="row">
+        <div class="itin-display-block grid-layout3">
+            <?php
+                 while ( $query->have_posts() ):
+                $query->the_post();
+                $campImage = get_sub_field('hero_image');?>
+
+
+            <div class="itinerary-item tile">
+                <div class="itin-item-image"
+                    style="background-image: url(<?php if ($campImage): ?><?php echo $campImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url($post->ID,'large'); ?><?php endif ?>)">
+
+                </div>
+
+                <div class="itin-item-text">
+                    <h3 class="heading-tertiary">
+                        <span class="heading-tertiary--sub">
+                            <?php $terms = get_the_term_list( $post->ID, 'destination', '' ,  ' | ' ); $terms = strip_tags( $terms ); 
+if ($terms) {
+echo ''.$terms.'';
+} else  {
+}
+
+?>
+                        </span>
+
+                        <span class="heading-tertiary--main"><a
+                                href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
+                    </h3>
+                    <div class="right_arrow">
+                        <div class="arrow bounce">
+                            <a class="fal fa-chevron-right fa-2x" href="<?php the_permalink(); ?>"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--item-->
+            <?php endwhile; endif;?>
+        </div>
+    </div>
+</section>
+
+
+
 
 <!-- <?php if( !empty( $mapImage ) ): ?>
 <section class="section-title" id="map">

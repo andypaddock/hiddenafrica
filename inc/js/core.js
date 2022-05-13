@@ -152,7 +152,7 @@ jQuery(document).ready(function ($) {
     loop: true,
     margin: 48,
     center: true,
-    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left fa-2x'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right fa-2x'></i></div>"],
+    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right'></i></div>"],
     responsive: {
       0:{
         items:1,
@@ -172,7 +172,7 @@ jQuery(document).ready(function ($) {
   $(".itin-slider").owlCarousel({
     loop: true,
     margin: 32,
-    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left fa-2x'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right fa-2x'></i></div>"],
+    navText: ["<div class='nav-button owl-prev'><i class='fal fa-chevron-left'></i></div>","<div class='nav-button owl-next'><i class='fal fa-chevron-right'></i></div>"],
     responsive: {
       0:{
         items:1,

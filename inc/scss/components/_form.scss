@@ -100,3 +100,23 @@ span.wpcf7-not-valid-tip {
   font-size: 5rem;
 }
 }
+p.form-step {
+  margin: 0;
+  font-family: $default-header-style;
+  font-weight: 400;
+  font-size: 2rem;
+}
+// EFORM STYLE 
+section {
+  .ipt-uif-custom-material-custom.eform-override-element-boxy .ipt_uif_column {
+    margin: 3rem 0;
+    margin-bottom: 3rem;
+  }}
+  
+  .frm_page_skip {
+    color: $color-white;
+    background: $color-primary;
+    padding: 1rem 2rem;
+    border: 1px solid $color-primary;
+    margin: 2rem 0;
+  }
