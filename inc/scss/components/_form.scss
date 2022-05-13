@@ -75,6 +75,7 @@ span.wpcf7-not-valid-tip {
   box-shadow: 0px 7px 16px -7px rgba(0, 0, 0, 0.4);
   border: 0;
 }
+.page-template-contact {
 .with_frm_style .frm_form_fields {
   min-height: 70vh;
   .with_frm_style fieldset {
@@ -84,8 +85,18 @@ span.wpcf7-not-valid-tip {
 .frm_image_options .frm_image_option_container .frm_empty_url, .frm_image_options .frm_image_option_container img {
   object-fit: contain;
   height: unset;
+  border-radius: 0;
 }
 .frm_image_option_container.frm_label_with_image {
   padding: 3rem 3rem 0 3rem;
   background: $color-white;
+}
+.frm_checkbox.frm_image_option, .frm_radio.frm_image_option {
+  width: 20rem!important;
+}
+.form-step-main {
+  font-family: $default-header-style;
+  color: $color-primary;
+  font-size: 5rem;
+}
 }
