@@ -1,5 +1,5 @@
+<?php if (!is_page('Contact')): ?>
 <?php $linkSwitch = get_field('force', 'options');?>
-
 <?php $bgColor = get_field('bg_colour', 'options');
 $textBGImage = get_field('background_image', 'options');
 $backgroundSwitch = get_field('select_background', 'options');
@@ -55,3 +55,4 @@ if( $link ):
                         </div>
                     </div>
                 </section>
+                <?php endif; ?>

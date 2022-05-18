@@ -12,7 +12,11 @@
         flex-wrap: wrap;
         span {
         background: $color-black;
-        padding: 0.5rem 1rem;
+        padding: 1rem;
+        }
+        a {
+          color: $color-white;
+          margin-bottom: 1rem;
         }
       }
     }

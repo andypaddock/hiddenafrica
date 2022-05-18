@@ -170,7 +170,6 @@ $centreLocation = get_sub_field('center_position');?>
                     </a>
                 </div>
             </div>
-            
             <?php endif; ?>
             <div class="highlight-text">
                 <?php

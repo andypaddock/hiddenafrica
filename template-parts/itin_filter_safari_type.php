@@ -53,11 +53,12 @@ $counter++;
                         <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0', 'exclude' => '104,105') );?>
                         <?php if( $terms ): ?>
                         <?php foreach( $terms as $term ): ?>
-                        <span><?php echo esc_html( $term->name ); ?></span>
+                        <a href="<?php echo esc_url(get_term_link($term)); ?>"
+                            target="_blank"><span><?php echo esc_html( $term->name ); ?></span></a>
                         <?php endforeach; ?><?php endif; ?>
                     </div>
                 </div>
-                <div class="post-text">
+                <div class=" post-text">
                     <span class="meta "><?php echo esc_html( $days_field ); ?> <?php $terms = get_the_term_list( $post->ID, 'safaritype', '', ',' ); $terms = strip_tags( $terms ); 
 if ($terms) {
 echo ''.$terms.'';

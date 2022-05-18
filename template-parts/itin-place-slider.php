@@ -25,7 +25,7 @@ echo wp_trim_words( get_sub_field('itin_step_desc'), 40, '...' );
                     <a class="button outline itin-button" href="<?php echo esc_url( $permalink ); ?>">
                         <div class="icon"><i class="far fa-home"></i></div>
                         <div class="text"><span class="camp-name"><?php echo esc_html( $featured_post->post_title ); ?>
-                            </span>Read More</div>
+                            </span><?php the_field('camps_slider_cta', 'options'); ?></div>
                         <i class="fa-light fa-chevron-right"></i>
                     </a>
                 </div>

@@ -27,8 +27,9 @@ if( $destinations ): ?>
                     <p><?php the_field('short_description',$destination); ?></p>
                 </div>
                 <div class="post-link">
-                    <a class="button outline" href="<?php echo esc_url( get_term_link( $destination ) ); ?>">
-                        Find Out more<i class="fa-light fa-chevron-right"></i>
+                    <a class="button outline"
+                        href="<?php echo esc_url( get_term_link( $destination ) ); ?>"><?php the_field('destination_block_cta', 'options'); ?><i
+                            class="fa-light fa-chevron-right"></i>
                     </a>
                 </div>
             </div>

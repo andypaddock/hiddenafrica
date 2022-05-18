@@ -20,6 +20,9 @@
   }
   &.contact {
     height: unset;
+    @include respond(tab-port) {
+      height: unset !important;
+    }
   }
   @include respond(tab-port) {
     height: 100vh !important;
@@ -69,9 +72,13 @@
       flex-wrap: wrap;
       justify-content: center;
       span {
-      background: $color-black;
-      padding: 0.5rem 1rem;
-      }
+        background: $color-black;
+        padding: 1rem;
+        }
+        a {
+          color: $color-white;
+          margin-bottom: 1rem;
+        }
     }
     section {
       padding-bottom: 0;

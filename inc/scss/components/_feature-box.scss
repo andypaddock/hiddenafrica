@@ -8,9 +8,11 @@
   transition: transform 0.3s;
   border: 1px solid $color-primary-dark;
   text-transform: uppercase;
+
   svg {
     height: 2rem;
   }
+
   .heading-tertiary {
     font-size: 1.6rem;
     color: $color-primary;
@@ -24,10 +26,12 @@
     i {
       font-size: 2.5rem;
     }
+
     .heading-tertiary {
       color: $color-primary;
     }
   }
+
   .arrow {
     svg {
       width: 3rem;
@@ -40,14 +44,17 @@
     transform: translateY(-1.5rem) scale(1.03);
   }
 }
+
 .image-block {
   display: flex;
   grid-gap: $gutter-horizontal;
   margin-bottom: $gutter-horizontal;
+
   &:nth-of-type(even) {
     flex-direction: row-reverse;
   }
 }
+
 .dest-slider {
   .dest-item {
     @include backgroundCover;
@@ -62,6 +69,7 @@
       font-family: $default-header-style;
       color: $color-white;
     }
+
     a {
       color: $color-white;
       display: block;
@@ -70,41 +78,50 @@
     }
   }
 }
+
 .prop-slider {
   .property-style-block {
     display: grid;
     grid-template-columns: 2fr 3fr;
     grid-auto-rows: minmax(100px, auto);
-    grid-template-areas: "top main" "lt main" "lt main";
+    grid-template-areas: "top main""lt main""lt main";
     grid-gap: 2rem;
+
     @include respond(phone) {
       display: flex;
       flex-direction: column-reverse;
     }
+
     .style-text {
       // padding: 5rem 0 0 5rem;
       grid-area: lt;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       a {
         color: $color-black;
         border: 1px solid $color-black;
       }
     }
+
     .style-image {
       grid-area: main;
       @include backgroundCover;
+
       @include respond(phone) {
         height: 30rem;
       }
     }
+
     .heading-secondary {
       padding-bottom: 2rem;
     }
   }
+
   .owl-nav {
     padding: 0.5rem 2rem;
+
     .owl-prev {
       left: 3.5rem;
       top: 0;
@@ -112,6 +129,7 @@
       border: 1px solid $color-black;
       background: none;
     }
+
     .owl-next {
       left: 7rem;
       right: unset;
@@ -121,10 +139,12 @@
     }
   }
 }
+
 .itin-slider {
   &.owl-theme .owl-nav {
     margin-top: 25px;
   }
+
   .itin-slide-block {
     display: flex;
     flex-direction: column;
@@ -134,6 +154,7 @@
     .itin-slide-image {
       height: 25rem;
       @include backgroundCover;
+
       .overlay-country {
         position: absolute;
         z-index: 2;
@@ -142,42 +163,55 @@
         display: flex;
         grid-gap: 1rem;
         flex-wrap: wrap;
+
         span {
-        background: $color-black;
-        padding: 0.5rem 1rem;
-        }
+          background: $color-black;
+          padding: 1rem;
+          }
+          a {
+            color: $color-white;
+            margin-bottom: 1rem;
+          }
       }
     }
+
     .itin-slide-text {
       padding: 1rem 2rem;
       flex: 1;
+
       .button {
         font-size: inherit;
         font-weight: 400;
       }
+
       a {
         color: $color-black;
       }
+
       .underscores:after {
         padding-top: 1.5rem;
       }
     }
+
     .itin-slide-button {
       padding: 1rem 2rem 2rem;
     }
   }
-  
+
   .owl-prev,
   .owl-next {
     position: relative;
     border: 1px solid $color-black;
   }
+
   .owl-prev {
     left: -16.7%;
   }
+
   .owl-next {
     right: 15.7%;
   }
+
   // .owl-stage > .active {
   //   opacity: 0;
   //   transition: all 0.5s;
@@ -187,67 +221,84 @@
   //   opacity: 1;
   // }
 }
+
 .destination-grid {
   .destination-item {
     background: $color-white;
+
     .dest-image {
       @include backgroundCover;
       height: 25rem;
     }
+
     .dest-text {
       padding: 1rem 3rem;
+
       p,
       .button {
         font-size: inherit;
       }
+
       .heading-secondary {
         padding-bottom: 1rem;
       }
     }
   }
+
   .itin-block {
     background: $color-white;
+
     .itin-image {
       @include backgroundCover;
       height: 25rem;
     }
+
     .itin-text {
       padding: 1rem 3rem;
+
       a {
         color: $color-black;
       }
     }
   }
 }
+
 .map-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
+
   @include respond(phone) {
     display: flex;
     flex-direction: column;
   }
+
   .map-image {
     position: relative;
+
     .overlay-link {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%);
-      background: rgba($color-black,0.7);
+      background: rgba($color-black, 0.7);
       padding: 0.5rem 1rem;
-      a{
+
+      a {
         color: $color-white;
         text-transform: uppercase;
+
         i {
           font-size: 1.8rem;
         }
       }
     }
   }
+
   .map-box {
     position: relative;
     min-height: 45rem;
+
     .overlay-country {
       position: absolute;
       z-index: 2;
@@ -256,25 +307,34 @@
       display: flex;
       grid-gap: 1rem;
       flex-wrap: wrap;
+
       span {
-      background: $color-black;
-      padding: 0.5rem 1rem;
-      }
+        background: $color-black;
+        padding: 1rem;
+        }
+        a {
+          color: $color-white;
+          margin-bottom: 1rem;
+        }
     }
   }
+
   .image {
     img {
       @include imageSize;
     }
   }
+
   .highlight-text {
     .text {
       padding: 0 4rem 2rem 0;
       // font-size: 1.2rem;
     }
+
     ul {
-      padding: 1.5rem ;
+      padding: 1.5rem;
     }
+
     .heading-tertiary {
       text-transform: uppercase;
       font-family: $default-header-style;
@@ -282,15 +342,18 @@
     }
   }
 }
+
 .advert-hero {
   min-height: 45rem;
   @include backgroundCover;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   .advert_text {
     width: 40%;
     margin-left: 20%;
+
     .heading-secondary,
     .heading-secondary--sub,
     p {
@@ -298,10 +361,12 @@
     }
   }
 }
+
 .section-itinerary {
   .row {
     position: relative;
   }
+
   .mask {
     position: absolute;
     width: 20rem;
@@ -309,40 +374,48 @@
     right: 0;
     height: 100%;
     background: rgb(239, 239, 239);
-    background: linear-gradient(
-      270deg,
-      rgba(239, 239, 239, 1) 30%,
-      rgba(239, 239, 239, 0) 100%
-    );
+    background: linear-gradient(270deg,
+        rgba(239, 239, 239, 1) 30%,
+        rgba(239, 239, 239, 0) 100%);
     z-index: 2;
   }
 }
+
 .itinerary-item {
   background: $color-white;
   display: flex;
   flex-direction: column;
+
   // min-height: 55rem;
   .itin-item-image {
     height: 25rem;
 
     @include backgroundCover;
+
     .overlay-country {
       color: $color-white;
       margin: 2rem 1.5rem;
       display: flex;
       grid-gap: 1rem;
       flex-wrap: wrap;
+
       span {
-      background: $color-black;
-      padding: 0.5rem 1rem;
-      }
+        background: $color-black;
+        padding: 1rem;
+        }
+        a {
+          color: $color-white;
+          margin-bottom: 1rem;
+        }
     }
   }
+
   .itin-item-text {
     flex: 1;
-    padding: 1rem 3rem;
+    padding: 1rem 4rem;
   }
+
   .itin-item-link {
-    padding: 0 3rem 2rem;
+    padding: 0 4rem 4rem;
   }
 }

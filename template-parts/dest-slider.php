@@ -12,7 +12,8 @@ if( $terms ): ?>
             <?php $destImage = get_field('hero_image',$term); ?>
             <div class="dest-item" style="background-image: url(<?php echo $destImage['url']; ?>)">
                 <h2 class="heading-secondary"><?php echo esc_html( $term->name ); ?></h2>
-                <a href="<?php echo esc_url( get_term_link( $term ) ); ?>">Find Out More</a>
+                <a
+                    href="<?php echo esc_url( get_term_link( $term ) ); ?>"><?php the_field('featured_destinations_cta', 'options'); ?></a>
             </div>
             <?php endforeach; ?>
         </div>

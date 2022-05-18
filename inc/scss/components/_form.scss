@@ -88,7 +88,7 @@ span.wpcf7-not-valid-tip {
   border-radius: 0;
 }
 .frm_image_option_container.frm_label_with_image {
-  padding: 3rem 3rem 0 3rem;
+  padding: 3rem 2rem 0 2rem;
   background: $color-white;
 }
 .frm_checkbox.frm_image_option, .frm_radio.frm_image_option {
@@ -119,4 +119,27 @@ section {
     padding: 1rem 2rem;
     border: 1px solid $color-primary;
     margin: 2rem 0;
+  }
+  .frm_field_14_container {
+    .frm_label_button_container {
+      color: $color-primary;
+      padding: 4rem 0;
+      font-size: 3rem;
+      font-family: $default-header-style;
+    }
+  }
+  .frm_forms .frm_progress_line input, .frm_forms .frm_progress_line input:disabled {
+    padding: 0;
+    line-height: 7px;
+  }
+  section {
+    &.form-short-code {
+      min-height: calc(100vh - 125px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .row {
+        width: 100%;
+      }
+    }
   }

@@ -26,7 +26,7 @@ $filterElement = get_sub_field( 'itin_prop' );
 $loop = new WP_Query(
     array(
         'post_type' => $filterElement, 
-        'posts_per_page' => -1,
+        'posts_per_page' => 50,
         'meta_query' => array(
             'relation' => 'OR',
             array(
@@ -43,7 +43,6 @@ $loop = new WP_Query(
         
     )
 );
-$counter = 0;
 while ( $loop->have_posts() ) : $loop->the_post();
 $mainImage = get_the_post_thumbnail_url(get_the_ID(),'large');
 $counter++;

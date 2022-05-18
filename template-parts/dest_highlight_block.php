@@ -1,10 +1,12 @@
+<?php $term = get_queried_object();
+if( have_rows('blocks', $term) ): ?>
+
 <?php $bgColor = get_sub_field('bg_colour');?>
 <section class="section-hightlightmap <?php if($bgColor == true): echo 'alt-bg'; endif; ?>"
     <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <div class="row <?php the_sub_field('column_size'); ?>">
 
-        <?php $term = get_queried_object();
-        $image = get_field('destination_map', $term);
+        <?php $image = get_field('destination_map', $term);
                 $rowReverse = get_field('reverse_layout', $term);
                 $selectMedia = get_field('image_or_map', $term); ?>
         <div class="map-item">
@@ -68,3 +70,4 @@ $centreLocation = get_field('center_position', $term);?>
         </div>
     </div>
 </section>
+<?php endif; ?>

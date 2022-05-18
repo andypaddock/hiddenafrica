@@ -5,9 +5,12 @@
  */
 ?>
 <div class="filler-block"></div>
+
 <?php $linkSwitch = get_field('force', 'options');?>
 <?php if($linkSwitch == true): ?>
+
 <?php get_template_part('template-parts/force-site-wide-text');?>
+
 <?php endif; ?>
 <div class="footer-message"><?php $footerSwitch = get_field('footer_override');
             if ($footerSwitch == 'alternate'): ?>
@@ -77,9 +80,27 @@ if( $link ):
     </div>
     <?php endif;?>
 </div>
+
+
+<?php $displayLogo = get_field('where_to_display','options');
+if(in_array('all', $displayLogo, true)): ?>
+<?php get_template_part('template-parts/logo_slider');?>
+<?php elseif (in_array('home', $displayLogo, true)): ?>
+<?php if (is_front_page()):?>
+<?php get_template_part('template-parts/logo_slider');?>
+<?php endif; ?>
+<?php elseif (in_array('itin', $displayLogo, true)): ?>
+<?php if (is_singular('itineraries')):?>
+<?php get_template_part('template-parts/logo_slider');?>
+<?php endif; ?>
+<?php elseif (in_array('dest', $displayLogo, true)): ?>
+<?php if (is_tax('destination')):?>
+<?php get_template_part('template-parts/logo_slider');?>
+<?php endif; ?>
+
+<?php endif; ?>
+
 <footer class="footer">
-
-
     <div class="row footer-navbar">
         <div class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part("inc/img/hiddenlogo"); ?></a>
             <div class="contact-details">

@@ -101,8 +101,5 @@ get_header(); ?>
 <?php endif; ?>
 
 
-<?php $displayLogo = get_field('where_to_display','options');
-if(in_array('all', $displayLogo)): ?>
-<?php get_template_part('template-parts/logo_slider');?>
-<?php endif; ?>
+
 <?php get_footer(); ?>

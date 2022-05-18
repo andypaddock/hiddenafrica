@@ -126,7 +126,8 @@ endif;
                     </h2>
 
                     <p><?php the_field('short_description', $term); ?></p>
-                    <a class="button outline" href="<?php echo esc_url(get_term_link($term)); ?>">Find Out More<i
+                    <a class="button outline"
+                        href="<?php echo esc_url(get_term_link($term)); ?>"><?php the_field('areas_of_cta', 'options'); ?><i
                             class="fa-light fa-chevron-right"></i></a>
                 </div>
                 <div class="style-image" style="background-image: url(<?php echo $styleImage['url']; ?>)">
@@ -145,21 +146,29 @@ endif;
 <?php endif; ?>
 
 <!-- ITINERARIES IN DESTINATION -->
-<?php
-                $args = array(
-                    'post_type' => 'itineraries',
-                    'tax_query' => array(
-                    'relation' => 'AND',
+<?php           
+                    $loop = new WP_Query(
                         array(
-                            'taxonomy' => 'destination',
-                            'field' => 'id', 
-                            'terms' => array($term_id) 
+                            'post_type' => 'itineraries', 
+                            'posts_per_page' => -1,
+                            'tax_query' => array(
+                            'relation' => 'AND',
+                                array(
+                                'taxonomy' => 'destination',
+                                'field' => 'id', 
+                                'terms' => array($term_id),
+                                'compare' => '=',
+                        
                         ),
                     )
-                );
-                $query = new WP_Query( $args );
-                if ( $query->have_posts() ): ?>
-
+                        )
+                    );
+                    
+                    
+                    
+                    
+                    ?>
+<?php if ($loop->have_posts()): ?>
 <section class="section-title" id="itineraries">
     <div class="row centre-line w50">
         <div class="line"></div>
@@ -178,8 +187,8 @@ endif;
     <div class="row w80">
         <div class="itin-display-block grid-layout2">
             <?php
-                 while ( $query->have_posts() ):
-                $query->the_post();
+                 while ( $loop->have_posts() ):
+                $loop->the_post();
                 $campImage = get_field('hero_image');?>
 
 
@@ -190,7 +199,8 @@ endif;
                         <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0', 'exclude' => '104,105') );?>
                         <?php if( $terms ): ?>
                         <?php foreach( $terms as $term ): ?>
-                        <span><?php echo esc_html( $term->name ); ?></span>
+                        <a href="<?php echo esc_url(get_term_link($term)); ?>"
+                            target="_blank"><span><?php echo esc_html( $term->name ); ?></span></a>
                         <?php endforeach; ?><?php endif; ?>
                     </div>
                 </div>
@@ -234,30 +244,40 @@ if( $terms ): ?>
 
 
             <!--item-->
-            <?php endwhile; endif;?>
+            <?php endwhile;
+wp_reset_postdata();
+?>
         </div>
     </div>
 </section>
-
+<?php endif; ?>
 <!-- LODGES IN DESTINATION -->
 <?php $queried_object = get_queried_object();
 $term_id = $queried_object->term_id; ?>
 
-<?php
-                $args = array(
-                    'post_type' => 'properties',
-                    'tax_query' => array(
-                    'relation' => 'AND',
+<?php           
+                    $loop = new WP_Query(
                         array(
-                            'taxonomy' => 'destination',
-                            'field' => 'id', 
-                        'terms' => array($term_id) 
+                            'post_type' => 'properties', 
+                            'posts_per_page' => -1,
+                            'tax_query' => array(
+                            'relation' => 'AND',
+                                array(
+                                'taxonomy' => 'destination',
+                                'field' => 'id', 
+                                'terms' => array($term_id),
+                                'compare' => '=',
+                        
                         ),
                     )
-                );
-                $query = new WP_Query( $args );
-                if ( $query->have_posts() ): ?>
-
+                        )
+                    );
+                    
+                    
+                    
+                    
+                    ?>
+<?php if ($loop->have_posts()): ?>
 <section class="section-title" id="lodges">
     <div class="row centre-line w50">
         <div class="line"></div>
@@ -276,8 +296,8 @@ $term_id = $queried_object->term_id; ?>
     <div class="row">
         <div class="itin-display-block grid-layout3">
             <?php
-                 while ( $query->have_posts() ):
-                $query->the_post();
+                 while ( $loop->have_posts() ):
+                $loop->the_post();
                 $campImage = get_sub_field('hero_image');?>
 
 
@@ -290,13 +310,7 @@ $term_id = $queried_object->term_id; ?>
                 <div class="itin-item-text">
                     <h3 class="heading-tertiary">
                         <span class="heading-tertiary--sub">
-                            <?php $terms = get_the_term_list( $post->ID, 'destination', '' ,  ' | ' ); $terms = strip_tags( $terms ); 
-if ($terms) {
-echo ''.$terms.'';
-} else  {
-}
-
-?>
+                            <?php echo taxonomy_hierarchy(); ?>
                         </span>
 
                         <span class="heading-tertiary--main"><a
@@ -312,43 +326,14 @@ echo ''.$terms.'';
 
 
             <!--item-->
-            <?php endwhile; endif;?>
+
+            <?php endwhile;
+wp_reset_postdata();
+?>
         </div>
+        <div class="mixitup-page-list"></div>
+        <div class="mixitup-page-stats"></div>
     </div>
 </section>
-
-
-
-
-<!-- <?php if( !empty( $mapImage ) ): ?>
-<section class="section-title" id="map">
-    <div class="row centre-line w50">
-        <div class="line"></div>
-        <div></div>
-    </div>
-    <div class="row w40">
-        <h2 class="heading-secondary">
-            <span class="heading-secondary--sub italic"><?php the_field('map_sub_title', $term); ?></span>
-            <span class="heading-secondary--main"><?php echo single_term_title(); ?> Map</span>
-        </h2>
-    </div>
-</section>
-<section class="section-map">
-
-    <div class="row">
-        <a class="image-popup-no-margins" href="<?php echo $mapImage['url']; ?>">
-            <img src="<?php echo $mapImage['sizes']['large']; ?>" alt="<?php echo $mapImage['alt']; ?>" />
-        </a>
-
-    </div>
-</section>
-<?php endif; ?> -->
-
-
-<?php $displayLogo = get_field('where_to_display','options');
-if(in_array('all', $displayLogo)): ?>
-<?php get_template_part('template-parts/logo_slider');?>
-<?php elseif (in_array('dest', $displayLogo)): ?>
-<?php get_template_part('template-parts/logo_slider');?>
 <?php endif; ?>
 <?php get_footer(); ?>

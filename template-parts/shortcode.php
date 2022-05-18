@@ -1,4 +1,4 @@
-<section>
+<section class="form-short-code">
     <div class="row">
         <?php
         if ( get_sub_field('shortcode') ) {

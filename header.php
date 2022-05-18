@@ -111,7 +111,7 @@ if( $link ):
         </nav>
         <header class="header">
 
-            <?php if (is_singular('destinations')):?>
+            <?php if (is_tax('destination')):?>
             <?php get_template_part('template-parts/desthero');?>
             <?php elseif (is_tax('safaritype')):?>
             <?php get_template_part('template-parts/taxhero');?>
