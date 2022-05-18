@@ -1,13 +1,13 @@
-<section class="section-title">
-    <div class="row centre-line w50">
+<section class="section-title logo-slider-title">
+    <!-- <div class="row centre-line w50">
         <div class="line"></div>
         <div></div>
-    </div>
-    <h2 class="heading-secondary">
-        <span class="heading-secondary--sub italic"><?php the_field('partner_top_header','options'); ?></span>
+    </div> -->
+    <h3 class="heading-secondary">
+        <!-- <span class="heading-primary--sub italic"><?php the_field('partner_top_header','options'); ?></span> -->
         <span class="heading-secondary--main"><?php the_field('partner_sub_header','options'); ?></span>
 
-    </h2>
+        </h2>
 </section>
 <section class="logo-slider">
     <div class="row">

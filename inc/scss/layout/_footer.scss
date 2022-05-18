@@ -74,11 +74,23 @@
       float: none;
     }
   }
+  .footer-accreds {
+    background: $color-grey-dark-3;
+    padding: 2rem 0;
+    .company-links {
+      img {
+        height: 4rem;
+        padding-right: 3rem;
+      }
+    }
+  }
 }
 .footer-navbar {
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr 4fr;
+  grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
+  grid-template-rows: 1fr 2fr;
   padding: 3rem 0;
+  grid-gap: 2rem;
   @include respond(tab-port) {
     display: flex;
     flex-direction: column;
@@ -87,8 +99,11 @@
   .logo {
     display: flex;
     flex-direction: column;
+    grid-row: span 2;
+    padding-right: 2rem;
     svg {
       width: 80%;
+      margin-bottom: 1.5rem;
       path {
         fill: $color-white;
       }
@@ -100,8 +115,18 @@
       }
       .lower-footer-links {
         padding-right: 1rem;
-        
+        li {
+          padding-bottom: 1rem;
+        }
       }
+    }
+    .outline {
+      border-color: $color-white;
+      color: $color-white;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      text-transform: unset;
+      justify-content: center;
     }
   }
   .nav {
@@ -133,13 +158,42 @@
   .about-links {
     padding-top: 3.5rem;
   }
+  .privacy-links {
+    padding-top: 3.5rem;
+  }
   .company-links {
     img {
       height: 5rem;
     }
   }
+  .footer-feed {
+    grid-column: 2/5;
+    padding-top: 2rem;
+    border-top: 1px solid $color-white;
+    margin-top: 2rem;
+    ul {
+      display: flex;
+      grid-gap: 2rem;
+      li {
+        p {
+          margin-bottom: 1rem;
+        }
+        a {
+          font-size: 1.3rem;
+          font-weight: 400;
+          &.italic {
+            font-weight: 300;
+          }
+          &.overscores::before {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+  }
   .newsletter-block {
     padding: 3.5rem 0 0 3rem;
+    grid-row: span 2;
     .mc4wp-form-fields {
       padding: 2rem 0;
       input {
@@ -147,12 +201,13 @@
         background: rgba(255, 255, 255, 0.4);
         padding: 1rem 3rem;
         border: none;
-        margin-right: 0.5rem;
+        
       }
       input[type="submit"] {
         border: 1px solid $color-white;
         background: transparent;
         width: 100%;
+        margin-top: 1rem;
       }
     }
     .mc4wp-form ::-webkit-input-placeholder {
@@ -176,7 +231,6 @@
       }
     }
     .email {
-      margin-right: 0.5rem;
       @include respond(tab-port) {
         margin: 0;
       }
@@ -186,7 +240,7 @@
     }
     .news-terms {
       font-size: 1.1rem;
-      padding: 1rem 0;
+      padding: 2rem 0 0;
     }
   }
 

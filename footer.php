@@ -124,18 +124,17 @@ if( $link ):
                 <?php endif; ?>
             </div>
             <?php 
-$link = get_sub_field('reservation_link','options');
+$link = get_field('reservation_link','options');
 if( $link ): 
     $link_url = $link['url'];
     $link_title = $link['title'];
     $link_target = $link['target'] ? $link['target'] : '_self';
     ?>
-            <a href="<?php echo esc_url( $link_url ); ?>"
+            <a class="button outline" href="<?php echo esc_url( $link_url ); ?>"
                 target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
             <?php endif; ?>
             <?php if( have_rows('social_media_links','options') ): ?>
             <ul class="social-links">
-                <li>FOLLOW US</li>
                 <?php while( have_rows('social_media_links','options') ): the_row(); ?>
 
                 <li>
@@ -175,26 +174,6 @@ if( $link ):
                 <?php endwhile; ?>
             </ul>
             <?php endif; ?>
-            <h3 class="heading-tertiary">Our Latest Blog Posts</h3>
-            <ul class="lower-footer-links">
-                <?php
-    $args = array(
-        'post_type' => 'post',
-        'post_per_page' => 4,
-    );
-
-    $post_query = new WP_Query($args);
-
-    if($post_query->have_posts() ) {
-        while($post_query->have_posts() ) {
-            $post_query->the_post();
-            ?>
-                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-                <?php
-            }
-        }
-?>
-            </ul>
         </div>
         <div class="about-links">
             <h3 class="heading-tertiary">Get to Know Us</h3>
@@ -217,6 +196,70 @@ if( $link ):
             </ul>
             <?php endif; ?>
 
+
+        </div>
+        <div class="privacy-links">
+            <h3 class="heading-tertiary">Important Stuff</h3>
+            <?php if( have_rows('important_menu_items','options') ): ?>
+            <ul class="lower-footer-links">
+                <?php while( have_rows('important_menu_items','options') ): the_row(); ?>
+                <li>
+                    <?php 
+$link = get_sub_field('link','options');
+if( $link ): 
+    $link_url = $link['url'];
+    $link_title = $link['title'];
+    $link_target = $link['target'] ? $link['target'] : '_self';
+    ?>
+                    <a href="<?php echo esc_url( $link_url ); ?>"
+                        target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                    <?php endif; ?>
+                </li>
+                <?php endwhile; ?>
+            </ul>
+            <?php endif; ?>
+        </div>
+        <div class="newsletter-block">
+            <h3 class="heading-tertiary">Sign up for exclusive news and inspiration</h3>
+            <?php
+        if ( get_field('footer_shortcode','options') ) {
+            echo do_shortcode( get_field('footer_shortcode','options') );
+        }
+        ?>
+        </div>
+
+        <div class="footer-feed">
+            <h3 class="heading-tertiary">Our Latest Blog Posts</h3>
+            <ul class="lower-footer-links">
+
+                <?php 
+   // the query
+   $the_query = new WP_Query( array(
+      'posts_per_page' => 3,
+   )); 
+?>
+
+                <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+                <li>
+                    <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+                    <?php echo wp_trim_words(get_the_excerpt(), 15); ?>
+                    <a class="overscores italic" href="<?php the_permalink(); ?>">Read more</a>
+                </li>
+
+                <?php endwhile; ?>
+            </ul>
+            <?php wp_reset_postdata(); ?>
+
+            <?php else : ?>
+            <p><?php __('No News'); ?></p>
+            <?php endif; ?>
+
+        </div>
+    </div>
+    <div class="footer-accreds">
+        <div class="row">
             <div class="company-links">
 
 
@@ -226,10 +269,10 @@ if( $link ):
                 <?php 
 $link = get_sub_field('link','options');
 if( $link ): 
-    $link_url = $link['url'];
-    $link_title = $link['title'];
-    $link_target = $link['target'] ? $link['target'] : '_self';
-    ?>
+$link_url = $link['url'];
+$link_title = $link['title'];
+$link_target = $link['target'] ? $link['target'] : '_self';
+?>
                 <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><img
                         src="<?php the_sub_field('company_logo','options'); ?>" /></a>
                 <?php endif; ?>
@@ -240,16 +283,7 @@ if( $link ):
 
             </div>
         </div>
-        <div class="newsletter-block">
-            <h3 class="heading-tertiary">Sign up for exclusive news and inspiration</h3>
-            <?php
-        if ( get_field('footer_shortcode','options') ) {
-            echo do_shortcode( get_field('footer_shortcode','options') );
-        }
-        ?>
-        </div>
     </div>
-
 
 </footer>
 </main>
