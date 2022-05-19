@@ -78,9 +78,16 @@
     background: $color-grey-dark-3;
     padding: 2rem 0;
     .company-links {
+      display: flex;
+      align-items: center;
+      grid-gap: 3rem;
       img {
         height: 4rem;
-        padding-right: 3rem;
+      }
+      .heading-secondary--main {
+        font-family: $default-header-style;
+        text-transform: uppercase;
+        font-size: 2rem;
       }
     }
   }
@@ -90,7 +97,7 @@
   grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
   grid-template-rows: 1fr 2fr;
   padding: 3rem 0;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
   @include respond(tab-port) {
     display: flex;
     flex-direction: column;
@@ -103,18 +110,19 @@
     padding-right: 2rem;
     svg {
       width: 80%;
-      margin-bottom: 1.5rem;
       path {
         fill: $color-white;
       }
     }
     .contact-details {
-      padding: 0.5rem 0 3rem 0;
+      padding: 0rem 0 3rem 0;
+      font-size: 1.2rem;
       p {
         font-size: 1.2rem;
       }
       .lower-footer-links {
         padding-right: 1rem;
+        margin-bottom: 1rem;
         li {
           padding-bottom: 1rem;
         }
@@ -192,10 +200,10 @@
     }
   }
   .newsletter-block {
-    padding: 3.5rem 0 0 3rem;
+    padding: 3.5rem 0 0 2rem;
     grid-row: span 2;
     .mc4wp-form-fields {
-      padding: 2rem 0;
+      padding: 0 0 2rem;
       input {
         color: white;
         background: rgba(255, 255, 255, 0.4);
@@ -246,8 +254,8 @@
 
   .heading-tertiary {
     text-transform: uppercase;
-    font-size: 1.3rem;
-    padding: 0rem 0 2rem;
+    font-size: 1.2rem;
+    padding: 0rem 0 1.5rem;
     font-family: $default-font-style;
     font-weight: 700;
   }

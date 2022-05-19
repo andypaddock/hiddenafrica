@@ -46,53 +46,8 @@ $counter++;
 
 ?>
             <?php $terms = wp_get_post_terms( $post->ID, 'destination' ); ?>
-            <div class="mix tile post-item <?php foreach( $terms as $term ) echo ' ' . $term->slug; ?>">
-
-                <div class="filter-item--image" style="background-image: url(<?php echo $mainImage; ?>)">
-                    <div class="overlay-country">
-                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0', 'exclude' => '104,105') );?>
-                        <?php if( $terms ): ?>
-                        <?php foreach( $terms as $term ): ?>
-                        <a href="<?php echo esc_url(get_term_link($term)); ?>"
-                            target="_blank"><span><?php echo esc_html( $term->name ); ?></span></a>
-                        <?php endforeach; ?><?php endif; ?>
-                    </div>
-                </div>
-                <div class=" post-text">
-                    <span class="meta "><?php echo esc_html( $days_field ); ?> <?php $terms = get_the_term_list( $post->ID, 'safaritype', '', ',' ); $terms = strip_tags( $terms ); 
-if ($terms) {
-echo ''.$terms.'';
-} else  {
-}
-?></span>
-                    <h2 class="heading-secondary underscores">
-                        <a href="<?php the_permalink(); ?>">
-                            <span class="heading-secondary--main"><?php the_title(); ?></span>
-                        </a>
-                    </h2>
-                    <div class="destination-meta">
-                        <?php 
-$terms = wp_get_post_terms( $post->ID , 'destination', array('childless'=>'true') );
-if( $terms ): ?>
-                        <ul id="places">
-                            <li>Visiting:</li>
-                            <?php foreach( $terms as $term ):?>
-
-                            <li><?php echo ( $term->name ); ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                        <?php endif; ?>
-
-
-
-                    </div>
-
-                </div>
-                <div class="post-link">
-                    <a class="button outline" href="<?php the_permalink(); ?>">
-                        <?php echo esc_html( $custom_field ); ?><i class="fa-light fa-chevron-right"></i>
-                    </a>
-                </div>
+            <div class="mix tile itin-card post-item <?php foreach( $terms as $term ) echo ' ' . $term->slug; ?>">
+                <?php get_template_part('partials/itin','card');?>
             </div>
             <?php endwhile;
 wp_reset_postdata();

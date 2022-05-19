@@ -122,6 +122,7 @@ if( $link ):
                     <?php endwhile; ?>
                 </ul>
                 <?php endif; ?>
+                <?php the_field('address','options');?>
             </div>
             <?php 
 $link = get_field('reservation_link','options');
@@ -244,7 +245,7 @@ if( $link ):
 
                 <li>
                     <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-                    <?php echo wp_trim_words(get_the_excerpt(), 15); ?>
+                    <!-- <?php echo wp_trim_words(get_the_excerpt(), 15); ?> -->
                     <a class="overscores italic" href="<?php the_permalink(); ?>">Read more</a>
                 </li>
 
@@ -261,7 +262,9 @@ if( $link ):
     <div class="footer-accreds">
         <div class="row">
             <div class="company-links">
-
+                <?php if (get_field('company_title','options')):?>
+                <span class="heading-secondary--main"><?php the_field('company_title','options');?></span>
+                <?php endif;?>
 
                 <?php if( have_rows('linked_companies','options') ): ?>
                 <?php while( have_rows('linked_companies','options') ): the_row(); ?>

@@ -27,6 +27,7 @@ echo ''.$terms.'';
 
                         <span class="heading-tertiary--main"><a
                                 href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
+                        <span class="heading-tertiary--lower underscores"><?php the_field( 'sub_header' ); ?></span>
                     </h3>
                     <span class="meta"> <?php $terms = get_the_term_list( $post->ID, 'destination', '', ',' ); $terms = strip_tags( $terms ); 
 if ($terms) {

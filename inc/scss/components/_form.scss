@@ -97,7 +97,7 @@ span.wpcf7-not-valid-tip {
 .form-step-main {
   font-family: $default-header-style;
   color: $color-primary;
-  font-size: 5rem;
+  font-size: 4.5rem;
 }
 }
 p.form-step {
@@ -135,11 +135,29 @@ section {
   section {
     &.form-short-code {
       min-height: calc(100vh - 125px);
+      @include backgroundCover;
       display: flex;
       align-items: center;
       justify-content: center;
       .row {
         width: 100%;
       }
+    }
+  }
+  #frm_field_92_container {
+    #field_fbn6c_label {
+      p {
+        padding-top: 1.2rem;
+      }
+    }
+  }
+  #frm_field_14_container, #frm_field_20_container {
+    .frm_radio {
+     
+    }
+    .frm_label_button_container {
+      font-size: 2.5rem;
+      font-family: $default-header-style;
+      height: 75px!important;
     }
   }

@@ -339,3 +339,50 @@
   background-color: transparent !important;
   pointer-events: none;
 }
+.itin-card {
+  .itin-slide-image {
+    height: 25rem;
+    @include backgroundCover;
+
+    .overlay-country {
+      position: absolute;
+      z-index: 2;
+      color: $color-white;
+      margin: 2rem 1.5rem;
+      display: flex;
+      grid-gap: 1rem;
+      flex-wrap: wrap;
+
+      span {
+        background: $color-black;
+        padding: 1rem;
+        }
+        a {
+          color: $color-white;
+          margin-bottom: 1rem;
+        }
+    }
+  }
+
+  .itin-slide-text {
+    padding: 1rem 2rem;
+    flex: 1;
+
+    .button {
+      font-size: inherit;
+      font-weight: 400;
+    }
+
+    a {
+      color: $color-black;
+    }
+
+    .underscores:after {
+      padding-top: 1.5rem;
+    }
+  }
+
+  .itin-slide-button {
+    padding: 1rem 2rem 2rem;
+  }
+}

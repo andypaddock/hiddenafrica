@@ -192,54 +192,8 @@ endif;
                 $campImage = get_field('hero_image');?>
 
 
-            <div class="itinerary-item tile">
-                <div class="itin-item-image"
-                    style="background-image: url(<?php if ($campImage): ?><?php echo $campImage['url']; ?><?php else: ?><?php echo get_the_post_thumbnail_url($post->ID,'large'); ?><?php endif ?>)">
-                    <div class="overlay-country">
-                        <?php $terms = wp_get_post_terms( $post->ID , 'destination', array('parent'=>'0', 'exclude' => '104,105') );?>
-                        <?php if( $terms ): ?>
-                        <?php foreach( $terms as $term ): ?>
-                        <a href="<?php echo esc_url(get_term_link($term)); ?>"
-                            target="_blank"><span><?php echo esc_html( $term->name ); ?></span></a>
-                        <?php endforeach; ?><?php endif; ?>
-                    </div>
-                </div>
-
-                <div class="itin-item-text">
-                    <h3 class="heading-tertiary">
-                        <span class="heading-tertiary--sub"><?php the_field( 'how_long' ); ?>
-                            <?php $terms = get_the_term_list( $post->ID, 'safaritype', '', ',' ); $terms = strip_tags( $terms ); 
-if ($terms) {
-echo ''.$terms.'';
-} else  {
-}
-?>
-                        </span>
-                        <span class="heading-tertiary--main underscores"><a
-                                href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
-                    </h3>
-
-                    <div class="destination-meta">
-                        <?php 
-$terms = wp_get_post_terms( $post->ID , 'destination', array('childless'=>'true') );
-if( $terms ): ?>
-                        <ul id="places">
-                            <li>Visiting:</li>
-                            <?php foreach( $terms as $term ):?>
-
-                            <li><?php echo ( $term->name ); ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                        <?php endif; ?>
-
-
-
-                    </div>
-                </div>
-                <div class="itin-item-link">
-                    <a class="button outline" href="<?php the_permalink(); ?>"><?php the_field( 'cta_text' ); ?><i
-                            class="fa-light fa-chevron-right"></i></a>
-                </div>
+            <div class="itinerary-item itin-card tile">
+                <?php get_template_part('partials/itin','card');?>
             </div>
 
 

@@ -124,6 +124,11 @@ body {
   &--main {
     line-height: 1.2;
   }
+  &--lower {
+    display: block;
+    color: $color-primary;
+    font-size: 1.7rem;
+  }
 }
 .heading-highlight {
   color: $color-primary;
