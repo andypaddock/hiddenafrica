@@ -26,7 +26,7 @@ $filterElement = get_sub_field( 'itin_prop' );
 $loop = new WP_Query(
     array(
         'post_type' => $filterElement, 
-        'posts_per_page' => 50,
+        'posts_per_page' => -1,
         'meta_query' => array(
             'relation' => 'OR',
             array(

@@ -95,10 +95,11 @@
 .home {
   .heading-primary {
     color: $color-white;
-    margin-bottom: 2rem;
-  
+    
     &--main {
     text-transform: unset;
+    margin-bottom: 6rem;
+  font-size: 7rem;
     }
   }
   .home-link {

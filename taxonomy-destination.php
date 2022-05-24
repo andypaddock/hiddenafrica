@@ -9,10 +9,12 @@ get_header('tax');
 $term = get_queried_object();
 
 
+
 // vars
 $heroSize = get_field('hero_section_size', $term);
 $color = get_field('color', $term);
 $mapImage = get_field('destination_map', $term);
+$destTitles = get_field('destination_text','options');
 ?>
 <header class="header">
     <?php get_template_part('template-parts/taxhero');?>
@@ -44,7 +46,7 @@ $mapImage = get_field('destination_map', $term);
         <div class="line"></div>
         <div></div>
     </div>
-    <div class="row w40">
+    <div class="row w60">
         <h2 class="heading-secondary">
             <span class="heading-secondary--sub italic"><?php the_field('gallery_sub_title', $term); ?></span>
             <span class="heading-secondary--main"><?php the_field('gallery_title', $term); ?></span>
@@ -89,10 +91,11 @@ $term_id = $queried_object->term_id; ?>
         <div class="line"></div>
         <div></div>
     </div>
-    <div class="row w40">
+    <div class="row w60">
         <h2 class="heading-secondary">
             <span class="heading-secondary--sub italic"><?php the_field('areas_sub_title', $term); ?></span>
-            <span class="heading-secondary--main">Areas of <?php echo single_term_title(); ?></span>
+            <span class="heading-secondary--main"><?php echo esc_attr( $destTitles['dest_with_title'] ); ?>
+                <?php echo single_term_title(); ?></span>
         </h2>
     </div>
 </section>
@@ -146,7 +149,8 @@ endif;
 <?php endif; ?>
 
 <!-- ITINERARIES IN DESTINATION -->
-<?php           
+<?php
+$term = get_queried_object();     
                     $loop = new WP_Query(
                         array(
                             'post_type' => 'itineraries', 
@@ -174,10 +178,11 @@ endif;
         <div class="line"></div>
         <div></div>
     </div>
-    <div class="row w40">
+    <div class="row w60">
         <h2 class="heading-secondary">
-            <span class="heading-secondary--sub italic"><?php the_field('itins_sub_title', $term); ?></span>
-            <span class="heading-secondary--main"><?php echo single_term_title(); ?> Itineraries</span>
+            <span class="heading-secondary--sub italic"><?php the_field('itins_sub_title',$term); ?></span>
+            <span class="heading-secondary--main"><?php echo single_term_title(); ?>
+                <?php echo esc_attr( $destTitles['itineraries_title'] ); ?></span>
         </h2>
     </div>
 </section>
@@ -237,10 +242,11 @@ $term_id = $queried_object->term_id; ?>
         <div class="line"></div>
         <div></div>
     </div>
-    <div class="row w40">
+    <div class="row w60">
         <h2 class="heading-secondary">
             <span class="heading-secondary--sub italic"><?php the_field('lodges_sub_title', $term); ?></span>
-            <span class="heading-secondary--main">Lodges in <?php echo single_term_title(); ?></span>
+            <span class="heading-secondary--main"><?php echo esc_attr( $destTitles['lodges_title'] ); ?>
+                <?php echo single_term_title(); ?></span>
         </h2>
     </div>
 </section>
