@@ -96,6 +96,10 @@ get_header(); ?>
 <?php get_template_part('template-parts/slick-slider');?>
 <?php elseif( get_row_layout() == 'logo_slider' ):?>
 <?php get_template_part('template-parts/logo_slider');?>
+<?php elseif( get_row_layout() == 'side_type_filter' ):?>
+<?php get_template_part('template-parts/side_type_filter');?>
+<?php elseif( get_row_layout() == 'itin_filter_safari_type_side' ):?>
+<?php get_template_part('template-parts/itin_filter_safari_type_side');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

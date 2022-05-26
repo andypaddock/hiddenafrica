@@ -236,17 +236,14 @@ if( $link ):
                 <?php 
    // the query
    $the_query = new WP_Query( array(
-      'posts_per_page' => 3,
+      'posts_per_page' => 4,
    )); 
 ?>
-
                 <?php if ( $the_query->have_posts() ) : ?>
                 <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
                 <li>
-                    <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-                    <!-- <?php echo wp_trim_words(get_the_excerpt(), 15); ?> -->
-                    <a class="overscores italic" href="<?php the_permalink(); ?>">Read more</a>
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><span>|</span><a class="italic"
+                        href="<?php the_permalink(); ?>">Read more</a>
                 </li>
 
                 <?php endwhile; ?>
@@ -259,6 +256,7 @@ if( $link ):
 
         </div>
     </div>
+    <?php if( have_rows('linked_companies','options') ): ?>
     <div class="footer-accreds">
         <div class="row">
             <div class="company-links">
@@ -266,7 +264,7 @@ if( $link ):
                 <span class="heading-secondary--main"><?php the_field('company_title','options');?></span>
                 <?php endif;?>
 
-                <?php if( have_rows('linked_companies','options') ): ?>
+
                 <?php while( have_rows('linked_companies','options') ): the_row(); ?>
 
                 <?php 
@@ -282,11 +280,12 @@ $link_target = $link['target'] ? $link['target'] : '_self';
 
                 <?php endwhile; ?>
 
-                <?php endif; ?>
 
             </div>
         </div>
     </div>
+    <?php endif; ?>
+
 
 </footer>
 </main>

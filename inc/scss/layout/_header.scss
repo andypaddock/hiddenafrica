@@ -74,11 +74,11 @@
       span {
         background: $color-black;
         padding: 1rem;
-        }
-        a {
-          color: $color-white;
-          margin-bottom: 1rem;
-        }
+      }
+      a {
+        color: $color-white;
+        margin-bottom: 1rem;
+      }
     }
     section {
       padding-bottom: 0;
@@ -96,7 +96,7 @@
 .home .header .hero {
   height: 100%;
   .home-link {
-    padding-bottom: 35vh;
+    padding-bottom: 25vh;
   }
 }
 // .archive .header {

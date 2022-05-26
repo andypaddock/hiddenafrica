@@ -217,15 +217,11 @@
       width: 100%;
     }
     ul {
-      display: flex;
-      grid-gap: 2rem;
       li {
         p {
-          margin-bottom: 1rem;
         }
         a {
           font-size: 1.3rem;
-          font-weight: 400;
           &.italic {
             font-weight: 300;
             font-family: $alt-font-header;
@@ -234,6 +230,9 @@
           &.overscores::before {
             margin-bottom: 1rem;
           }
+        }
+        span {
+          padding: 0 1rem;
         }
       }
     }
@@ -251,7 +250,6 @@
         background: rgba(255, 255, 255, 0.4);
         padding: 1rem 3rem;
         border: none;
-        
       }
       input[type="submit"] {
         border: 1px solid $color-white;
@@ -301,7 +299,7 @@
     font-family: $default-font-style;
     font-weight: 700;
   }
-  
+
   .lower-footer-links {
     li {
       list-style: none;
@@ -317,7 +315,7 @@
     grid-gap: 2rem;
     li {
       list-style: none;
-font-weight: 400;
+      font-weight: 400;
       i {
         color: $color-white;
         font-size: 1.7rem;

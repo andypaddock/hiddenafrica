@@ -103,8 +103,15 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
   padding: 5rem 0;
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+  }
   .text {
     padding: 0rem 20% 2rem 2rem;
+    @include respond(tab-port) {
+      padding: 0;
+    }
     .heading-secondary {
       padding-right: 5rem;
       // font-size: 6rem;
@@ -122,12 +129,22 @@
   }
   &.row-reverse {
     flex-direction: row-reverse;
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
     .text {
       order: 1;
       padding: 0rem 2rem 2rem 20%;
+      @include respond(tab-port) {
+        order: unset;
+        padding: 0;
+      }
     }
     .image {
       order: 2;
+      @include respond(tab-port) {
+        order: unset;
+      }
     }
   }
 }
@@ -149,7 +166,6 @@
       }
     }
     .content-text {
-      
     }
     .button {
       margin: 0;
@@ -264,7 +280,7 @@
   }
   &.owl-carousel .owl-stage {
     padding: 2rem 0;
-}
+  }
   .image {
     // height: 20rem;
     @include backgroundCover;
@@ -278,19 +294,19 @@
       // transform: scale(1);
       z-index: 99;
     }
-    
   }
   &.owl-carousel .owl-nav.disabled {
     display: block;
-    .owl-prev,.owl-next {
+    .owl-prev,
+    .owl-next {
       top: 35%;
     }
-}
-.underscores:after {
-  margin: 0 auto;
-  width: 6rem;
-  padding-top: 2rem;
-}
+  }
+  .underscores:after {
+    margin: 0 auto;
+    width: 6rem;
+    padding-top: 2rem;
+  }
 }
 .included-text {
   &.twocol {
