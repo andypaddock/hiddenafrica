@@ -43,17 +43,23 @@
         .heading-secondary {
           text-align: left;
           padding: 0;
+          line-height: 1.3;
           &--sub {
             color: $color-black;
           }
         }
+        p {
+          line-height: 1.5;
+        }
       }
       .post-link {
-        padding: 1rem 3rem 2rem;
+        padding: 0rem 3rem 2rem;
         a {
-          color: $color-black;
+          color: $color-primary;
           font-size: 1.5rem;
-          font-weight: 400;
+          text-transform: uppercase;
+          font-family: $alt-font-header;
+          font-style: italic;
           padding-top: 1rem;
         }
         .overscores::before {

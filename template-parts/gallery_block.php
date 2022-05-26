@@ -3,6 +3,7 @@
     <div class="row">
         <?php 
 $images = get_sub_field('upload_images');
+$count = 0;
 if( $images ): ?>
         <div id="parent">
             <?php foreach( $images as $image ): ?>
@@ -12,9 +13,10 @@ if( $images ): ?>
                         alt="<?php echo esc_attr($image['alt']); ?>" />
                 </a>
             </div>
-            <?php endforeach; ?>
+            <?php $count++; endforeach; ?>
         </div>
         <?php endif; ?>
+        <?php if ($count < 2):?>
         <div id="viewmorelink">
             <div class="row centre-line w50">
                 <div class="line"></div>
@@ -22,5 +24,6 @@ if( $images ): ?>
             </div>
             <a id="viewAll" class="view-more-btn" href="#">View More</a>
         </div>
+        <?php endif; ?>
     </div>
 </section>

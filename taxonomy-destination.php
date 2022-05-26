@@ -71,12 +71,14 @@ if( $images ): ?>
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
-        <div class="row centre-line w50">
-            <div class="line"></div>
-            <div></div>
+        <div id="viewmorelink">
+            <div class="row centre-line w50">
+                <div class="line"></div>
+                <div></div>
 
+            </div>
+            <a id="viewAll" class="view-more-btn" href="#">View More</a>
         </div>
-        <a id="viewAll" class="view-more-btn" href="#">View More</a>
     </div>
 </section>
 <?php $queried_object = get_queried_object();
