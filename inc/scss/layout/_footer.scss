@@ -4,7 +4,7 @@
   background: $color-black;
   font-family: "work-sans", sans-serif;
   @include respond(tab-port) {
-    padding: 8rem 0;
+    padding: 8rem 0 0;
   }
 
   &__logo-box {

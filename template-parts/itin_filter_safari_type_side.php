@@ -1,10 +1,11 @@
 <?php $bgColor = get_sub_field('bg_colour');
 $noMobile = get_sub_field('hide_on_mobile');?>
+<span id="filterscroll"></span>
 <section
     class="safari-type-select <?php if($bgColor == true): echo 'alt-bg'; endif; ?> <?php the_sub_field('margin_size'); ?> <?php if($noMobile == true): echo 'no-mob'; endif; ?>"
     <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <div class="row <?php the_sub_field('column_size'); ?>">
-        <div class="side-filter">
+        <div id="filtertop" class="side-filter">
             <div class="controls">
                 <ul>
                     <?php $all_categories = get_terms( array(
@@ -13,16 +14,17 @@ $noMobile = get_sub_field('hide_on_mobile');?>
   'parent' => 0, 
 ) );?>
                     <li>Filter</li>
-                    <li type="button" data-filter="all">All</li>
+                    <li type="button" href="#content" data-filter="all">All</li>
                     <?php foreach($all_categories as $category): ?>
-                    <li type="button" data-filter=".<?php echo $category->slug; ?>">
-                        <?php echo $category->name; ?></li>
+                    <li type="button" href="#content" data-filter=".<?php echo $category->slug; ?>">
+                        <?php echo $category->name; ?>
+                    </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
 
 
-            <div class="safaritype-grid filter-grid cust-post-grid">
+            <div class="safaritype-grid filter-grid side-filter cust-post-grid">
                 <?php
             $term_id = get_sub_field('select_type') ;
             $args = array(

@@ -305,7 +305,7 @@ jQuery(document).ready(function ($) {
   });
 
   // var mixer = mixitup('.filter-grid');
-  var containerEl = document.querySelector(".filter-grid");
+  var containerEl = document.querySelector(".top-filter");
   var mixer;
 
   if (containerEl) {
@@ -315,6 +315,28 @@ jQuery(document).ready(function ($) {
       },
     });
   }
+  // var mixer = mixitup('.filter-grid');
+  var containerEl = document.querySelector(".side-filter");
+  var mixer;
+
+  if (containerEl) {
+    mixer = mixitup(containerEl, {
+      multifilter: {
+        enable: true,
+      },
+      callbacks: {
+        onMixStart: function (state, originalEvent) {
+          $("html, body").animate(
+            {
+              scrollTop: $("#filterscroll").offset().top - 200,
+            },
+            "fast"
+          );
+        },
+      },
+    });
+  }
+
   var containerPG = document.querySelector(".paged-six");
   var mixer;
 

@@ -20,7 +20,7 @@ $filterType = get_sub_field( 'filter_by' );?>
 
         <?php endif;?>
 
-        <div class="testimonial-grid filter-grid">
+        <div class="testimonial-grid top-filter filter-grid">
             <?php
 $filterElement = get_sub_field( 'itin_prop' );
 $loop = new WP_Query(

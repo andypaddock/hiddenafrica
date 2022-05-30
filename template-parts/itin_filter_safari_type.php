@@ -22,7 +22,7 @@ $noMobile = get_sub_field('hide_on_mobile');?>
         </div>
 
 
-        <div class="safaritype-grid filter-grid cust-post-grid">
+        <div class="safaritype-grid top-filter filter-grid cust-post-grid">
             <?php
             $term_id = get_sub_field('select_type') ;
             $args = array(

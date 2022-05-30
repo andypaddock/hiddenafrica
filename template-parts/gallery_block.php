@@ -1,6 +1,9 @@
-<section class="gallery" <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>"
-    <?php endif; ?>>
-    <div class="row">
+<?php $bgColor = get_sub_field('bg_colour');
+$noMobile = get_sub_field('hide_on_mobile');?>
+<section
+    class="gallery <?php if($bgColor == true): echo 'alt-bg'; endif; ?> <?php the_sub_field('margin_size'); ?> <?php if($noMobile == true): echo 'no-mob'; endif; ?>"
+    <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
+    <div class="row <?php the_sub_field('column_size'); ?>">
         <?php 
 $images = get_sub_field('upload_images');
 $count = 0;
@@ -16,7 +19,7 @@ if( $images ): ?>
             <?php $count++; endforeach; ?>
         </div>
         <?php endif; ?>
-        <?php if ($count < 2):?>
+        <?php if ($count > 3):?>
         <div id="viewmorelink">
             <div class="row centre-line w50">
                 <div class="line"></div>

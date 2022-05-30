@@ -200,6 +200,9 @@
   .image-text-block {
     .text {
       padding: 0 0 2rem 2rem;
+      @include respond(tab-port) {
+        padding: 0;
+      }
     }
   }
 }
@@ -212,6 +215,11 @@
     color: $color-primary;
     font-weight: 400;
     padding: 2rem;
+    font-family: $alt-font-header;
+    font-style: italic;
+    p {
+      font-size: 1.6rem;
+    }
   }
   .heading-secondary {
     font-family: $alt-font-header;

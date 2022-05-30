@@ -184,7 +184,7 @@
   //   display: block;
   // }
   .visible-xs {
-    display: none;
+    // display: none;
   }
 }
 .down_arrow {
@@ -237,7 +237,6 @@
       li {
         list-style: none;
         i {
-
           background: $color-black;
           border-radius: 50%;
           padding: 1rem;
@@ -249,9 +248,8 @@
     &__contacts {
       align-self: center;
       @include respond(tab-port) {
-        justify-self: center;
+        padding-left: 3rem;
       }
-      
     }
     &__image {
       justify-self: center;

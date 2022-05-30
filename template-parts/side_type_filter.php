@@ -1,3 +1,4 @@
+<span id="filterscroll"></span>
 <section class="side-filter-section" id="filter-section">
     <?php
 $filterType = get_sub_field( 'filter_by' );?>
@@ -13,14 +14,15 @@ $filterType = get_sub_field( 'filter_by' );?>
                     <li type="button" data-filter="all">All</li>
                     <?php foreach($all_categories as $category): ?>
                     <li type="button" data-filter=".<?php echo $category->slug; ?>">
-                        <?php echo $category->name; ?></li>
+                        <?php echo $category->name; ?>
+                    </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
 
 
 
-            <div class="filter-grid">
+            <div class="filter-grid side-filter">
                 <?php
 $filterElement = get_sub_field( 'itin_prop' );
 $loop = new WP_Query(

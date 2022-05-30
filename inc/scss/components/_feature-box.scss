@@ -84,7 +84,7 @@
     display: grid;
     grid-template-columns: 2fr 3fr;
     grid-auto-rows: minmax(100px, auto);
-    grid-template-areas: "top main""lt main""lt main";
+    grid-template-areas: "top main" "lt main" "lt main";
     grid-gap: 2rem;
 
     @include respond(phone) {
@@ -167,11 +167,11 @@
         span {
           background: $color-black;
           padding: 1rem;
-          }
-          a {
-            color: $color-white;
-            margin-bottom: 1rem;
-          }
+        }
+        a {
+          color: $color-white;
+          margin-bottom: 1rem;
+        }
       }
     }
 
@@ -311,11 +311,11 @@
       span {
         background: $color-black;
         padding: 1rem;
-        }
-        a {
-          color: $color-white;
-          margin-bottom: 1rem;
-        }
+      }
+      a {
+        color: $color-white;
+        margin-bottom: 1rem;
+      }
     }
   }
 
@@ -349,7 +349,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-background-size: contain;
+  // background-size: contain;
   .advert_text {
     width: 40%;
     margin-left: 20%;
@@ -374,9 +374,11 @@ background-size: contain;
     right: 0;
     height: 100%;
     background: rgb(239, 239, 239);
-    background: linear-gradient(270deg,
-        rgba(239, 239, 239, 1) 30%,
-        rgba(239, 239, 239, 0) 100%);
+    background: linear-gradient(
+      270deg,
+      rgba(239, 239, 239, 1) 30%,
+      rgba(239, 239, 239, 0) 100%
+    );
     z-index: 2;
   }
 }
@@ -402,11 +404,11 @@ background-size: contain;
       span {
         background: $color-black;
         padding: 1rem;
-        }
-        a {
-          color: $color-white;
-          margin-bottom: 1rem;
-        }
+      }
+      a {
+        color: $color-white;
+        margin-bottom: 1rem;
+      }
     }
   }
 

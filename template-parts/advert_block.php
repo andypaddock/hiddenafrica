@@ -5,7 +5,8 @@ $noMobile = get_sub_field('hide_on_mobile');?>
     <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <?php $advertImage = get_sub_field('advert_image'); ?>
 
-    <div class="advert-hero" style="background-image: url(<?php echo $advertImage['url']; ?>)">
+    <div class="advert-hero row  <?php the_sub_field('column_size'); ?>"
+        style="background-image: url(<?php echo $advertImage['url']; ?>)">
         <div class="advert-text-container">
 
             <div class="row advert-message-box">
