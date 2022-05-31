@@ -45,6 +45,14 @@
         padding: 2rem 0;
       }
     }
+    .post-text {
+      .underscores {
+        &::after {
+          padding-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
   }
   video {
     width: 100%;

@@ -95,19 +95,30 @@ jQuery(document).ready(function ($) {
   $(".slick-center").owlCarousel({
     loop: true,
     center: true,
+    autoplay: true,
+    autoplayTimeout: 7000,
+    autoplayHoverPause: true,
     items: 1,
     margin: 20,
     nav: true,
-    dots: true,
+    navText: [
+      "<div class='nav-button owl-prev'><i class='fal fa-chevron-left fa-2x'></i></div>",
+      "<div class='nav-button owl-next'><i class='fal fa-chevron-right fa-2x'></i></div>",
+    ],
+    dots: false,
     responsive: {
       0: {
         items: 1,
+        nav: false,
+        dots: true,
       },
       768: {
         items: 1,
+        nav: true,
       },
       1170: {
         items: 1,
+        nav: true,
       },
     },
   });
@@ -211,7 +222,7 @@ jQuery(document).ready(function ($) {
   $("#parent").each(function () {
     // the containers for all your galleries
     $(this).magnificPopup({
-      delegate: "a", // the selector for gallery item
+      delegate: ".child a", // the selector for gallery item
       type: "image",
       gallery: {
         enabled: true,
@@ -228,6 +239,11 @@ jQuery(document).ready(function ($) {
   // });
 
   $(".map-image").magnificPopup({
+    delegate: "a",
+    type: "image",
+  });
+
+  $(".child").magnificPopup({
     delegate: "a",
     type: "image",
   });
@@ -424,7 +440,7 @@ jQuery(document).ready(function ($) {
     $(".limit-four").slice(0, 4).show();
     $("#loadMore").on("click", function (e) {
       e.preventDefault();
-      $(".limit-four:hidden").slice(0, 4).slideDown();
+      $(".limit-four:hidden").slice(0, 30).slideDown();
       if ($(".limit-four:hidden").length == 0) {
         $("#loadMore").text("No Content").addClass("noContent");
       }
@@ -435,7 +451,7 @@ jQuery(document).ready(function ($) {
   $(".limit-six:hidden").css("opacity", 0);
   $("#viewAll").on("click", function (e) {
     $(".limit-six:hidden") // Added :hidden
-      .slice(0, 9)
+      .slice(0, 30)
       .slideDown("slow")
       .animate(
         {
@@ -457,7 +473,7 @@ jQuery(document).ready(function ($) {
   $("#parent .limit-three:hidden").css("opacity", 0);
   $("#viewAll").on("click", function (e) {
     $("#parent .limit-three:hidden") // Added :hidden
-      .slice(0, 12)
+      .slice(0, 30)
       .slideDown("slow")
       .animate(
         {
@@ -479,7 +495,7 @@ jQuery(document).ready(function ($) {
   $(".limit-nine:hidden").css("opacity", 0);
   $("#viewAll").on("click", function (e) {
     $(".limit-nine:hidden") // Added :hidden
-      .slice(0, 9)
+      .slice(0, 30)
       .slideDown("slow")
       .animate(
         {

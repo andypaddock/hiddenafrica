@@ -11,8 +11,9 @@
 <div class="breadcrumb"><?php if( function_exists( 'bcn_display' ) ) bcn_display(); ?></div>
 <div class="header__text-box">
     <h1 class="heading-primary">
-        <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
+
         <span
             class="heading-primary--main"><?php if (get_field('header')): ?><?php the_field('header'); ?><?php else: ?><?php the_title(); ?><?php endif ?></span>
+        <span class="heading-primary--sub"><?php the_field('sub_header'); ?></span>
     </h1>
 </div>

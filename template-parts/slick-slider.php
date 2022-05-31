@@ -17,13 +17,13 @@ $noMobile = get_sub_field('hide_on_mobile');?>
                 </div>
                 <div class="text">
                     <div class="title">
-                        <h3 class="heading-secondary underscores"><?php the_sub_field('title');?></h3>
+                        <h3 class="heading-secondary"><?php the_sub_field('title');?></h3>
                     </div>
 
-                    <div class="content-text">
+                    <!-- <div class="content-text">
                         <?php the_sub_field('text');?>
 
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <?php endwhile; endif;?>
