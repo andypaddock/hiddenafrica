@@ -295,7 +295,7 @@
     .text {
       display: flex;
       flex: 1;
-      margin: 3rem;
+      padding: 3rem;
       align-items: center;
       @include respond(phone) {
         margin: 3rem 0;

@@ -193,11 +193,15 @@ section {
       grid-auto-rows: unset;
       height: 100%;
     }
-    #frm_field_80_container {
+    #frm_field_80_container,
+    #frm_field_81_container,
+    #frm_field_82_container,
+    #frm_field_40_container {
       .frm_label_button_container {
-        height: 17rem !important;
+        height: 25rem !important;
         flex-direction: column;
         justify-content: center;
+        white-space: unset;
         h3 {
           font-family: $alt-font-header;
           text-transform: uppercase;
@@ -209,11 +213,15 @@ section {
         }
       }
     }
+    .frm_field_79_container {
+      align-items: center;
+    }
     #frm_field_131_container {
       .frm_label_button_container {
-        height: 17rem !important;
+        height: 25rem !important;
         flex-direction: column;
         justify-content: center;
+        white-space: unset;
         h3 {
           font-family: $alt-font-header;
           text-transform: uppercase;

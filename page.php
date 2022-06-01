@@ -100,6 +100,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/side_type_filter');?>
 <?php elseif( get_row_layout() == 'itin_filter_safari_type_side' ):?>
 <?php get_template_part('template-parts/itin_filter_safari_type_side');?>
+<?php elseif( get_row_layout() == 'filter_post_block' ):?>
+<?php get_template_part('template-parts/filter_post_block');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

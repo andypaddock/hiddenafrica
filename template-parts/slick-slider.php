@@ -1,5 +1,6 @@
 <?php $bgColor = get_sub_field('bg_colour');
-$noMobile = get_sub_field('hide_on_mobile');?>
+$noMobile = get_sub_field('hide_on_mobile');
+$whiteBG = get_sub_field('text_box_bg'); ?>
 <section
     class="post-block <?php if($bgColor == true): echo 'alt-bg'; endif; ?> <?php the_sub_field('margin_size'); ?> <?php if($noMobile == true): echo 'no-mob'; endif; ?>"
     <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
@@ -15,7 +16,7 @@ $noMobile = get_sub_field('hide_on_mobile');?>
                     <img src=" <?php echo esc_url($image['sizes']['large']); ?>"
                         alt="<?php echo esc_attr($image['alt']); ?>" />
                 </div>
-                <div class="text">
+                <div class="text <?php if($whiteBG == true): echo 'white-bg'; endif; ?>">
                     <div class="title">
                         <h3 class="heading-secondary"><?php the_sub_field('title');?></h3>
                     </div>
