@@ -133,6 +133,12 @@ section {
     .frm_rootline_group {
       margin: 0;
     }
+    .frm_opt_container {
+      @include respond(phone) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
     .with_frm_style .frm_message p {
       font-weight: 400;
       text-transform: uppercase;
@@ -186,6 +192,38 @@ section {
     .frm_form_fields .frm_fields_container {
       grid-auto-rows: unset;
       height: 100%;
+    }
+    #frm_field_80_container {
+      .frm_label_button_container {
+        height: 17rem !important;
+        flex-direction: column;
+        justify-content: center;
+        h3 {
+          font-family: $alt-font-header;
+          text-transform: uppercase;
+          font-size: 3rem;
+          font-weight: normal;
+        }
+        p {
+          margin: 0;
+        }
+      }
+    }
+    #frm_field_131_container {
+      .frm_label_button_container {
+        height: 17rem !important;
+        flex-direction: column;
+        justify-content: center;
+        h3 {
+          font-family: $alt-font-header;
+          text-transform: uppercase;
+          font-size: 3rem;
+          font-weight: normal;
+        }
+        p {
+          margin: 0;
+        }
+      }
     }
   }
 }

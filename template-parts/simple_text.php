@@ -13,7 +13,7 @@ $titleStyle = get_sub_field ('style');?>
                     <?php if($titleStyle == "h2"):?>
                     <h3 class="heading-secondary underscores"><?php the_sub_field('title');?></h3>
                     <?php elseif($titleStyle == "h3"):?>
-                    <h3 class="heading-tertiary overscores"><?php the_sub_field('title');?></h3>
+                    <h3 class="heading-tertiary underscores"><?php the_sub_field('title');?></h3>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
