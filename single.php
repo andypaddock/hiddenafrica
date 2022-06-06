@@ -91,6 +91,10 @@ get_header(); ?>
 <?php get_template_part('template-parts/whats_included');?>
 <?php elseif( get_row_layout() == 'rates_accor_block' ):?>
 <?php get_template_part('template-parts/rates_accor_block');?>
+<?php elseif( get_row_layout() == 'image_rows' ):?>
+<?php get_template_part('template-parts/image_rows');?>
+<?php elseif( get_row_layout() == 'gap' ):?>
+<?php get_template_part('template-parts/gap');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>

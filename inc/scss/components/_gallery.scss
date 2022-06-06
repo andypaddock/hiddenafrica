@@ -41,3 +41,75 @@
   display: block;
   text-align: center;
 }
+.image-rows-outer {
+  .image {
+    height: 35rem;
+  }
+  .image-row {
+    display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    padding-bottom: 2rem;
+    a {
+      height: 45rem;
+      @include backgroundCover;
+    }
+    &.one {
+      grid-template-columns: 1fr;
+      & a:nth-child(n + 2) {
+        display: none;
+      }
+    }
+    &.two {
+      grid-template-columns: 1fr 1fr;
+      a {
+        height: 35rem;
+      }
+      & a:nth-child(n + 3) {
+        display: none;
+      }
+    }
+    &.twol {
+      grid-template-columns: 2fr 1fr;
+      a {
+        height: 35rem;
+      }
+      & a:nth-child(n + 3) {
+        display: none;
+      }
+    }
+    &.twor {
+      grid-template-columns: 1fr 2fr;
+      a {
+        height: 35rem;
+      }
+      & a:nth-child(n + 3) {
+        display: none;
+      }
+    }
+    &.three {
+      grid-template-columns: repeat(3, 1fr);
+      a {
+        height: 20rem;
+      }
+      & a:nth-child(4) {
+        display: none;
+      }
+    }
+    &.threec {
+      grid-template-columns: 1fr 2fr 1fr;
+      a {
+        height: 20rem;
+      }
+      & a:nth-child(4) {
+        display: none;
+      }
+    }
+    &.four {
+      grid-template-columns: repeat(4, 1fr);
+      a {
+        height: 20rem;
+      }
+    }
+  }
+}

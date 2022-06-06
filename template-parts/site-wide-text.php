@@ -6,16 +6,16 @@ $backgroundSwitch = get_field('select_background', 'options');
             if ($backgroundSwitch == 'full'): ?>
 <section class="section-text para <?php if($bgColor == true): echo 'alt-bg'; endif; ?>"
     style="background-image: linear-gradient(rgba(0, 0, 0, <?php the_field('image_overlay', 'options'); ?>), rgba(0, 0, 0, <?php the_field('image_overlay', 'options'); ?>)), url(<?php echo $textBGImage['url']; ?>)">
-    <div class="row">
+    <div class="row<?php the_field('column_size', 'options'); ?>">
         <?php elseif ($backgroundSwitch == 'back'): ?>
         <section class="section-text <?php if($bgColor == true): echo 'alt-bg'; endif; ?>">
-            <div class="row"
+            <div class="row<?php the_field('column_size', 'options'); ?>"
                 style="background-image:linear-gradient(rgba(0, 0, 0, <?php the_field('image_overlay', 'options'); ?>), rgba(0, 0, 0, <?php the_field('image_overlay', 'options'); ?>)), url(<?php echo $textBGImage['url']; ?>)">
                 <?php else :?>
                 <section class="section-text <?php if($bgColor == true): echo 'alt-bg'; endif; ?>">
-                    <div class="row">
+                    <div class="row <?php the_field('column_size', 'options'); ?>">
                         <?php endif;?>
-                        <div class="row  <?php the_field('column_size', 'options'); ?> site-wide-steps">
+                        <div class="site-wide-steps">
                             <div class="left-col">
                                 <h3 class="heading-primary underscores"><?php the_field('steps_title', 'options'); ?>
                                 </h3>

@@ -45,6 +45,9 @@
       flex: 1;
       padding: 2rem 5rem;
       text-align: left;
+      @include respond(phone) {
+        padding: 2rem 0;
+      }
       .heading-primary {
         padding-left: 9rem;
       }
@@ -53,6 +56,9 @@
       flex: 1;
       padding: 2rem 5rem;
       text-align: left;
+      @include respond(phone) {
+        padding: 2rem 0;
+      }
       .heading-primary {
         padding-left: 2rem;
       }
@@ -358,9 +364,14 @@
     margin-left: 1.5rem;
     padding-left: 1rem;
   }
+  h2,
   h3,
   h4,
   h5 {
     margin-bottom: 0.5rem;
+    margin-top: 1.3rem;
+  }
+  p {
+    margin-bottom: 1.7rem;
   }
 }

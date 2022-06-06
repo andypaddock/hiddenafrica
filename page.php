@@ -102,6 +102,10 @@ get_header(); ?>
 <?php get_template_part('template-parts/itin_filter_safari_type_side');?>
 <?php elseif( get_row_layout() == 'filter_post_block' ):?>
 <?php get_template_part('template-parts/filter_post_block');?>
+<?php elseif( get_row_layout() == 'image_rows' ):?>
+<?php get_template_part('template-parts/image_rows');?>
+<?php elseif( get_row_layout() == 'gap' ):?>
+<?php get_template_part('template-parts/gap');?>
 <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
