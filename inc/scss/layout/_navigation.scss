@@ -189,6 +189,9 @@
 }
 .down_arrow {
   text-align: center;
+  @include respond(tab-port) {
+    padding-top: 5rem;
+  }
 
   a {
     text-decoration: none;

@@ -15,6 +15,9 @@
 .itin-facts {
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
+  @include respond(phone) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
 
   .where,
   .length,
@@ -29,6 +32,9 @@
     padding: 0 0 1rem 1rem;
     font-weight: 700;
     border-bottom: 1px solid $color-black;
+    @include respond(phone) {
+      padding: 0 0 1rem 0;
+    }
   }
 
   .length {
@@ -45,7 +51,7 @@
         display: inline;
 
         &::after {
-          content: ',';
+          content: ",";
         }
 
         &:last-child::after {
@@ -64,20 +70,20 @@
       }
     }
 
-    .country~.country {
+    .country ~ .country {
       &::before {
         content: "\a";
         white-space: pre;
       }
     }
 
-    .country~.place {
+    .country ~ .place {
       &::after {
         content: ",";
       }
     }
 
-    .country~.place {
+    .country ~ .place {
       &:last-of-type {
         &::after {
           content: none;
@@ -172,7 +178,7 @@
         display: inline;
 
         &::after {
-          content: ',';
+          content: ",";
         }
 
         &:first-child {
@@ -182,7 +188,6 @@
           &::after {
             content: none;
           }
-
         }
 
         &:last-child::after {
@@ -192,11 +197,22 @@
     }
   }
 }
+.safari-type-select {
+  .controls {
+    @include respond(phone) {
+      display: none;
+    }
+  }
+}
 
 .safaritype-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 4rem;
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .itin-slide-text {
@@ -214,7 +230,7 @@
         display: inline;
 
         &::after {
-          content: ',';
+          content: ",";
         }
 
         &:first-child {
@@ -224,7 +240,6 @@
           &::after {
             content: none;
           }
-
         }
 
         &:last-child::after {

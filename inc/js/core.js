@@ -19,6 +19,10 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  $("#mob-filter").click(function () {
+    $(".mobile-filter").toggleClass("open");
+  });
+
   /* TABBED CONTENT */
 
   $(document).ready(function () {
@@ -53,6 +57,7 @@ jQuery(document).ready(function ($) {
       0: {
         items: 1,
         nav: false,
+        dotsEach: 2,
       },
       600: {
         items: 1,
@@ -111,6 +116,7 @@ jQuery(document).ready(function ($) {
         items: 1,
         nav: false,
         dots: true,
+        dotsEach: 4,
       },
       768: {
         items: 1,
@@ -134,6 +140,7 @@ jQuery(document).ready(function ($) {
       0: {
         items: 1,
         nav: false,
+        dotsEach: 4,
       },
       600: {
         items: 2,
@@ -181,6 +188,7 @@ jQuery(document).ready(function ($) {
       0: {
         items: 1,
         nav: false,
+        dotsEach: 4,
       },
       600: {
         items: 1,
@@ -204,6 +212,7 @@ jQuery(document).ready(function ($) {
       0: {
         items: 1,
         nav: false,
+        dotsEach: 4,
       },
       600: {
         items: 2,
@@ -318,7 +327,7 @@ jQuery(document).ready(function ($) {
   });
 
   new Readmore("article", {
-    collapsedHeight: 128,
+    collapsedHeight: 125,
   });
 
   new Readmore(".readmore", {
@@ -326,7 +335,7 @@ jQuery(document).ready(function ($) {
   });
 
   new Readmore(".staffreadmore", {
-    collapsedHeight: 128,
+    collapsedHeight: 125,
   });
 
   // SIDEBAR MOBILEMENU

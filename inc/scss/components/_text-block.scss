@@ -46,7 +46,7 @@
       padding: 2rem 5rem;
       text-align: left;
       @include respond(phone) {
-        padding: 2rem 0;
+        padding: 2rem;
       }
       .heading-primary {
         padding-left: 9rem;
@@ -57,13 +57,22 @@
       padding: 2rem 5rem;
       text-align: left;
       @include respond(phone) {
-        padding: 2rem 0;
+        padding: 2rem;
       }
       .heading-primary {
         padding-left: 2rem;
+        @include respond(phone) {
+          padding-left: calc(20% + 2rem);
+        }
       }
       .button {
         position: relative;
+      }
+      .right-text {
+        padding: 2rem 0 2rem 2rem;
+        @include respond(phone) {
+          padding-left: calc(20% + 2rem);
+        }
       }
     }
     i {
@@ -87,9 +96,6 @@
       .icon {
         justify-self: center;
       }
-    }
-    .right-text {
-      padding: 2rem 0 2rem 2rem;
     }
   }
 }
@@ -183,6 +189,9 @@
   .image {
     @include backgroundCover;
     height: 25rem;
+    @include respond(phone) {
+      height: 15rem;
+    }
   }
 }
 .optional-header {
@@ -245,6 +254,11 @@
       padding-top: 1.5rem;
     }
   }
+  .text {
+    ul {
+      padding: 0 2rem;
+    }
+  }
 }
 .section-imagetext {
   .image-text-block {
@@ -304,11 +318,14 @@
       padding: 3rem;
       align-items: center;
       @include respond(phone) {
-        margin: 3rem 0;
+        margin: 0;
       }
     }
     .title {
       padding: 5rem;
+      @include respond(phone) {
+        padding: 0;
+      }
       .heading-secondary {
         text-align: left;
         span {
@@ -319,6 +336,9 @@
   }
   &.owl-carousel .owl-stage {
     padding: 2rem 0;
+    @include respond(phone) {
+      padding: 0;
+    }
   }
   .image {
     // height: 20rem;

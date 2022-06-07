@@ -282,10 +282,14 @@
   display: inline-block;
   zoom: 1;
   display: inline;
+  transform: scale(0.75);
+  &.active {
+    transform: scale(1.2);
+  }
 }
 .owl-theme .owl-dots .owl-dot span {
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   margin: 5px 7px;
   background: #d6d6d6;
   display: block;
@@ -306,7 +310,10 @@ article {
 .read-less {
   text-align: center;
   padding-top: 5rem;
-  
+  @include respond(phone) {
+    padding-top: 3rem;
+  }
+
   a {
     color: $color-primary;
     text-decoration: none;
@@ -939,7 +946,6 @@ uncomment this part if you haven't added this code anywhere else
   opacity: 0;
 }
 
-
 // SLICK CSS
 
 /* Slider */
@@ -1113,9 +1119,7 @@ uncomment this part if you haven't added this code anywhere else
 }
 .slick-prev:before {
   content: "\f053";
- 
 }
-
 
 .slick-next {
   right: -25px;
@@ -1126,11 +1130,9 @@ uncomment this part if you haven't added this code anywhere else
 }
 .slick-next:before {
   content: "\f054";
-  
 }
 [dir="rtl"] .slick-next:before {
   content: "\f053";
- 
 }
 
 /* Dots */
@@ -1210,4 +1212,7 @@ uncomment this part if you haven't added this code anywhere else
   opacity: 0.75;
   color: black;
 }
-#map { width: 100%; height: 100%; }
+#map {
+  width: 100%;
+  height: 100%;
+}

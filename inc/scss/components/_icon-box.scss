@@ -16,6 +16,9 @@
     .underscores::after {
       margin: 0 auto;
     }
+    @include respond(tab-port) {
+      padding: 0 0 2rem 0;
+    }
   }
 }
 .facility-icons {
@@ -38,6 +41,9 @@
     opacity: 0;
     transition: all 0.5s ease-in-out;
     &:hover {
+      opacity: 1;
+    }
+    @include respond(tab-port) {
       opacity: 1;
     }
   }

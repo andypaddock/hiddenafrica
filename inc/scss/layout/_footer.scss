@@ -166,9 +166,9 @@
     @include respond(tab-port) {
       width: 100%;
       .lower-footer-links {
-        display: flex;
         li {
-          flex: 1;
+          display: inline;
+          padding-right: 2rem;
         }
       }
     }
@@ -184,9 +184,9 @@
     @include respond(tab-port) {
       width: 100%;
       .lower-footer-links {
-        display: flex;
         li {
-          flex: 1;
+          display: inline;
+          padding-right: 2rem;
         }
       }
     }
@@ -196,9 +196,9 @@
     @include respond(tab-port) {
       width: 100%;
       .lower-footer-links {
-        display: flex;
         li {
-          flex: 1;
+          display: inline;
+          padding-right: 2rem;
         }
       }
     }
@@ -351,7 +351,6 @@
 .footer-message {
   .footer-hero {
     height: 50rem;
-    border-radius: 0.5rem 0.5rem 0 0;
     @include backgroundCover;
     display: flex;
     flex-direction: column;

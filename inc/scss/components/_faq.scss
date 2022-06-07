@@ -65,6 +65,16 @@
     align-items: center;
     grid-template-columns: 1fr 4fr 3fr;
     padding: 1rem 0;
+    @include respond(phone) {
+      grid-template-columns: 5fr 3fr;
+      grid-template-rows: 1fr 1fr;
+      .heading.underscores {
+        grid-row: 2;
+      }
+      i {
+        grid-row: span 2;
+      }
+    }
   }
   .content {
     padding: 1rem 5rem 2rem 12.5%;

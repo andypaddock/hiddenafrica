@@ -1,5 +1,26 @@
 <?php $bgColor = get_sub_field('bg_colour');
 $noMobile = get_sub_field('hide_on_mobile');?>
+<div class="mobile-filter">
+    <div class="mobile-filter--nav">
+        <div class="controls">
+            <ul>
+                <?php $all_categories = get_terms( array(
+  'taxonomy' => 'destination',
+  'hide_empty' => true,
+  'parent' => 0, 
+) );?>
+                <li>Filter</li>
+                <li type="button" data-filter="all">All</li>
+                <?php foreach($all_categories as $category): ?>
+                <li type="button" data-filter=".<?php echo $category->slug; ?>">
+                    <?php echo $category->name; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <div class="mobile-filter--button"><span id="mob-filter"><i class="fa-solid fa-filter"></i></span></div>
+
+</div>
 <section
     class="safari-type-select <?php if($bgColor == true): echo 'alt-bg'; endif; ?> <?php the_sub_field('margin_size'); ?> <?php if($noMobile == true): echo 'no-mob'; endif; ?>"
     <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
