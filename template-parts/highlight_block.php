@@ -12,7 +12,7 @@
             <?php elseif ($selectMedia == 'image'):?>
 
             <div class="map-image image fmleft">
-                <a href="<?php echo esc_url($image['url']); ?>">
+                <a data-fslightbox="map" href="<?php echo esc_url($image['url']); ?>">
                     <img src="<?php echo esc_url($image['sizes']['large']); ?>"
                         alt="<?php echo esc_attr($image['alt']); ?>" />
                 </a>

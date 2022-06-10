@@ -275,19 +275,26 @@
 
   .map-image {
     position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
 
     .overlay-link {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%);
-      background: rgba($color-black, 0.7);
-      padding: 0.5rem 1rem;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      a {
+      .map-link {
+        background: rgba($color-black, 0.7);
         color: $color-white;
         text-transform: uppercase;
+        padding: 0.5rem 1rem;
+      }
 
+      a {
         i {
           font-size: 1.8rem;
         }

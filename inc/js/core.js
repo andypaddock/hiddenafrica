@@ -2,6 +2,7 @@
 //@prepros-prepend mixitup-multifilter.min.js
 //@prepros-prepend mixitup-pagination.js
 //@prepros-prepend jquery.magnific-popup.js
+//@prepros-prepend fslightbox.js
 //@prepros-prepend owl.carousel.min.js
 //@prepros-prepend readmore.js
 //@prepros-prepend scrollreveal.js
@@ -276,10 +277,10 @@ jQuery(document).ready(function ($) {
     },
   });
 
-  $(".map-image").magnificPopup({
-    delegate: "a",
-    type: "image",
-  });
+  // $(".map-image").magnificPopup({
+  //   delegate: "a",
+  //   type: "image",
+  // });
 
   // $(".child").magnificPopup({
   //   delegate: "a",
@@ -327,7 +328,7 @@ jQuery(document).ready(function ($) {
   });
 
   new Readmore("article", {
-    collapsedHeight: 125,
+    collapsedHeight: 135,
   });
 
   new Readmore(".readmore", {
@@ -335,7 +336,7 @@ jQuery(document).ready(function ($) {
   });
 
   new Readmore(".staffreadmore", {
-    collapsedHeight: 125,
+    collapsedHeight: 135,
   });
 
   // SIDEBAR MOBILEMENU
