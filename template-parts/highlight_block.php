@@ -11,16 +11,13 @@
             <?php get_template_part('partials/simple','map');?>
             <?php elseif ($selectMedia == 'image'):?>
 
-            <div class="map-image image fmleft">
+            <div class="map-image image fmleft"
+                style="background-image: url(<?php echo esc_url($image['sizes']['large']); ?>)">
                 <a data-fslightbox="map" href="<?php echo esc_url($image['url']); ?>">
-                    <img src="<?php echo esc_url($image['sizes']['large']); ?>"
-                        alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <div class="overlay-link">
+                        <span class="map-link"><i class="fa-solid fa-location-dot"></i> View Map</span>
+                    </div>
                 </a>
-                <div class="overlay-link">
-                    <a href="<?php echo esc_url($image['url']); ?>">
-                        <i class="fa-solid fa-location-dot"></i> View Map
-                    </a>
-                </div>
             </div>
             <?php endif; ?>
             <div class="highlight-text">

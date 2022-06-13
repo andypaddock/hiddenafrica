@@ -3,7 +3,7 @@ $noMobile = get_sub_field('hide_on_mobile');?>
 <section
     class="testimonial-slider <?php if($darkBG == true): echo 'alt-bg-color'; endif;?> <?php the_sub_field('margin_size'); ?> <?php if($noMobile == true): echo 'no-mob'; endif; ?>"
     <?php if( get_sub_field('section_id') ): ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
-    <div class="row <?php the_sub_field('column_size'); ?>">
+    <div class="row w80">
         <div class="owl-carousel owl-theme testimonial-carousel">
 
             <?php if( have_rows('short_testimonial','options') ): ?>
