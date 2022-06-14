@@ -276,7 +276,8 @@
   .map-image {
     position: relative;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: top right;
 
     .overlay-link {
       position: absolute;
